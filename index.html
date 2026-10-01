@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholastic 學樂閱讀闖關玩</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #2b7a3e; /* 外圍綠意背景 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    /* 遊戲主畫面容器：固定比例並自適應螢幕 */
+    .game-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      line-height: 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .main-bg {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+    }
+
+    /* 互動按鈕熱區共通樣式 */
+    .zone-btn {
+      position: absolute;
+      border-radius: 35px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      /* 預設邊框微透，避免突兀 */
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* 滑鼠懸停（Hover）發亮與彈跳效果 */
+    .zone-btn:hover {
+      transform: scale(1.04);
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: #ffffff;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.9),
+                  0 0 45px rgba(255, 223, 0, 0.8),
+                  inset 0 0 20px rgba(255, 255, 255, 0.6);
+      animation: pulse 1.2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 35px rgba(255, 223, 0, 0.7);
+      }
+      100% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 55px rgba(255, 215, 0, 0.95);
+      }
+    }
+
+    /* 1. 藍思值 700L 探索冒險 (上方中偏左區域) */
+    .zone-700l {
+      top: 20%;
+      left: 33%;
+      width: 36%;
+      height: 31%;
+    }
+
+    /* 2. 藍思值 500L 水上狂歡 (左下方水樂園區域) */
+    .zone-500l {
+      top: 52%;
+      left: 4%;
+      width: 46%;
+      height: 40%;
+    }
+
+    /* 3. 藍思值 300L 奇幻樂園 (右下方粉紅樂園區域) */
+    .zone-300l {
+      top: 58%;
+      left: 57%;
+      width: 39%;
+      height: 38%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-wrapper">
+    <!-- 主頁底圖 -->
+    <img src="bg-main.jpg" alt="學樂閱讀闖關玩" class="main-bg">
+
+    <!-- 三個熱區發亮按鈕 -->
+    <a href="700L.html" class="zone-btn zone-700l" title="進入 藍思值700L 探索冒險"></a>
+    <a href="500L.html" class="zone-btn zone-500l" title="進入 藍思值500L 水上狂歡"></a>
+    <a href="300L.html" class="zone-btn zone-300l" title="進入 藍思值300L 奇幻樂園"></a>
+  </div>
+
+</body>
+</html>

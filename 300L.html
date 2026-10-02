@@ -7,7 +7,6 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* 【關鍵修改】：將粉紅漸層替換為全螢幕自適應背景圖 */
     body {
       background: url('images/bg-300l.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -21,7 +20,6 @@
       justify-content: center;
     }
 
-    /* 遊戲主卡片：微透白與毛玻璃效果，完美凸顯底圖與文字 */
     .container {
       background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(8px);
@@ -200,9 +198,9 @@
       transform: scale(1);
     }
 
-    /* 共用按鈕 */
+    /* 操作按鈕 */
     .action-btn {
-      margin-top: 20px;
+      margin-top: 15px;
       padding: 12px 28px;
       background: #ff4081;
       color: white;
@@ -214,6 +212,53 @@
       transition: 0.2s;
     }
     .action-btn:hover { background: #d81b60; transform: scale(1.04); }
+
+    .cert-btn {
+      background: #ff9800;
+    }
+    .cert-btn:hover {
+      background: #f57c00;
+    }
+
+    /* 獎狀彈窗樣式 (Modal) */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 24px;
+      padding: 25px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .modal-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 26px;
+      cursor: pointer;
+      color: #999;
+      background: none;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -243,9 +288,21 @@
       <span class="stage-step" id="step-memory">階段 3：翻牌對對碰 (Memory)</span>
     </div>
 
-    <!-- 遊戲視窗主體 -->
+    <!-- 遊戲主舞台 -->
     <div class="game-window" id="game-window">
       載入題庫中...
+    </div>
+  </div>
+
+  <!-- 獎狀彈出視窗 -->
+  <div class="modal-overlay" id="cert-modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeCertModal()">×</button>
+      <h2 style="color: #ff9800; margin-bottom: 15px;">🏅 榮譽過關獎狀</h2>
+      <img src="images/certificate.png" alt="過關獎狀" id="cert-img">
+      <div>
+        <a href="images/certificate.png" download="Scholastic-300L-Certificate.png" class="action-btn cert-btn" style="text-decoration:none; display:inline-block;">📥 下載獎狀</a>
+      </div>
     </div>
   </div>
 
@@ -530,27 +587,56 @@
       }
     }
 
-    /* ---------------- 最終闖關結算 ---------------- */
+    /* ---------------- 計分結算邏輯 ---------------- */
     function renderFinalResults() {
       document.getElementById('step-qa').className = 'stage-step';
       document.getElementById('step-match').className = 'stage-step';
       document.getElementById('step-memory').className = 'stage-step';
 
-      const totalPlayed = currentSession.qa.length + currentSession.match.length + currentSession.memory.length;
+      // 總得分計算（QA答對題數 + 連連看完成組數 + 對對碰完成組數）
+      const totalScore = score.qaCorrect + score.matchDone + score.memoryDone;
+      const totalPossible = currentSession.qa.length + currentSession.match.length + currentSession.memory.length;
+      const isPassed = totalScore >= 11;
       const win = document.getElementById('game-window');
 
       win.innerHTML = `
         <div style="padding: 20px;">
-          <h2 style="color:#d81b60;font-size:26px;margin-bottom:15px;">🏆 恭喜完成 300L 奇幻樂園大挑戰！</h2>
-          <div style="background:#fff0f5;padding:20px;border-radius:16px;margin-bottom:20px;text-align:left;line-height:2;font-size:16px;">
-            <p>🎯 <b>單選對答正確率</b>：${score.qaCorrect} / ${score.qaTotal} 題</p>
-            <p>🔗 <b>連連看完成組數</b>：${score.matchDone} / ${currentSession.match.length} 組</p>
-            <p>🃏 <b>對對碰翻牌完成</b>：${score.memoryDone} / ${currentSession.memory.length} 組</p>
-            <p style="color:#e91e63;font-weight:bold;font-size:18px;margin-top:10px;">🌟 本輪總共闖關題目：${totalPlayed} 題！</p>
+          ${isPassed ? `
+            <h2 style="color:#2e7d32; font-size:28px; margin-bottom:10px;">🎉 恭喜你成功過關！</h2>
+            <p style="color:#666; margin-bottom:20px;">太棒了！你的表現非常優異！</p>
+          ` : `
+            <h2 style="color:#d32f2f; font-size:28px; margin-bottom:10px;">😢 闖關失敗，再接再厲！</h2>
+            <p style="color:#666; margin-bottom:20px;">只要答對 11 題以上就能獲得榮譽獎狀喔！</p>
+          `}
+
+          <div style="background:#fff0f5; padding:20px; border-radius:16px; margin-bottom:25px; text-align:left; line-height:2.2; font-size:16px;">
+            <p>🎯 <b>單選對答正確率</b>：${score.qaCorrect} / ${score.qaTotal} 分</p>
+            <p>🔗 <b>連連看完成組數</b>：${score.matchDone} / ${currentSession.match.length} 分</p>
+            <p>🃏 <b>對對碰翻牌完成</b>：${score.memoryDone} / ${currentSession.memory.length} 分</p>
+            <hr style="border:none; border-top:1px dashed #ffb6c1; margin:10px 0;">
+            <p style="color:${isPassed ? '#2e7d32' : '#d32f2f'}; font-weight:bold; font-size:20px;">
+              🏆 最終總得分：${totalScore} / ${totalPossible} 分
+            </p>
           </div>
-          <button class="action-btn" onclick="startNewGameSession()">再抽 15 題挑戰下一輪</button>
+
+          <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+            ${isPassed ? `
+              <button class="action-btn cert-btn" onclick="openCertModal()">🏅 領取獎狀</button>
+              <button class="action-btn" onclick="startNewGameSession()">🔄 再玩一輪</button>
+            ` : `
+              <button class="action-btn" onclick="startNewGameSession()">🔄 再次闖關</button>
+            `}
+          </div>
         </div>
       `;
+    }
+
+    /* 獎狀彈窗控制 */
+    function openCertModal() {
+      document.getElementById('cert-modal').style.display = 'flex';
+    }
+    function closeCertModal() {
+      document.getElementById('cert-modal').style.display = 'none';
     }
   </script>
 </body>

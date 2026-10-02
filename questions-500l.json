@@ -1,0 +1,786 @@
+{
+  "books": [
+    "Diary of a Pug",
+    "Dragon",
+    "Mister Shivers",
+    "Owl Diaries",
+    "Poppleton",
+    "Press Start!",
+    "The Adventure Friends"
+  ],
+  "qa": [
+    {
+      "book": "Diary of a Pug",
+      "question": "Bella wanted Bub to fly the rocket at first.",
+      "options": ["True", "False"],
+      "answer": 1
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "Bub wanted to get his Bear back from Nutz, so he jumped on the rocket.",
+      "options": ["True", "False"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "Bub's nose froze to the ice! Who had to rescue him?",
+      "options": ["Bella", "Duchess", "Nutz", "Luna"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "Nutz is telling a lie when his fingers are crossed behind his back.",
+      "options": ["True", "False"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "What is the one thing that Luna loves but Bub hates?",
+      "options": ["Water", "Snow", "Treats", "Skateboard"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "Why did Bub decide to let go of the hose?",
+      "options": ["He wanted to save the treats", "He wanted to get the lawn wet", "He was scared", "Bella told him to"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "Who has stage fright in the talent show?",
+      "options": ["Duchess", "Luna", "Bub", "Bella"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "Bella's favorite place in Nana's house is the attic.",
+      "options": ["True", "False"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "The two shadows they saw in the attic were owls, not ghosts.",
+      "options": ["True", "False"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "What makes Bella think of a pirate theme for the sleepover?",
+      "options": ["Bub's growl ('Arrrrr!')", "Duchess's cat food", "A pirate movie", "A treasure map"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "What does Duchess tell Bub that worries him about sleepovers?",
+      "options": ["No one sleeps at a sleepover!", "Pirates don't eat breakfast!", "Ghosts come out", "Dogs sleep outside"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "What is the last surprise that Bella brings home from the road trip?",
+      "options": ["Moon pies", "A pirate map", "A collar", "A toy truck"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "If Bella is a queen, what is Bub's royal title?",
+      "options": ["Prince", "King", "Knight", "Captain"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "The low tide is not good for surfing.",
+      "options": ["True", "False"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "Finally at the beach, what did they find is the best treasure of all?",
+      "options": ["Friendship!", "Gold coins", "Seagulls", "Shells"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "Why did Bub need to wear the Big, Bad Cone?",
+      "options": ["To keep him from chewing on the cast", "To look like a scary lion", "To protect his ears", "To sleep better"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Pug",
+      "question": "When the real fire happened, what did Bub choose to save?",
+      "options": ["His friend", "His treats", "His skateboard", "His bed"],
+      "answer": 0
+    },
+
+    {
+      "book": "Dragon",
+      "question": "Why wouldn't the animals be Dragon's friend in the beginning?",
+      "options": ["They said they were too tired, busy, or grouchy", "Dragon was too scary", "Dragon had no food", "They were sleeping"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon",
+      "question": "Did the green snake really want to be Dragon's friend?",
+      "options": ["No", "Yes"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon",
+      "question": "What fell out of the tree and hit Dragon on the head?",
+      "options": ["An apple", "A rock", "A leaf", "A cone"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon",
+      "question": "Where did Cat and Dragon sleep in the end?",
+      "options": ["Cat slept on Dragon's bed, Dragon slept on Cat's bed on the floor", "Both on the bed", "Both on the floor", "Outside in the yard"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon",
+      "question": "When Dragon was groggy, what mistake did he make with the newspaper?",
+      "options": ["He read an egg and fried the morning newspaper", "He threw it away", "He ate it", "He soaked it in water"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon",
+      "question": "When Dragon was groggy, what mistake did he make with breakfast?",
+      "options": ["He buttered his tea and sipped a cup of toast", "He ate cold soup", "He forgot to eat", "He cooked rocks"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon",
+      "question": "What made the big hole in Dragon's floor?",
+      "options": ["All of his sweeping", "Cat scratched it", "Water leaked", "A giant fell"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon",
+      "question": "How did Dragon make his scary jack-o'-lantern out of six small pumpkins?",
+      "options": ["He stacked them on top of one another until they were very tall", "He smashed them", "He baked a pie", "He painted them green"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon",
+      "question": "What made the squish sound in the deep dark woods?",
+      "options": ["The wet leaves beneath Dragon's feet", "A scary monster", "A muddy frog", "A falling tree"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon",
+      "question": "What was the awful rumbling sound Dragon heard in the woods?",
+      "options": ["Dragon's hungry stomach!", "A scary ghost", "A bear growling", "Thunder in the sky"],
+      "answer": 0
+    },
+
+    {
+      "book": "Mister Shivers",
+      "question": "In 'The Noise at the Window', what caused the scratches on the window?",
+      "options": ["Something scratched the glass from the inside", "A tree outside", "The wind", "A cat"],
+      "answer": 0
+    },
+    {
+      "book": "Mister Shivers",
+      "question": "In 'The Statue', the cold eyes of the frozen stone figure seem to follow you.",
+      "options": ["True", "False"],
+      "answer": 0
+    },
+    {
+      "book": "Mister Shivers",
+      "question": "In 'Shadow in the Woods', Hugh safely ran away from the monster at the very end.",
+      "options": ["True", "False"],
+      "answer": 1
+    },
+    {
+      "book": "Mister Shivers",
+      "question": "In 'Fingernails', Tommy promised not to chew his own nails, but he chewed his ______ nails instead.",
+      "options": ["grandmother's", "mother's", "sister's", "friend's"],
+      "answer": 0
+    },
+    {
+      "book": "Mister Shivers",
+      "question": "In 'The Writing on the Wall', Sophie woke up and found that her red marker had changed into a black one.",
+      "options": ["True", "False"],
+      "answer": 0
+    },
+    {
+      "book": "Mister Shivers",
+      "question": "In 'The Doll in the Hall', what did the homeowner tell Mia about the doll?",
+      "options": ["They don't own a doll", "The doll is very old", "The doll is broken", "The doll loves cookies"],
+      "answer": 0
+    },
+    {
+      "book": "Mister Shivers",
+      "question": "In 'The Cast', what grew under Danny's cast when it was cut open?",
+      "options": ["Thousands of worms", "Green moss", "Flowers", "Spiders"],
+      "answer": 0
+    },
+    {
+      "book": "Mister Shivers",
+      "question": "In 'A Walk in the Dark', Jason went to the bathroom at midnight and saw...",
+      "options": ["The woman from the painting", "A friendly ghost", "His uncle", "A monster with horns"],
+      "answer": 0
+    },
+    {
+      "book": "Mister Shivers",
+      "question": "In 'The Face in the Mirror', where was the girl pulled into by her doll?",
+      "options": ["Into the mirror", "Under the bed", "Into the closet", "Outside in the dark"],
+      "answer": 0
+    },
+    {
+      "book": "Mister Shivers",
+      "question": "In 'Like Pulling Teeth', why is Dr. Smiles a free dentist?",
+      "options": ["He keeps all the real teeth he pulls", "He loves helping people", "He is very rich", "He only works on holidays"],
+      "answer": 0
+    },
+
+    {
+      "book": "Owl Diaries",
+      "question": "Why is Baxter considered a hero?",
+      "options": ["He squeezed in to save the baby squirrel", "He found the lost keys", "He flew the fastest", "He built a treehouse"],
+      "answer": 0
+    },
+    {
+      "book": "Owl Diaries",
+      "question": "Why do Eva and her classmates open the Wildwood Bakery?",
+      "options": ["To raise money for Mia's wingchair", "To win a baking trophy", "For their homework", "To share cookies with squirrels"],
+      "answer": 0
+    },
+    {
+      "book": "Owl Diaries",
+      "question": "Why does Mia need a wingchair?",
+      "options": ["She was born with wings that are too small to fly", "She broke her leg", "She gets tired easily", "Her wings are frozen"],
+      "answer": 0
+    },
+    {
+      "book": "Owl Diaries",
+      "question": "The Owl Oath is a promise to always be...",
+      "options": ["Wise, brave, and kind", "Fast, loud, and strong", "Quiet, sweet, and calm", "Funny, smart, and tall"],
+      "answer": 0
+    },
+    {
+      "book": "Owl Diaries",
+      "question": "What is the smallest type of owl mentioned?",
+      "options": ["Elf owl", "Baby owl", "Barn owl", "Pygmy owl"],
+      "answer": 0
+    },
+    {
+      "book": "Owl Diaries",
+      "question": "What is the real reason Sue doesn't want to sleep over at Eva's party?",
+      "options": ["She is a bit scared", "She is too busy", "She doesn't like popcorn", "She has homework"],
+      "answer": 0
+    },
+    {
+      "book": "Owl Diaries",
+      "question": "Owls are awake when the ______ is out.",
+      "options": ["Moon", "Sun", "Rainbow", "Cloud"],
+      "answer": 0
+    },
+
+    {
+      "book": "Poppleton",
+      "question": "Who is Poppleton's new neighbor?",
+      "options": ["Cherry Sue", "Fillmore", "Hudson", "Zacko"],
+      "answer": 0
+    },
+    {
+      "book": "Poppleton",
+      "question": "What day is Poppleton's regular library day?",
+      "options": ["Every Monday", "Every Sunday", "Every Friday", "Every Wednesday"],
+      "answer": 0
+    },
+    {
+      "book": "Poppleton",
+      "question": "What kind of stories does Poppleton like to read?",
+      "options": ["Adventure stories", "Ghost stories", "Comic books", "Fairy tales"],
+      "answer": 0
+    },
+    {
+      "book": "Poppleton",
+      "question": "Poppleton thought he had dry skin, but what was it actually?",
+      "options": ["Lint from his sweater", "Sunburn", "Mud", "Powder"],
+      "answer": 0
+    },
+    {
+      "book": "Poppleton",
+      "question": "What constellation did Poppleton see in the sky while stargazing?",
+      "options": ["The Big Dipper", "The Little Dipper", "Venus", "Orion"],
+      "answer": 0
+    },
+    {
+      "book": "Poppleton",
+      "question": "Why did Poppleton decide to buy a new bed?",
+      "options": ["His old bed was too small for him", "He didn't like the color", "It was broken", "Cherry Sue bought one"],
+      "answer": 0
+    },
+    {
+      "book": "Poppleton",
+      "question": "Which way were the geese flying over Poppleton's house in fall?",
+      "options": ["South", "North", "East", "West"],
+      "answer": 0
+    },
+    {
+      "book": "Poppleton",
+      "question": "Who has a coat store that Poppleton visited?",
+      "options": ["Zacko", "Hudson", "Cherry Sue", "Fillmore"],
+      "answer": 0
+    },
+    {
+      "book": "Poppleton",
+      "question": "Poppleton loved lying on his ______ in summer.",
+      "options": ["roof", "porch", "bed", "boat"],
+      "answer": 0
+    },
+
+    {
+      "book": "Press Start!",
+      "question": "How does Rabbit Boy turn into Super Rabbit Boy?",
+      "options": ["He eats a shiny super magical carrot", "He finds a golden cape", "A wizard gives him a potion", "He levels up in a video game"],
+      "answer": 0
+    },
+    {
+      "book": "Press Start!",
+      "question": "What is King Viking's 'No-Fun Plan'?",
+      "options": ["Build a robot army, steal the singing dog, and spread no fun", "Destroy all the carrots", "Take over the skyway", "Freeze Animal Town"],
+      "answer": 0
+    },
+    {
+      "book": "Press Start!",
+      "question": "How many races are there in the Super Cup Grand Prix?",
+      "options": ["Four", "Eight", "Six", "Two"],
+      "answer": 0
+    },
+    {
+      "book": "Press Start!",
+      "question": "Who won the Super Cup Grand Prix in the end?",
+      "options": ["Nugget", "Frog Knight", "King Viking", "Super Rabbit Boy"],
+      "answer": 0
+    },
+    {
+      "book": "Press Start!",
+      "question": "What was the name of the green alien who hopped out of a rocket?",
+      "options": ["Glob Glorp", "Robo-Bobo", "Plib", "Sunny"],
+      "answer": 0
+    },
+    {
+      "book": "Press Start!",
+      "question": "Glob Glorp turned out to be who in disguise?",
+      "options": ["King Viking", "Sunny", "Tolver the Wizard", "Robo-Boss"],
+      "answer": 0
+    },
+    {
+      "book": "Press Start!",
+      "question": "What power does the Ultra Diamond have in Team-Up Trouble?",
+      "options": ["To keep the world safe", "To dig tunnels fast", "To build giant robots", "To control minds"],
+      "answer": 0
+    },
+    {
+      "book": "Press Start!",
+      "question": "Where is King Viking's factory located in Super Game Book?",
+      "options": ["At the top of Mount Boom", "At the bottom of Splish Splash Sea", "Inside Carrot Castle", "In Cloudy Hills"],
+      "answer": 0
+    },
+    {
+      "book": "Press Start!",
+      "question": "Why does the giant Gigabot explode when it reaches the sea?",
+      "options": ["It was stolen before King Viking could make it waterproof", "Super Rabbit Boy lasered it", "It was out of fuel", "A mine hit it"],
+      "answer": 0
+    },
+
+    {
+      "book": "The Adventure Friends",
+      "question": "What is the librarian Lynda's superpower?",
+      "options": ["Finding books", "Reading minds", "Flying fast", "Baking cookies"],
+      "answer": 0
+    },
+    {
+      "book": "The Adventure Friends",
+      "question": "Who is Rita in The Adventure Friends?",
+      "options": ["The mayor of the whole town", "The librarian", "Clarke's sister", "A baker"],
+      "answer": 0
+    },
+    {
+      "book": "The Adventure Friends",
+      "question": "What is Clarke's secret code name?",
+      "options": ["Thunder Walrus", "Super Star", "Spider Scout", "Speedy Fox"],
+      "answer": 0
+    },
+    {
+      "book": "The Adventure Friends",
+      "question": "What does the Spanish word 'Vamos' mean?",
+      "options": ["Let's go!", "Goodbye!", "Thank you!", "Look out!"],
+      "answer": 0
+    },
+    {
+      "book": "The Adventure Friends",
+      "question": "The red end of a compass needle always points...",
+      "options": ["NORTH", "SOUTH", "EAST", "WEST"],
+      "answer": 0
+    },
+    {
+      "book": "The Adventure Friends",
+      "question": "What did Miguel trade their park treasure for at the end?",
+      "options": ["Two large ice cream cones", "A new compass", "Two books", "Dog treats"],
+      "answer": 0
+    }
+  ],
+
+  "matching": [
+    {
+      "book": "Diary of a Pug",
+      "pairs": [
+        {"item": "mess", "match": "dirty or untidy conditions"},
+        {"item": "adopt", "match": "to take a pet into your home"},
+        {"item": "treat", "match": "a special snack for pets or kids"},
+        {"item": "trial run", "match": "a test to see if something works"},
+        {"item": "hose", "match": "a long tube used to spray water"}
+      ]
+    },
+    {
+      "book": "Diary of a Pug",
+      "pairs": [
+        {"item": "audition", "match": "short performance to try to get a role"},
+        {"item": "rehearsal", "match": "practice for a play, concert, or show"},
+        {"item": "costume", "match": "special clothes worn by an actor"},
+        {"item": "break a leg", "match": "phrase used to wish good luck"},
+        {"item": "talent show", "match": "competition to show your skills"}
+      ]
+    },
+    {
+      "book": "Diary of a Pug",
+      "pairs": [
+        {"item": "brave", "match": "showing no fear in danger"},
+        {"item": "tease", "match": "to joke or laugh playfully"},
+        {"item": "armor", "match": "metal clothing worn for protection"},
+        {"item": "collar", "match": "band worn around the neck of a pet"},
+        {"item": "adventure", "match": "an exciting and unusual journey"}
+      ]
+    },
+    {
+      "book": "Diary of a Pug",
+      "pairs": [
+        {"item": "theme", "match": "main subject or idea of a party"},
+        {"item": "sleepover", "match": "party where friends stay and sleep"},
+        {"item": "ingredient", "match": "food used to make a dish"},
+        {"item": "tummy", "match": "a child's word for stomach"},
+        {"item": "mattress", "match": "soft part of a bed to sleep on"}
+      ]
+    },
+
+    {
+      "book": "Dragon",
+      "pairs": [
+        {"item": "backyard", "match": "後院"},
+        {"item": "lonely", "match": "寂寞的"},
+        {"item": "sign", "match": "牌子"},
+        {"item": "hit", "match": "撞擊"},
+        {"item": "friend", "match": "朋友"}
+      ]
+    },
+    {
+      "book": "Dragon",
+      "pairs": [
+        {"item": "litter box", "match": "貓砂盆/垃圾桶"},
+        {"item": "train", "match": "訓練"},
+        {"item": "teach", "match": "教導"},
+        {"item": "feed", "match": "餵養"},
+        {"item": "problem", "match": "問題"}
+      ]
+    },
+    {
+      "book": "Dragon",
+      "pairs": [
+        {"item": "broom", "match": "掃把"},
+        {"item": "sweep", "match": "掃地"},
+        {"item": "dirty", "match": "髒的"},
+        {"item": "shovel", "match": "鏟子"},
+        {"item": "basement", "match": "地下室"}
+      ]
+    },
+    {
+      "book": "Dragon",
+      "pairs": [
+        {"item": "cupboard", "match": "櫥櫃"},
+        {"item": "bare", "match": "空的"},
+        {"item": "parking lot", "match": "停車場"},
+        {"item": "bedtime", "match": "就寢時間"},
+        {"item": "groggy", "match": "昏昏沉沉的"}
+      ]
+    },
+
+    {
+      "book": "Mister Shivers",
+      "pairs": [
+        {"item": "Beneath the Bed", "match": "A doll speaks: 'Just the three of us.'"},
+        {"item": "A Hair Down to My Stomach", "match": "A doctor finds a bizarre hair problem"},
+        {"item": "The Statue", "match": "A frozen stone figure might be watching"},
+        {"item": "A Dark and Stormy Night", "match": "Toys left outside get scratched by a cat"},
+        {"item": "The Noise at the Window", "match": "Scratched glass from the inside"}
+      ]
+    },
+    {
+      "book": "Mister Shivers",
+      "pairs": [
+        {"item": "The Doll in the Hall", "match": "A life-sized doll sits on a chair"},
+        {"item": "The Cast", "match": "Worms grow under the broken arm cast"},
+        {"item": "Bright White Teeth", "match": "Eats all carrots and surrounded by rabbits"},
+        {"item": "The Jack-O'-Lantern", "match": "Buries pumpkin Willy and pumpkin patch grows"},
+        {"item": "Billy Smiled", "match": "Rotten popcorn kernels for teeth"}
+      ]
+    },
+
+    {
+      "book": "Owl Diaries",
+      "pairs": [
+        {"item": "In the beginning", "match": "Doesn't like Baxter to go near squirrels"},
+        {"item": "In the middle", "match": "Those stinky squirrels had to do with missing"},
+        {"item": "At the end", "match": "The squirrels are pretty cute"}
+      ]
+    },
+    {
+      "book": "Owl Diaries",
+      "pairs": [
+        {"item": "hero", "match": "someone admired for bravery"},
+        {"item": "clues", "match": "hints that help solve a mystery"},
+        {"item": "posters", "match": "large notices put up in public"},
+        {"item": "lullaby", "match": "quiet song to help babies sleep"},
+        {"item": "trophy", "match": "prize for winning a competition"}
+      ]
+    },
+
+    {
+      "book": "Poppleton",
+      "pairs": [
+        {"item": "geese", "match": "more than one goose"},
+        {"item": "lonely", "match": "feeling sad because you are alone"},
+        {"item": "chilly", "match": "slightly cold"},
+        {"item": "measure", "match": "to find size, length or amount"},
+        {"item": "depressed", "match": "very sad and without hope"}
+      ]
+    },
+    {
+      "book": "Poppleton",
+      "pairs": [
+        {"item": "stargaze", "match": "looking at stars in the night"},
+        {"item": "dresser", "match": "a person who dresses smartly"},
+        {"item": "porch", "match": "covered shelter at entrance of house"},
+        {"item": "mud", "match": "wet, soft earth"},
+        {"item": "roof", "match": "the top covering of a house"}
+      ]
+    },
+
+    {
+      "book": "Press Start!",
+      "pairs": [
+        {"item": "dodge", "match": "to move quickly to avoid something"},
+        {"item": "fake", "match": "not real; made to look real"},
+        {"item": "wand", "match": "a stick used to do magic"},
+        {"item": "coin", "match": "small round piece of metal money"},
+        {"item": "slime", "match": "sticky, wet, and soft stuff"}
+      ]
+    },
+    {
+      "book": "Press Start!",
+      "pairs": [
+        {"item": "orb", "match": "a round ball, often glowing"},
+        {"item": "dungeon", "match": "dark, scary underground prison"},
+        {"item": "spooky", "match": "scary or creepy"},
+        {"item": "troublemaker", "match": "a person who causes problems"},
+        {"item": "vacuum", "match": "machine that cleans by sucking dirt"}
+      ]
+    },
+    {
+      "book": "Press Start!",
+      "pairs": [
+        {"item": "villain", "match": "a bad person in a story or game"},
+        {"item": "tournament", "match": "competition with many players"},
+        {"item": "gorilla", "match": "a large, strong ape"},
+        {"item": "semifinal", "match": "second-to-last round of competition"},
+        {"item": "portal", "match": "magical doorway connecting worlds"}
+      ]
+    },
+
+    {
+      "book": "The Adventure Friends",
+      "pairs": [
+        {"item": "Over and Out.", "match": "I'm done talking."},
+        {"item": "Roger that.", "match": "Yep!"},
+        {"item": "NORTH", "match": "The direction red needle points"},
+        {"item": "walkie-talkie", "match": "Like a phone for spies"}
+      ]
+    },
+    {
+      "book": "The Adventure Friends",
+      "pairs": [
+        {"item": "sleeping bag", "match": "warm soft bag used for camping"},
+        {"item": "planet", "match": "large round object moving around a star"},
+        {"item": "outer space", "match": "area beyond Earth where stars are"},
+        {"item": "trampoline", "match": "bouncy mat you jump on for fun"},
+        {"item": "alien", "match": "creature from another planet"}
+      ]
+    },
+    {
+      "book": "The Adventure Friends",
+      "pairs": [
+        {"item": "out of", "match": "no more"},
+        {"item": "reach for", "match": "to get"},
+        {"item": "bakery", "match": "place where bread and cakes are sold"},
+        {"item": "ton", "match": "a lot, a very large amount"},
+        {"item": "jar", "match": "glass or plastic container with a lid"}
+      ]
+    }
+  ],
+
+  "memory": [
+    {
+      "book": "Diary of a Pug",
+      "cards": ["rocket", "peanut butter", "skateboard", "assistant"]
+    },
+    {
+      "book": "Diary of a Pug",
+      "cards": ["detective", "rescue", "fort", "fence"]
+    },
+    {
+      "book": "Diary of a Pug",
+      "cards": ["audition", "costume", "stunt", "rehearsal"]
+    },
+    {
+      "book": "Diary of a Pug",
+      "cards": ["armor", "collar", "shadow", "adventure"]
+    },
+    {
+      "book": "Diary of a Pug",
+      "cards": ["souvenir", "canyon", "cousin", "memory"]
+    },
+
+    {
+      "book": "Dragon",
+      "cards": ["apple", "backyard", "sign", "friend"]
+    },
+    {
+      "book": "Dragon",
+      "cards": ["litter box", "toilet", "train", "feed"]
+    },
+    {
+      "book": "Dragon",
+      "cards": ["broom", "shovel", "basement", "toast"]
+    },
+    {
+      "book": "Dragon",
+      "cards": ["cupboard", "parking lot", "kitchen", "groggy"]
+    },
+    {
+      "book": "Dragon",
+      "cards": ["pumpkin", "jack-o'-lantern", "leaves", "candle"]
+    },
+
+    {
+      "book": "Mister Shivers",
+      "cards": ["doll", "window", "statue", "noise"]
+    },
+    {
+      "book": "Mister Shivers",
+      "cards": ["shadow", "monster", "marker", "locker"]
+    },
+    {
+      "book": "Mister Shivers",
+      "cards": ["cast", "worms", "carrots", "rabbits"]
+    },
+    {
+      "book": "Mister Shivers",
+      "cards": ["painting", "haircut", "beach", "hotel"]
+    },
+    {
+      "book": "Mister Shivers",
+      "cards": ["mirror", "dentist", "teeth", "fangs"]
+    },
+
+    {
+      "book": "Owl Diaries",
+      "cards": ["clues", "posters", "hero", "squirrel"]
+    },
+    {
+      "book": "Owl Diaries",
+      "cards": ["bakery", "wingchair", "cupcakes", "sugar"]
+    },
+    {
+      "book": "Owl Diaries",
+      "cards": ["storms", "cave", "oath", "outfit"]
+    },
+    {
+      "book": "Owl Diaries",
+      "cards": ["sleepover", "article", "photo", "lemonade"]
+    },
+    {
+      "book": "Owl Diaries",
+      "cards": ["trophy", "hobby", "lullaby", "burp"]
+    },
+
+    {
+      "book": "Poppleton",
+      "cards": ["spaghetti", "cake", "library", "neighbor"]
+    },
+    {
+      "book": "Poppleton",
+      "cards": ["grapefruit", "poker", "sweater", "shells"]
+    },
+    {
+      "book": "Poppleton",
+      "cards": ["stargaze", "shopping", "sailing", "bed"]
+    },
+    {
+      "book": "Poppleton",
+      "cards": ["geese", "pancake", "coat", "chilly"]
+    },
+    {
+      "book": "Poppleton",
+      "cards": ["sunglasses", "jeep", "porch", "shower"]
+    },
+
+    {
+      "book": "Press Start!",
+      "cards": ["super carrot", "maze", "robot", "king viking"]
+    },
+    {
+      "book": "Press Start!",
+      "cards": ["power up", "spider", "flame", "shadow"]
+    },
+    {
+      "book": "Press Start!",
+      "cards": ["rocket", "space", "blast", "ufo"]
+    },
+    {
+      "book": "Press Start!",
+      "cards": ["wand", "battery", "coin", "shop"]
+    },
+    {
+      "book": "Press Start!",
+      "cards": ["orb", "dungeon", "vacuum", "chip"]
+    },
+    {
+      "book": "Press Start!",
+      "cards": ["time crystal", "tunnel", "disguise", "portal"]
+    },
+
+    {
+      "book": "The Adventure Friends",
+      "cards": ["library", "superpower", "steps", "cart"]
+    },
+    {
+      "book": "The Adventure Friends",
+      "cards": ["spaceship", "spy", "flashlight", "backyard"]
+    },
+    {
+      "book": "The Adventure Friends",
+      "cards": ["trampoline", "alien", "planet", "sleeping bag"]
+    },
+    {
+      "book": "The Adventure Friends",
+      "cards": ["mayor", "treats", "woods", "photo"]
+    },
+    {
+      "book": "The Adventure Friends",
+      "cards": ["compass", "walkie-talkie", "needle", "north"]
+    }
+  ]
+}

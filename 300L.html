@@ -6,30 +6,40 @@
   <title>藍思值 300L 奇幻樂園 - 15 題大闖關</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* 【關鍵修改】：將粉紅漸層替換為全螢幕自適應背景圖 */
     body {
-      background: radial-gradient(circle at center, #ffd1dc 0%, #ff8da1 100%);
+      background: url('bg-300l.jpg') no-repeat center center fixed;
+      background-size: cover;
       font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
       min-height: 100vh;
-      padding: 20px;
+      padding: 25px 20px;
       color: #444;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
     }
+
+    /* 遊戲主卡片：微透白與毛玻璃效果，完美凸顯底圖與文字 */
     .container {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       width: 100%;
       max-width: 860px;
-      border-radius: 24px;
-      box-shadow: 0 15px 35px rgba(255, 64, 129, 0.25);
+      border-radius: 28px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+      border: 2px solid rgba(255, 255, 255, 0.8);
       padding: 25px 30px;
-      margin-bottom: 30px;
+      margin: auto 0;
     }
+
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px dashed #ffc0cb;
+      border-bottom: 2px dashed #ffb6c1;
       padding-bottom: 15px;
       margin-bottom: 20px;
     }
@@ -78,7 +88,7 @@
       box-shadow: 0 4px 10px rgba(255, 64, 129, 0.3);
     }
 
-    /* 進度條與狀態指示 */
+    /* 三階段進度狀態 */
     .stage-bar {
       display: flex;
       justify-content: space-between;
@@ -95,7 +105,7 @@
 
     /* 遊戲主舞台 */
     .game-window {
-      background: #fafafa;
+      background: #ffffff;
       border: 2px solid #fce4ec;
       border-radius: 18px;
       padding: 25px;
@@ -150,7 +160,7 @@
     .match-item.selected { border-color: #ff4081; background: #fff0f5; transform: scale(1.02); }
     .match-item.matched { background: #e8f5e9; border-color: #81c784; color: #2e7d32; cursor: default; }
 
-    /* 【對對碰修正】：修復鏡像倒轉與卡片字型 */
+    /* 對對碰 (Memory Cards) */
     .memory-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -172,12 +182,9 @@
       font-weight: bold;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: all 0.25s ease-out;
-      /* 蓋牌時隱藏文字 */
       color: transparent;
       border: 3px solid transparent;
     }
-
-    /* 翻開與配對成功的狀態：不使用 rotateY，避免字體鏡像顛倒 */
     .memory-card.flipped {
       background: #ffffff;
       color: #d81b60;
@@ -251,7 +258,6 @@
     let currentItemIdx = 0;
     let score = { qaCorrect: 0, qaTotal: 0, matchDone: 0, memoryDone: 0 };
 
-    // 載入題庫 JSON（確保 UTF-8 解析）
     fetch('questions-300l.json')
       .then(res => res.json())
       .then(data => {
@@ -356,7 +362,7 @@
       const q = currentSession.qa[currentItemIdx];
       win.innerHTML = `
         <div class="quiz-box">
-          <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} /${currentSession.qa.length} 題</span>
+          <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} / ${currentSession.qa.length} 題</span>
           <div class="quiz-question">${q.question}</div>
           <div class="options-grid">
             ${q.options.map((opt, i) => `
@@ -409,7 +415,7 @@
 
       win.innerHTML = `
         <div style="width:100%;">
-          <span class="book-tag" style="margin-bottom:15px;">📖 ${m.book} ｜ 連連看 第 ${currentItemIdx + 1} /${currentSession.match.length} 組</span>
+          <span class="book-tag" style="margin-bottom:15px;">📖 ${m.book} ｜ 連連看 第 ${currentItemIdx + 1} / ${currentSession.match.length} 組</span>
           <p style="margin-bottom:15px;color:#666;">點擊左側項目，再點擊右側對應的意思進行連線！</p>
           <div class="match-container">
             <div class="match-col" id="col-left">
@@ -477,13 +483,11 @@
     function renderMemoryQuestion() {
       const win = document.getElementById('game-window');
       const mem = currentSession.memory[currentItemIdx];
-      
-      // 複製成 8 張卡片並隨機排列
       let cardList = [...mem.cards, ...mem.cards].sort(() => Math.random() - 0.5);
 
       win.innerHTML = `
         <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
-          <span class="book-tag" style="margin-bottom:15px;">📖 ${mem.book} ｜ 對對碰 第 ${currentItemIdx + 1} /${currentSession.memory.length} 組</span>
+          <span class="book-tag" style="margin-bottom:15px;">📖 ${mem.book} ｜ 對對碰 第 ${currentItemIdx + 1} / ${currentSession.memory.length} 組</span>
           <p style="margin-bottom:15px;color:#666;">點開兩張卡片，找出相同的單字或角色！</p>
           <div class="memory-grid">
             ${cardList.map(w => `<div class="memory-card" data-word="${w}" onclick="onFlipCard(this)">${w}</div>`).join('')}
@@ -495,7 +499,6 @@
     function onFlipCard(card) {
       if (card.classList.contains('flipped') || card.classList.contains('matched') || memSelected.length >= 2) return;
 
-      // 翻牌
       card.classList.add('flipped');
       memSelected.push(card);
 
@@ -540,9 +543,9 @@
         <div style="padding: 20px;">
           <h2 style="color:#d81b60;font-size:26px;margin-bottom:15px;">🏆 恭喜完成 300L 奇幻樂園大挑戰！</h2>
           <div style="background:#fff0f5;padding:20px;border-radius:16px;margin-bottom:20px;text-align:left;line-height:2;font-size:16px;">
-            <p>🎯 <b>單選對答正確率</b>：${score.qaCorrect} /${score.qaTotal} 題</p>
-            <p>🔗 <b>連連看完成組數</b>：${score.matchDone} /${currentSession.match.length} 組</p>
-            <p>🃏 <b>對對碰翻牌完成</b>：${score.memoryDone} /${currentSession.memory.length} 組</p>
+            <p>🎯 <b>單選對答正確率</b>：${score.qaCorrect} / ${score.qaTotal} 題</p>
+            <p>🔗 <b>連連看完成組數</b>：${score.matchDone} / ${currentSession.match.length} 組</p>
+            <p>🃏 <b>對對碰翻牌完成</b>：${score.memoryDone} / ${currentSession.memory.length} 組</p>
             <p style="color:#e91e63;font-weight:bold;font-size:18px;margin-top:10px;">🌟 本輪總共闖關題目：${totalPlayed} 題！</p>
           </div>
           <button class="action-btn" onclick="startNewGameSession()">再抽 15 題挑戰下一輪</button>

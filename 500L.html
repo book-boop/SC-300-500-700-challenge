@@ -2,15 +2,753 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>藍思值 500L 水上狂歡</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>藍思值 500L 水上狂歡 - 15 題大闖關</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding-top: 100px; background: #e0f7fa; }
-    a { display: inline-block; margin-top: 20px; text-decoration: none; background: #00bcd4; color: white; padding: 10px 22px; border-radius: 20px; font-weight: bold; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* 全螢幕水上樂園背景 */
+    body {
+      background: url('images/bg-500l.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+      min-height: 100vh;
+      padding: 25px 20px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 遊戲主卡片：水藍毛玻璃質感 */
+    .container {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      width: 100%;
+      max-width: 860px;
+      border-radius: 28px;
+      box-shadow: 0 18px 45px rgba(0, 80, 140, 0.28);
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      padding: 25px 30px;
+      margin: auto 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px dashed #81d4fa;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .header h1 { font-size: 24px; color: #0288d1; }
+    .back-btn {
+      text-decoration: none;
+      background: #00bcd4;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    .back-btn:hover { background: #0097a7; transform: scale(1.05); }
+
+    /* 書籍篩選器 */
+    .filter-section {
+      background: #e1f5fe;
+      border-radius: 16px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+    }
+    .filter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-weight: bold;
+      color: #0277bd;
+    }
+    .book-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .book-chip {
+      background: #ffffff;
+      border: 2px solid #81d4fa;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .book-chip.active {
+      background: #0288d1;
+      color: #ffffff;
+      border-color: #0288d1;
+      box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);
+    }
+
+    /* 三階段進度狀態 */
+    .stage-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      background: #e0f7fa;
+      padding: 10px 15px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #78909c;
+    }
+    .stage-step { padding: 4px 10px; border-radius: 8px; }
+    .stage-step.current { background: #0288d1; color: white; }
+
+    /* 遊戲主舞台 */
+    .game-window {
+      background: #ffffff;
+      border: 2px solid #e0f2f1;
+      border-radius: 18px;
+      padding: 25px;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* 單選對答 (QA) */
+    .quiz-box { width: 100%; text-align: left; }
+    .book-tag {
+      display: inline-block;
+      background: #b3e5fc;
+      color: #01579b;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .quiz-question { font-size: 19px; font-weight: bold; margin-bottom: 20px; color: #222; line-height: 1.5; }
+    .options-grid { display: flex; flex-direction: column; gap: 12px; }
+    .option-btn {
+      padding: 14px 18px;
+      background: #ffffff;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .option-btn:hover { background: #e1f5fe; border-color: #0288d1; }
+    .option-btn.correct { background: #c8e6c9 !important; border-color: #4caf50 !important; color: #2e7d32; }
+    .option-btn.wrong { background: #ffcdd2 !important; border-color: #f44336 !important; color: #c62828; }
+
+    /* 連連看 (Matching) */
+    .match-container { display: flex; justify-content: space-between; width: 100%; gap: 20px; }
+    .match-col { display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .match-item {
+      padding: 14px;
+      background: #ffffff;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+    .match-item.selected { border-color: #0288d1; background: #e1f5fe; transform: scale(1.02); }
+    .match-item.matched { background: #e8f5e9; border-color: #81c784; color: #2e7d32; cursor: default; }
+
+    /* 對對碰 (Memory Cards) */
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      width: 100%;
+      max-width: 520px;
+    }
+    .memory-card {
+      aspect-ratio: 1;
+      background: #4fc3f7;
+      border-radius: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.25s ease-out;
+      color: transparent;
+      border: 3px solid transparent;
+    }
+    .memory-card.flipped {
+      background: #ffffff;
+      color: #0277bd;
+      border-color: #0288d1;
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(2, 136, 209, 0.3);
+    }
+    .memory-card.matched {
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-color: #81c784;
+      cursor: default;
+      transform: scale(1);
+    }
+
+    /* 表單區塊 */
+    .form-box {
+      background: #f0fbfd;
+      border: 2px dashed #4fc3f7;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 20px 0;
+      width: 100%;
+      max-width: 480px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      color: #0277bd;
+      margin-bottom: 6px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2px solid #81d4fa;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+      transition: 0.2s;
+    }
+    .form-group input:focus {
+      border-color: #0288d1;
+      box-shadow: 0 0 8px rgba(2, 136, 209, 0.3);
+    }
+
+    /* 操作按鈕 */
+    .action-btn {
+      margin-top: 10px;
+      padding: 12px 28px;
+      background: #0288d1;
+      color: white;
+      border: none;
+      border-radius: 24px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .action-btn:hover { background: #01579b; transform: scale(1.04); }
+
+    .cert-btn { background: #ff9800; }
+    .cert-btn:hover { background: #f57c00; }
+
+    .submit-form-btn { background: #4caf50; }
+    .submit-form-btn:hover { background: #388e3c; }
+
+    /* 獎狀彈出視窗 */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 24px;
+      padding: 25px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .modal-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 26px;
+      cursor: pointer;
+      color: #999;
+      background: none;
+      border: none;
+    }
   </style>
 </head>
 <body>
-  <h1>🌊 藍思值 500L 水上狂歡</h1>
-  <p>小遊戲關卡建構中...</p>
-  <a href="index.html">返回大地圖</a>
+
+  <div class="container">
+    <div class="header">
+      <h1>🌊 藍思值 500L 水上狂歡闖關玩</h1>
+      <a href="index.html" class="back-btn">⬅ 返回大地圖</a>
+    </div>
+
+    <!-- 書籍篩選器 -->
+    <div class="filter-section">
+      <div class="filter-header">
+        <span>📖 請勾選你想挑戰的讀本（支援單選或複選）：</span>
+        <div>
+          <button id="btn-select-all" style="background:none;border:none;color:#0288d1;cursor:pointer;font-weight:bold;margin-right:10px;">全部勾選</button>
+          <button id="btn-start" class="action-btn" style="margin-top:0;padding:6px 16px;font-size:14px;">重新出題抽籤</button>
+        </div>
+      </div>
+      <div class="book-list" id="book-list"></div>
+    </div>
+
+    <!-- 三階段進度狀態 -->
+    <div class="stage-bar">
+      <span class="stage-step" id="step-qa">階段 1：單選對答 (QA)</span>
+      <span class="stage-step" id="step-match">階段 2：連連看配對 (Matching)</span>
+      <span class="stage-step" id="step-memory">階段 3：翻牌對對碰 (Memory)</span>
+    </div>
+
+    <!-- 遊戲主舞台 -->
+    <div class="game-window" id="game-window">
+      載入題庫中...
+    </div>
+  </div>
+
+  <!-- 獎狀彈出視窗 -->
+  <div class="modal-overlay" id="cert-modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeCertModal()">×</button>
+      <h2 style="color: #ff9800; margin-bottom: 15px;">🏅 榮譽過關獎狀</h2>
+      <img src="images/certificate.png" alt="過關獎狀" id="cert-img">
+      <div>
+        <a href="images/certificate.png" download="Scholastic-500L-Certificate.png" class="action-btn cert-btn" style="text-decoration:none; display:inline-block;">📥 下載獎狀</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* =========================================================
+       【Google 表單設定】
+       ========================================================= */
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdeS0CG_Ti9E56ZCKYYfaVzplhiiCs9_WJJ2yD4mwUn7HjAMw/formResponse";
+    const ENTRY_NAME = "entry.702878888";   // 請確認與 300L 相同的本名欄位 ID
+    const ENTRY_LINE = "entry.2024579566";   // LINE 名稱欄位 ID
+    const ENTRY_SCORE = "entry.131340800";  // 答對題數欄位 ID
+
+    let rawData = null;
+    let selectedBooks = [];
+
+    let currentSession = { qa: [], match: [], memory: [] };
+    let currentPhase = 'qa';
+    let currentItemIdx = 0;
+    let score = { qaCorrect: 0, qaTotal: 0, matchDone: 0, memoryDone: 0 };
+    let isFormSubmitted = false;
+
+    // 讀取 500L 題庫
+    fetch('questions-500l.json')
+      .then(res => res.json())
+      .then(data => {
+        rawData = data;
+        selectedBooks = [...data.books];
+        renderBookChips();
+        startNewGameSession();
+      })
+      .catch(err => {
+        document.getElementById('game-window').innerHTML = `
+          <p style="color:red;">⚠️ 無法讀取 questions-500l.json，請確認檔案已放置在同目錄中。</p>
+        `;
+      });
+
+    function renderBookChips() {
+      const container = document.getElementById('book-list');
+      container.innerHTML = '';
+      rawData.books.forEach(b => {
+        const chip = document.createElement('div');
+        chip.className = `book-chip ${selectedBooks.includes(b) ? 'active' : ''}`;
+        chip.innerText = b;
+        chip.onclick = () => {
+          if (selectedBooks.includes(b)) {
+            selectedBooks = selectedBooks.filter(x => x !== b);
+          } else {
+            selectedBooks.push(b);
+          }
+          chip.classList.toggle('active');
+        };
+        container.appendChild(chip);
+      });
+
+      document.getElementById('btn-select-all').onclick = () => {
+        if (selectedBooks.length === rawData.books.length) {
+          selectedBooks = [];
+        } else {
+          selectedBooks = [...rawData.books];
+        }
+        renderBookChips();
+      };
+
+      document.getElementById('btn-start').onclick = () => {
+        startNewGameSession();
+      };
+    }
+
+    function samplePool(pool, targetCount = 5) {
+      const shuffled = [...pool].sort(() => Math.random() - 0.5);
+      return shuffled.slice(0, Math.min(targetCount, shuffled.length));
+    }
+
+    function startNewGameSession() {
+      const win = document.getElementById('game-window');
+      if (selectedBooks.length === 0) {
+        win.innerHTML = '<p style="font-size:18px;">⚠️ 請至少勾選一本上方讀本再開始闖關！</p>';
+        return;
+      }
+
+      isFormSubmitted = false;
+      const qaPool = rawData.qa.filter(q => selectedBooks.includes(q.book));
+      const matchPool = rawData.matching.filter(m => selectedBooks.includes(m.book));
+      const memPool = rawData.memory.filter(m => selectedBooks.includes(m.book));
+
+      currentSession.qa = samplePool(qaPool, 5);
+      currentSession.match = samplePool(matchPool, 5);
+      currentSession.memory = samplePool(memPool, 5);
+
+      score = {
+        qaCorrect: 0,
+        qaTotal: currentSession.qa.length,
+        matchDone: 0,
+        memoryDone: 0
+      };
+
+      currentPhase = 'qa';
+      currentItemIdx = 0;
+      updateStageIndicators();
+
+      if (currentSession.qa.length > 0) {
+        renderQAQuestion();
+      } else if (currentSession.match.length > 0) {
+        currentPhase = 'match';
+        updateStageIndicators();
+        renderMatchQuestion();
+      } else if (currentSession.memory.length > 0) {
+        currentPhase = 'memory';
+        updateStageIndicators();
+        renderMemoryQuestion();
+      } else {
+        win.innerHTML = '<p>所選讀本目前無任何題目，請嘗試勾選其他讀本。</p>';
+      }
+    }
+
+    function updateStageIndicators() {
+      document.getElementById('step-qa').className = `stage-step ${currentPhase === 'qa' ? 'current' : ''}`;
+      document.getElementById('step-match').className = `stage-step ${currentPhase === 'match' ? 'current' : ''}`;
+      document.getElementById('step-memory').className = `stage-step ${currentPhase === 'memory' ? 'current' : ''}`;
+    }
+
+    /* ---------------- 階段 1：單選對答 ---------------- */
+    function renderQAQuestion() {
+      const win = document.getElementById('game-window');
+      const q = currentSession.qa[currentItemIdx];
+      win.innerHTML = `
+        <div class="quiz-box">
+          <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} / ${currentSession.qa.length} 題</span>
+          <div class="quiz-question">${q.question}</div>
+          <div class="options-grid">
+            ${q.options.map((opt, i) => `
+              <button class="option-btn" onclick="submitQAAnswer(this, ${i}, ${q.answer})">${opt}</button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function submitQAAnswer(btn, chosen, correct) {
+      const parent = btn.parentElement;
+      parent.querySelectorAll('.option-btn').forEach(b => b.style.pointerEvents = 'none');
+
+      if (chosen === correct) {
+        btn.classList.add('correct');
+        score.qaCorrect++;
+      } else {
+        btn.classList.add('wrong');
+        parent.querySelectorAll('.option-btn')[correct].classList.add('correct');
+      }
+
+      setTimeout(() => {
+        currentItemIdx++;
+        if (currentItemIdx < currentSession.qa.length) {
+          renderQAQuestion();
+        } else {
+          currentPhase = 'match';
+          currentItemIdx = 0;
+          updateStageIndicators();
+          if (currentSession.match.length > 0) {
+            renderMatchQuestion();
+          } else {
+            currentPhase = 'memory';
+            updateStageIndicators();
+            renderMemoryQuestion();
+          }
+        }
+      }, 1100);
+    }
+
+    /* ---------------- 階段 2：連連看配對 ---------------- */
+    let selLeft = null, selRight = null;
+
+    function renderMatchQuestion() {
+      const win = document.getElementById('game-window');
+      const m = currentSession.match[currentItemIdx];
+      const leftList = [...m.pairs].sort(() => Math.random() - 0.5);
+      const rightList = [...m.pairs].sort(() => Math.random() - 0.5);
+
+      win.innerHTML = `
+        <div style="width:100%;">
+          <span class="book-tag" style="margin-bottom:15px;">📖 ${m.book} ｜ 連連看 第 ${currentItemIdx + 1} / ${currentSession.match.length} 組</span>
+          <p style="margin-bottom:15px;color:#666;">點擊左側項目，再點擊右側對應的意思進行連線！</p>
+          <div class="match-container">
+            <div class="match-col" id="col-left">
+              ${leftList.map(p => `<div class="match-item" data-id="${p.match}" onclick="onSelectLeft(this)">${p.item}</div>`).join('')}
+            </div>
+            <div class="match-col" id="col-right">
+              ${rightList.map(p => `<div class="match-item" data-id="${p.match}" onclick="onSelectRight(this)">${p.match}</div>`).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function onSelectLeft(el) {
+      if (el.classList.contains('matched')) return;
+      document.querySelectorAll('#col-left .match-item').forEach(i => i.classList.remove('selected'));
+      el.classList.add('selected');
+      selLeft = el;
+      checkMatch();
+    }
+
+    function onSelectRight(el) {
+      if (el.classList.contains('matched')) return;
+      document.querySelectorAll('#col-right .match-item').forEach(i => i.classList.remove('selected'));
+      el.classList.add('selected');
+      selRight = el;
+      checkMatch();
+    }
+
+    function checkMatch() {
+      if (selLeft && selRight) {
+        if (selLeft.dataset.id === selRight.dataset.id) {
+          selLeft.classList.add('matched');
+          selRight.classList.add('matched');
+        }
+        selLeft.classList.remove('selected');
+        selRight.classList.remove('selected');
+        selLeft = null;
+        selRight = null;
+
+        if (document.querySelectorAll('#col-left .match-item:not(.matched)').length === 0) {
+          score.matchDone++;
+          setTimeout(() => {
+            currentItemIdx++;
+            if (currentItemIdx < currentSession.match.length) {
+              renderMatchQuestion();
+            } else {
+              currentPhase = 'memory';
+              currentItemIdx = 0;
+              updateStageIndicators();
+              if (currentSession.memory.length > 0) {
+                renderMemoryQuestion();
+              } else {
+                renderFinalResults();
+              }
+            }
+          }, 800);
+        }
+      }
+    }
+
+    /* ---------------- 階段 3：翻牌對對碰 ---------------- */
+    let memSelected = [];
+
+    function renderMemoryQuestion() {
+      const win = document.getElementById('game-window');
+      const mem = currentSession.memory[currentItemIdx];
+      let cardList = [...mem.cards, ...mem.cards].sort(() => Math.random() - 0.5);
+
+      win.innerHTML = `
+        <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
+          <span class="book-tag" style="margin-bottom:15px;">📖 ${mem.book} ｜ 對對碰 第 ${currentItemIdx + 1} / ${currentSession.memory.length} 組</span>
+          <p style="margin-bottom:15px;color:#666;">點開兩張卡片，找出相同的單字或角色！</p>
+          <div class="memory-grid">
+            ${cardList.map(w => `<div class="memory-card" data-word="${w}" onclick="onFlipCard(this)">${w}</div>`).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function onFlipCard(card) {
+      if (card.classList.contains('flipped') || card.classList.contains('matched') || memSelected.length >= 2) return;
+
+      card.classList.add('flipped');
+      memSelected.push(card);
+
+      if (memSelected.length === 2) {
+        const [c1, c2] = memSelected;
+        if (c1.dataset.word === c2.dataset.word) {
+          c1.classList.add('matched');
+          c2.classList.add('matched');
+          memSelected = [];
+
+          if (document.querySelectorAll('.memory-card:not(.matched)').length === 0) {
+            score.memoryDone++;
+            setTimeout(() => {
+              currentItemIdx++;
+              if (currentItemIdx < currentSession.memory.length) {
+                renderMemoryQuestion();
+              } else {
+                renderFinalResults();
+              }
+            }, 800);
+          }
+        } else {
+          setTimeout(() => {
+            c1.classList.remove('flipped');
+            c2.classList.remove('flipped');
+            memSelected = [];
+          }, 700);
+        }
+      }
+    }
+
+    /* ---------------- 計分結算與回傳表單 ---------------- */
+    function renderFinalResults() {
+      document.getElementById('step-qa').className = 'stage-step';
+      document.getElementById('step-match').className = 'stage-step';
+      document.getElementById('step-memory').className = 'stage-step';
+
+      const totalScore = score.qaCorrect + score.matchDone + score.memoryDone;
+      const totalPossible = currentSession.qa.length + currentSession.match.length + currentSession.memory.length;
+      const isPassed = totalScore >= 11;
+      const win = document.getElementById('game-window');
+
+      win.innerHTML = `
+        <div style="padding: 10px; width:100%; display:flex; flex-direction:column; align-items:center;">
+          ${isPassed ? `
+            <h2 style="color:#0288d1; font-size:26px; margin-bottom:8px;">🎉 恭喜你成功過關！</h2>
+            <p style="color:#555; margin-bottom:15px;">太棒了！你的表現非常優異！</p>
+          ` : `
+            <h2 style="color:#d32f2f; font-size:26px; margin-bottom:8px;">😢 闖關失敗，再接再厲！</h2>
+            <p style="color:#555; margin-bottom:15px;">只要答對 11 題以上就能獲得榮譽獎狀喔！</p>
+          `}
+
+          <div style="background:#e1f5fe; padding:15px 25px; border-radius:16px; margin-bottom:15px; width:100%; max-width:480px; text-align:left; line-height:2; font-size:15px;">
+            <p>🎯 <b>單選對答正確率</b>：${score.qaCorrect} / ${score.qaTotal} 分</p>
+            <p>🔗 <b>連連看完成組數</b>：${score.matchDone} / ${currentSession.match.length} 分</p>
+            <p>🃏 <b>對對碰翻牌完成</b>：${score.memoryDone} / ${currentSession.memory.length} 分</p>
+            <hr style="border:none; border-top:1px dashed #81d4fa; margin:6px 0;">
+            <p style="color:${isPassed ? '#0288d1' : '#d32f2f'}; font-weight:bold; font-size:18px;">
+              🏆 最終總得分：${totalScore} / ${totalPossible} 分
+            </p>
+          </div>
+
+          <!-- 回傳 Google 表單輸入區 -->
+          <div class="form-box">
+            <h3 style="color:#0288d1; font-size:17px; margin-bottom:12px;">📝 登記闖關成績</h3>
+            <div class="form-group">
+              <label for="user-name">答題者本名：</label>
+              <input type="text" id="user-name" placeholder="請輸入姓名" />
+            </div>
+            <div class="form-group">
+              <label for="user-line">LINE 名稱：</label>
+              <input type="text" id="user-line" placeholder="請輸入 LINE 暱稱" />
+            </div>
+            <button class="action-btn submit-form-btn" id="btn-submit-score" onclick="submitToGoogleForm(${totalScore})">
+              📤 送出成績登記
+            </button>
+            <p id="form-msg" style="margin-top:10px; font-weight:bold; font-size:14px; display:none;"></p>
+          </div>
+
+          <!-- 底部功能按鈕 -->
+          <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+            ${isPassed ? `
+              <button class="action-btn cert-btn" onclick="openCertModal()">🏅 領取獎狀</button>
+              <button class="action-btn" onclick="startNewGameSession()">🔄 再玩一輪</button>
+            ` : `
+              <button class="action-btn" onclick="startNewGameSession()">🔄 再次闖關</button>
+            `}
+          </div>
+        </div>
+      `;
+    }
+
+    /* 送出成績到 Google 表單 */
+    function submitToGoogleForm(scoreVal) {
+      if (isFormSubmitted) {
+        alert('您已經送出過成績囉！');
+        return;
+      }
+
+      const name = document.getElementById('user-name').value.trim();
+      const line = document.getElementById('user-line').value.trim();
+      const msg = document.getElementById('form-msg');
+      const submitBtn = document.getElementById('btn-submit-score');
+
+      if (!name || !line) {
+        alert('請填寫「本名」與「LINE 名稱」後再送出！');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = '傳送中...';
+
+      const formData = new FormData();
+      formData.append(ENTRY_NAME, name);
+      formData.append(ENTRY_LINE, line);
+      formData.append(ENTRY_SCORE, `${scoreVal} 題 (500L)`);
+
+      fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      })
+      .then(() => {
+        isFormSubmitted = true;
+        submitBtn.style.background = '#888';
+        submitBtn.innerText = '✅ 成績已送出';
+        msg.style.display = 'block';
+        msg.style.color = '#0288d1';
+        msg.innerText = '🎉 成績已成功回傳至系統！';
+      })
+      .catch(err => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = '📤 送出成績登記';
+        msg.style.display = 'block';
+        msg.style.color = '#d32f2f';
+        msg.innerText = '⚠️ 傳送失敗，請稍後再試。';
+      });
+    }
+
+    /* 獎狀彈窗控制 */
+    function openCertModal() {
+      document.getElementById('cert-modal').style.display = 'flex';
+    }
+    function closeCertModal() {
+      document.getElementById('cert-modal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>

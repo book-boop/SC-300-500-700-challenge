@@ -74,7 +74,7 @@
       z-index: 25;
       opacity: 1; /* 浮現出來 */
       
-      /* 金黃色高強度外發光 */
+      /* 金黃色高強度外發光（精準貼合 PNG 邊緣） */
       filter: drop-shadow(0 0 12px #ffe600)
               drop-shadow(0 0 25px #ffb300)
               drop-shadow(0 0 40px rgba(255, 235, 59, 0.9));
@@ -100,8 +100,16 @@
     }
 
     /* ========================================================
-       三個按鈕大小與定位（依指定參數更新）
+       按鈕大小與定位
        ======================================================== */
+
+    /* 0. 右上方熱氣球與布條按鈕（Scholastic × 堂奧圖書） */
+    .btn-balloon {
+      top: 3.2%;
+      left: 56.5%;
+      width: 41.5%;
+      height: 17.5%;
+    }
 
     /* 1. 藍思值 700L 探索冒險（上方中央偏左，含城堡、樹屋與書本） */
     .btn-700l {
@@ -133,6 +141,11 @@
   <div class="game-board">
     <!-- 主背景底圖（平時只顯示這張） -->
     <img src="bg-main.jpg" alt="學樂閱讀闖關玩地圖" class="map-bg">
+
+    <!-- 熱氣球外部連結按鈕（前往外部網站，新分頁開啟） -->
+    <a href="https://www.tangao.com.tw/" target="_blank" rel="noopener noreferrer" class="img-btn btn-balloon" title="前往官方網站">
+      <img src="btn-balloon.png" alt="Scholastic x 堂奧圖書">
+    </a>
 
     <!-- 700L 探索冒險按鈕（滑鼠移上浮現發光） -->
     <a href="700L.html" class="img-btn btn-700l" title="進入 藍思值 700L 探索冒險">

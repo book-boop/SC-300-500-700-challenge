@@ -93,7 +93,7 @@
     .stage-step { padding: 4px 10px; border-radius: 8px; }
     .stage-step.current { background: #ff4081; color: white; }
 
-    /* 遊戲主要舞台 */
+    /* 遊戲主舞台 */
     .game-window {
       background: #fafafa;
       border: 2px solid #fce4ec;
@@ -150,34 +150,47 @@
     .match-item.selected { border-color: #ff4081; background: #fff0f5; transform: scale(1.02); }
     .match-item.matched { background: #e8f5e9; border-color: #81c784; color: #2e7d32; cursor: default; }
 
-    /* 對對碰 (Memory Cards) */
+    /* 【對對碰修正】：修復鏡像倒轉與卡片字型 */
     .memory-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      gap: 14px;
       width: 100%;
-      max-width: 500px;
+      max-width: 520px;
     }
     .memory-card {
       aspect-ratio: 1;
       background: #ff80ab;
-      border-radius: 12px;
+      border-radius: 14px;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 14px;
-      font-weight: bold;
-      color: transparent;
       cursor: pointer;
-      transition: transform 0.25s;
       user-select: none;
-      padding: 6px;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.25s ease-out;
+      /* 蓋牌時隱藏文字 */
+      color: transparent;
+      border: 3px solid transparent;
     }
-    .memory-card.flipped, .memory-card.matched {
+
+    /* 翻開與配對成功的狀態：不使用 rotateY，避免字體鏡像顛倒 */
+    .memory-card.flipped {
       background: #ffffff;
       color: #d81b60;
-      border: 2px solid #ff4081;
-      transform: rotateY(180deg);
+      border-color: #ff4081;
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(255, 64, 129, 0.3);
+    }
+    .memory-card.matched {
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-color: #81c784;
+      cursor: default;
+      transform: scale(1);
     }
 
     /* 共用按鈕 */
@@ -233,18 +246,12 @@
     let rawData = null;
     let selectedBooks = [];
 
-    // 本輪 15 題（各抽 5 題或有多少抽多少）
-    let currentSession = {
-      qa: [],
-      match: [],
-      memory: []
-    };
-
-    let currentPhase = 'qa'; // 'qa' -> 'match' -> 'memory' -> 'result'
+    let currentSession = { qa: [], match: [], memory: [] };
+    let currentPhase = 'qa';
     let currentItemIdx = 0;
     let score = { qaCorrect: 0, qaTotal: 0, matchDone: 0, memoryDone: 0 };
 
-    // 載入題庫 JSON
+    // 載入題庫 JSON（確保 UTF-8 解析）
     fetch('questions-300l.json')
       .then(res => res.json())
       .then(data => {
@@ -255,7 +262,7 @@
       })
       .catch(err => {
         document.getElementById('game-window').innerHTML = `
-          <p style="color:red;">⚠️ 無法讀取 questions-300l.json，請確認題庫檔案已上傳至同目錄。</p>
+          <p style="color:red;">⚠️ 無法讀取 questions-300l.json，請確認檔案已放置在同目錄中。</p>
         `;
       });
 
@@ -291,7 +298,6 @@
       };
     }
 
-    // 核心抽題邏輯：從符合勾選的池子中「各抽 5 題；若不足 5 題則有多少抽多少」
     function samplePool(pool, targetCount = 5) {
       const shuffled = [...pool].sort(() => Math.random() - 0.5);
       return shuffled.slice(0, Math.min(targetCount, shuffled.length));
@@ -304,12 +310,10 @@
         return;
       }
 
-      // 1. 撈出符合勾選書籍的題目池
       const qaPool = rawData.qa.filter(q => selectedBooks.includes(q.book));
       const matchPool = rawData.matching.filter(m => selectedBooks.includes(m.book));
       const memPool = rawData.memory.filter(m => selectedBooks.includes(m.book));
 
-      // 2. 各抽 5 題（有多少抽多少）
       currentSession.qa = samplePool(qaPool, 5);
       currentSession.match = samplePool(matchPool, 5);
       currentSession.memory = samplePool(memPool, 5);
@@ -325,7 +329,6 @@
       currentItemIdx = 0;
       updateStageIndicators();
 
-      // 如果該階段完全無題目，自動順延下一階段
       if (currentSession.qa.length > 0) {
         renderQAQuestion();
       } else if (currentSession.match.length > 0) {
@@ -347,13 +350,13 @@
       document.getElementById('step-memory').className = `stage-step ${currentPhase === 'memory' ? 'current' : ''}`;
     }
 
-    /* ---------------- 階段 1：單選對答 (QA) ---------------- */
+    /* ---------------- 階段 1：單選對答 ---------------- */
     function renderQAQuestion() {
       const win = document.getElementById('game-window');
       const q = currentSession.qa[currentItemIdx];
       win.innerHTML = `
         <div class="quiz-box">
-          <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} / ${currentSession.qa.length} 題</span>
+          <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} /${currentSession.qa.length} 題</span>
           <div class="quiz-question">${q.question}</div>
           <div class="options-grid">
             ${q.options.map((opt, i) => `
@@ -381,7 +384,6 @@
         if (currentItemIdx < currentSession.qa.length) {
           renderQAQuestion();
         } else {
-          // QA 結束，進入連連看
           currentPhase = 'match';
           currentItemIdx = 0;
           updateStageIndicators();
@@ -396,7 +398,7 @@
       }, 1100);
     }
 
-    /* ---------------- 階段 2：連連看配對 (Matching) ---------------- */
+    /* ---------------- 階段 2：連連看配對 ---------------- */
     let selLeft = null, selRight = null;
 
     function renderMatchQuestion() {
@@ -407,7 +409,7 @@
 
       win.innerHTML = `
         <div style="width:100%;">
-          <span class="book-tag" style="margin-bottom:15px;">📖 ${m.book} ｜ 連連看 第 ${currentItemIdx + 1} / ${currentSession.match.length} 組</span>
+          <span class="book-tag" style="margin-bottom:15px;">📖 ${m.book} ｜ 連連看 第 ${currentItemIdx + 1} /${currentSession.match.length} 組</span>
           <p style="margin-bottom:15px;color:#666;">點擊左側項目，再點擊右側對應的意思進行連線！</p>
           <div class="match-container">
             <div class="match-col" id="col-left">
@@ -469,17 +471,19 @@
       }
     }
 
-    /* ---------------- 階段 3：翻牌對對碰 (Memory) ---------------- */
+    /* ---------------- 階段 3：翻牌對對碰 ---------------- */
     let memSelected = [];
 
     function renderMemoryQuestion() {
       const win = document.getElementById('game-window');
       const mem = currentSession.memory[currentItemIdx];
+      
+      // 複製成 8 張卡片並隨機排列
       let cardList = [...mem.cards, ...mem.cards].sort(() => Math.random() - 0.5);
 
       win.innerHTML = `
         <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
-          <span class="book-tag" style="margin-bottom:15px;">📖 ${mem.book} ｜ 對對碰 第 ${currentItemIdx + 1} / ${currentSession.memory.length} 組</span>
+          <span class="book-tag" style="margin-bottom:15px;">📖 ${mem.book} ｜ 對對碰 第 ${currentItemIdx + 1} /${currentSession.memory.length} 組</span>
           <p style="margin-bottom:15px;color:#666;">點開兩張卡片，找出相同的單字或角色！</p>
           <div class="memory-grid">
             ${cardList.map(w => `<div class="memory-card" data-word="${w}" onclick="onFlipCard(this)">${w}</div>`).join('')}
@@ -491,6 +495,7 @@
     function onFlipCard(card) {
       if (card.classList.contains('flipped') || card.classList.contains('matched') || memSelected.length >= 2) return;
 
+      // 翻牌
       card.classList.add('flipped');
       memSelected.push(card);
 
@@ -535,9 +540,9 @@
         <div style="padding: 20px;">
           <h2 style="color:#d81b60;font-size:26px;margin-bottom:15px;">🏆 恭喜完成 300L 奇幻樂園大挑戰！</h2>
           <div style="background:#fff0f5;padding:20px;border-radius:16px;margin-bottom:20px;text-align:left;line-height:2;font-size:16px;">
-            <p>🎯 <b>單選對答正確率</b>：${score.qaCorrect} / ${score.qaTotal} 題</p>
-            <p>🔗 <b>連連看完成組數</b>：${score.matchDone} / ${currentSession.match.length} 組</p>
-            <p>🃏 <b>對對碰翻牌完成</b>：${score.memoryDone} / ${currentSession.memory.length} 組</p>
+            <p>🎯 <b>單選對答正確率</b>：${score.qaCorrect} /${score.qaTotal} 題</p>
+            <p>🔗 <b>連連看完成組數</b>：${score.matchDone} /${currentSession.match.length} 組</p>
+            <p>🃏 <b>對對碰翻牌完成</b>：${score.memoryDone} /${currentSession.memory.length} 組</p>
             <p style="color:#e91e63;font-weight:bold;font-size:18px;margin-top:10px;">🌟 本輪總共闖關題目：${totalPlayed} 題！</p>
           </div>
           <button class="action-btn" onclick="startNewGameSession()">再抽 15 題挑戰下一輪</button>

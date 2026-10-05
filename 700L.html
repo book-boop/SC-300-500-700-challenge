@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>藍思值 700L 探索冒險 - 15 題大闖關</title>
+  <!-- 引入彩帶拉炮特效庫 -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -638,6 +640,38 @@
       }
     }
 
+    /* ---------------- 過關彩帶拉炮特效 ---------------- */
+    function triggerConfetti() {
+      if (typeof confetti !== 'function') return;
+
+      const duration = 3 * 1000;
+      const animationEnd = Date.now() + duration;
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1200 };
+
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      const interval = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+
+        confetti(Object.assign({}, defaults, {
+          particleCount,
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+        }));
+        confetti(Object.assign({}, defaults, {
+          particleCount,
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+        }));
+      }, 250);
+    }
+
     /* ---------------- 計分結算與回傳表單 ---------------- */
     function renderFinalResults() {
       document.getElementById('step-qa').className = 'stage-step';
@@ -648,6 +682,11 @@
       const totalPossible = currentSession.qa.length + currentSession.match.length + currentSession.memory.length;
       const isPassed = totalScore >= 11;
       const win = document.getElementById('game-window');
+
+      // 闖關成功時觸發彩帶拉炮
+      if (isPassed) {
+        triggerConfetti();
+      }
 
       win.innerHTML = `
         <div style="padding: 10px; width:100%; display:flex; flex-direction:column; align-items:center;">
@@ -746,7 +785,6 @@
       });
     }
 
-    /* 獎狀彈窗控制 */
     /* 700L 獎狀動態合成與彈窗控制 */
     function openCertModal() {
       // 1. 抓取答題者在表單中輸入的「本名」
@@ -799,6 +837,7 @@
         document.getElementById('cert-modal').style.display = 'flex';
       };
     }
+
     function closeCertModal() {
       document.getElementById('cert-modal').style.display = 'none';
     }

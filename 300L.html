@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>藍思值 300L 奇幻樂園 - 15 題大闖關</title>
+  <!-- 引入彩帶拉炮特效庫 -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -329,28 +331,29 @@
   </div>
 
   <!-- 獎狀彈出視窗 -->
-<div class="modal-overlay" id="cert-modal">
-  <div class="modal-content">
-    <button class="close-modal" onclick="closeCertModal()">×</button>
-    <h2 style="color: #ff9800; margin-bottom: 15px;">🏅 榮譽過關獎狀</h2>
-    
-    <!-- 隱藏原生 canvas，用 img 呈現繪製後的專屬圖片 -->
-    <canvas id="cert-canvas" style="display:none;"></canvas>
-    <img id="cert-display-img" src="" alt="專屬過關獎狀" style="max-width:100%; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-bottom:15px;">
-    
-    <div>
-      <a id="cert-download-link" href="#" download="Scholastic-300L-Certificate.png" class="action-btn cert-btn" style="text-decoration:none; display:inline-block;">📥 下載專屬獎狀</a>
+  <div class="modal-overlay" id="cert-modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeCertModal()">×</button>
+      <h2 style="color: #ff9800; margin-bottom: 15px;">🏅 榮譽過關獎狀</h2>
+      
+      <!-- 隱藏原生 canvas，用 img 呈現繪製後的專屬圖片 -->
+      <canvas id="cert-canvas" style="display:none;"></canvas>
+      <img id="cert-display-img" src="" alt="專屬過關獎狀" style="max-width:100%; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-bottom:15px;">
+      
+      <div>
+        <a id="cert-download-link" href="#" download="Scholastic-300L-Certificate.png" class="action-btn cert-btn" style="text-decoration:none; display:inline-block;">📥 下載專屬獎狀</a>
+      </div>
     </div>
   </div>
-</div>
+
   <script>
     /* =========================================================
-       【請在此設定您的 Google 表單設定】
+       【Google 表單設定】
        ========================================================= */
     const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe1wq7V2HLV5ALzSzkmQ7ZkOR02nOIAqicxXZ_XQdwgZz-6Ig/formResponse";
-    const ENTRY_NAME = "entry.10104725";   // 本名欄位 ID
+    const ENTRY_NAME = "entry.10104725";    // 本名欄位 ID
     const ENTRY_LINE = "entry.393671221";   // LINE 名稱欄位 ID
-    const ENTRY_SCORE = "entry.1127374980";  // 答對題數欄位 ID
+    const ENTRY_SCORE = "entry.1127374980"; // 答對題數欄位 ID
 
     let rawData = null;
     let selectedBooks = [];
@@ -634,6 +637,38 @@
       }
     }
 
+    /* ---------------- 過關彩帶拉炮特效 ---------------- */
+    function triggerConfetti() {
+      if (typeof confetti !== 'function') return;
+
+      const duration = 3 * 1000;
+      const animationEnd = Date.now() + duration;
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1200 };
+
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      const interval = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+          return clearInterval(interval);
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+
+        confetti(Object.assign({}, defaults, {
+          particleCount,
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+        }));
+        confetti(Object.assign({}, defaults, {
+          particleCount,
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+        }));
+      }, 250);
+    }
+
     /* ---------------- 結算與回傳表單 ---------------- */
     function renderFinalResults() {
       document.getElementById('step-qa').className = 'stage-step';
@@ -644,6 +679,11 @@
       const totalPossible = currentSession.qa.length + currentSession.match.length + currentSession.memory.length;
       const isPassed = totalScore >= 11;
       const win = document.getElementById('game-window');
+
+      // 闖關成功時觸發彩帶拉炮
+      if (isPassed) {
+        triggerConfetti();
+      }
 
       win.innerHTML = `
         <div style="padding: 10px; width:100%; display:flex; flex-direction:column; align-items:center;">
@@ -715,13 +755,11 @@
       submitBtn.disabled = true;
       submitBtn.innerText = '傳送中...';
 
-      // 構建表單資料
       const formData = new FormData();
       formData.append(ENTRY_NAME, name);
       formData.append(ENTRY_LINE, line);
-      formData.append(ENTRY_SCORE, `${scoreVal} 題`);
+      formData.append(ENTRY_SCORE, `${scoreVal} 題 (300L)`);
 
-      // 使用 no-cors 模式非同步傳送
       fetch(GOOGLE_FORM_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -745,57 +783,47 @@
     }
 
     /* 獎狀動態合成與彈窗控制 */
-function openCertModal() {
-  // 1. 抓取答題者在表單中輸入的「本名」
-  const nameInput = document.getElementById('user-name');
-  let studentName = nameInput ? nameInput.value.trim() : "";
-  if (!studentName) {
-    studentName = "小小閱讀家"; // 沒填寫時的預設稱呼
-  }
+    function openCertModal() {
+      const nameInput = document.getElementById('user-name');
+      let studentName = nameInput ? nameInput.value.trim() : "";
+      if (!studentName) {
+        studentName = "小小閱讀家";
+      }
 
-  // 2. 取得隱藏的 canvas 畫布
-  const canvas = document.getElementById('cert-canvas');
-  const ctx = canvas.getContext('2d');
-  const certImg = new Image();
+      const canvas = document.getElementById('cert-canvas');
+      const ctx = canvas.getContext('2d');
+      const certImg = new Image();
 
-  // 3. 載入對應等級的獎狀圖（300L 頁面用 cert-300l.png）
-  certImg.src = 'images/certificates/cert-300l.png';
+      certImg.src = 'images/certificates/cert-300l.png';
 
-  // 4. 等圖片讀取完畢後進行繪製合成
-  certImg.onload = function() {
-    // 依據原始圖片大小設定畫布解析度
-    canvas.width = certImg.naturalWidth;
-    canvas.height = certImg.naturalHeight;
+      certImg.onload = function() {
+        canvas.width = certImg.naturalWidth;
+        canvas.height = certImg.naturalHeight;
 
-    // 將獎狀底圖畫上畫布
-    ctx.drawImage(certImg, 0, 0);
+        ctx.drawImage(certImg, 0, 0);
 
-    // 設定文字樣式與字體大小（隨圖片寬度等比縮放）
-    const fontSize = Math.floor(canvas.width * 0.045);
-    ctx.font = `bold ${fontSize}px "PingFang TC", "Microsoft JhengHei", sans-serif`;
-    ctx.fillStyle = '#2c3e50'; // 深灰藍色字體
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'bottom';
+        const fontSize = Math.floor(canvas.width * 0.045);
+        ctx.font = `bold ${fontSize}px "PingFang TC", "Microsoft JhengHei", sans-serif`;
+        ctx.fillStyle = '#2c3e50';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
 
-    // 定位橫線上方位置（比例定位：橫向 72.5%、垂直 46.5%）[cite: 573]
-    const lineX = canvas.width * 0.68;
-    const lineY = canvas.height * 0.465;
+        const lineX = canvas.width * 0.68;
+        const lineY = canvas.height * 0.465;
 
-    // 將名字印上去
-    ctx.fillText(studentName, lineX, lineY);
+        ctx.fillText(studentName, lineX, lineY);
 
-    // 5. 輸出為圖片並設定給彈窗預覽及下載按鈕
-    const finalImageURL = canvas.toDataURL('image/png');
-    document.getElementById('cert-display-img').src = finalImageURL;
-    
-    const downloadBtn = document.getElementById('cert-download-link');
-    downloadBtn.href = finalImageURL;
-    downloadBtn.download = `${studentName}_300L_闖關獎狀.png`;
+        const finalImageURL = canvas.toDataURL('image/png');
+        document.getElementById('cert-display-img').src = finalImageURL;
+        
+        const downloadBtn = document.getElementById('cert-download-link');
+        downloadBtn.href = finalImageURL;
+        downloadBtn.download = `${studentName}_300L_闖關獎狀.png`;
 
-    // 6. 顯示彈窗
-    document.getElementById('cert-modal').style.display = 'flex';
-  };
-}
+        document.getElementById('cert-modal').style.display = 'flex';
+      };
+    }
+
     function closeCertModal() {
       document.getElementById('cert-modal').style.display = 'none';
     }

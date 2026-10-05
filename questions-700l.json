@@ -5,7 +5,8 @@
     "Dragon Masters",
     "The Last Firehawk",
     "The Notebook of Doom",
-    "Eerie Elementary"
+    "Eerie Elementary",
+    "Geronimo Stilton"
   ],
   "qa": [
     {
@@ -282,6 +283,97 @@
       "question": "Where was Orson Eerie trapped forever in the end?",
       "options": ["Inside Mr. Nekobi's old hall monitor sash", "Inside a giant pumpkin", "In the school basement", "Behind the locker"],
       "answer": 0
+    },
+
+    {
+      "book": "Geronimo Stilton",
+      "question": "What is Geronimo Stilton’s job in New Mouse City?",
+      "options": ["A newspaper publisher and editor", "A police officer", "A cheese chef", "A doctor"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "Where does Geronimo Stilton live?",
+      "options": ["Mouse Island", "Cat Island", "Cheese Kingdom", "Treasure Island"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "Who is Trap Stilton?",
+      "options": ["Geronimo’s cousin", "Geronimo’s boss", "Geronimo’s grandfather", "Geronimo’s brother"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "What is the name of Geronimo’s sister, who is a brave special correspondent?",
+      "options": ["Thea Stilton", "Petunia Pretty Paws", "Sally Ratmussen", "Creepella von Cacklefur"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "Who is Benjamin Stilton?",
+      "options": ["Geronimo’s favorite nephew", "Geronimo’s rival newspaper owner", "Geronimo’s pet cat", "The mayor of the city"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "What is Geronimo’s favorite food?",
+      "options": ["Cheese", "Pizza", "Chocolate", "Apple pie"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "What kind of personality does Geronimo have?",
+      "options": ["Quiet, nervous, but kind-hearted", "Very loud and wild", "Cruel and lazy", "Angry and mean"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "What is the name of the main newspaper in New Mouse City run by Geronimo?",
+      "options": ["The Rodent's Gazette", "The Daily Cat", "Cheese Weekly", "Mouse Daily"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "What is Geronimo still afraid of, even when he tries to be brave?",
+      "options": ["Cats", "Taking planes", "The dark", "Swimming"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "What is New Mouse City?",
+      "options": ["The capital of Mouse Island", "A small village", "An underwater city", "A floating fortress"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "What is the main function of the rooftop of The Rodent’s Gazette building?",
+      "options": ["A helicopter landing pad", "A Printing press room", "Geronimo’s chief editor office", "A cheese restaurant"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "What is NOT Geronimo’s job title?",
+      "options": ["A doctor", "An editor-in-chief", "A writer", "A publisher"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "What kind of books does Geronimo like to write?",
+      "options": ["Adventure stories", "Jokes", "Cheese cookbooks", "Math textbooks"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "Who does NOT work in the editorial room?",
+      "options": ["Accountants", "Illustrators", "Editors", "Writers"],
+      "answer": 0
+    },
+    {
+      "book": "Geronimo Stilton",
+      "question": "What does Geronimo enjoy doing the most in his spare time?",
+      "options": ["Collecting antique cheese rinds", "Telling stories to his nephew", "Playing golf", "Running races"],
+      "answer": 0
     }
   ],
 
@@ -460,6 +552,34 @@
         {"item": "sprinkler", "match": "machine spraying water during fire"},
         {"item": "thermostat", "match": "device used to control temperature"}
       ]
+    },
+
+    {
+      "book": "Geronimo Stilton",
+      "pairs": [
+        {"item": "Geronimo", "match": "Editor-in-chief & writer who loves cheese"},
+        {"item": "Thea", "match": "Brave sister & special correspondent"},
+        {"item": "Trap", "match": "Prankster cousin of Geronimo"},
+        {"item": "Benjamin", "match": "Geronimo's sweet favorite nephew"}
+      ]
+    },
+    {
+      "book": "Geronimo Stilton",
+      "pairs": [
+        {"item": "The Rodent's Gazette", "match": "The famous newspaper in New Mouse City"},
+        {"item": "Mouse Island", "match": "The island shaped like a piece of cheese"},
+        {"item": "Rooftop pad", "match": "Where helicopters land on the office building"},
+        {"item": "Cats", "match": "What Geronimo is terrified of"}
+      ]
+    },
+    {
+      "book": "Geronimo Stilton",
+      "pairs": [
+        {"item": "Adventure stories", "match": "Books Geronimo writes about his trips"},
+        {"item": "Cheese rinds", "match": "Antiques Geronimo loves collecting"},
+        {"item": "Illustrator", "match": "Artist who draws pictures for newspapers"},
+        {"item": "Accountant", "match": "Works in finance, not the editorial room"}
+      ]
     }
   ],
 
@@ -584,6 +704,19 @@
     {
       "book": "Eerie Elementary",
       "cards": ["pumpkin", "tractor", "sash", "revenge"]
+    },
+
+    {
+      "book": "Geronimo Stilton",
+      "cards": ["Geronimo", "Thea", "Trap", "Benjamin"]
+    },
+    {
+      "book": "Geronimo Stilton",
+      "cards": ["Gazette", "Newspaper", "Editor", "Helicopter"]
+    },
+    {
+      "book": "Geronimo Stilton",
+      "cards": ["Cheese", "Mouse Island", "Adventure", "Feline"]
     }
   ]
 }

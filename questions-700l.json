@@ -1,0 +1,589 @@
+{
+  "books": [
+    "Diary of a Roblox Pro",
+    "Disaster Squad",
+    "Dragon Masters",
+    "The Last Firehawk",
+    "The Notebook of Doom",
+    "Eerie Elementary"
+  ],
+  "qa": [
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "When Ari says, 'don't get me wrong,' what does he mean?",
+      "options": ["Don't misunderstand me", "Don't play with me", "Don't talk to me", "Don't touch me"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "When Ari's dad says, 'Hold your horses,' what does he mean?",
+      "options": ["Wait", "Go faster", "Ride a horse", "Stop talking"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "Zeke's dad said Jez's online obby was 'sick.' What does he really mean?",
+      "options": ["Superb / Amazing", "Bad and ugly", "Ill and coughing", "Boring"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "Who is the school bully in Lava Chase?",
+      "options": ["Trip", "Gabe", "Zeke", "Ari"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "What are the zombies allergic to in Zombie Invasion?",
+      "options": ["Lemonade", "Chips", "Apples", "Water blasters"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "What happens to sharks during tonic immobility?",
+      "options": ["They stay still for a short time", "They really die", "They swim faster", "They jump out of water"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "When Jez said, 'Don't be chicken,' what did she mean?",
+      "options": ["Don't be scared", "Don't eat chicken", "Don't run fast", "Don't be noisy"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "What did they use to start a fire without matches on the deserted island?",
+      "options": ["Ally's glasses", "Dry shells", "A flashlight", "A shiny rock"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "When Ari says, 'you've definitely nailed it' to Ally, what does he think about her Halloween look?",
+      "options": ["She looks scary, which is good for Halloween", "She looks like a marshmallow", "She looks funny", "She made a mistake"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "When Ari says, 'It was a complete fluke!', what does he mean about scoring the winning goal?",
+      "options": ["Because of good luck", "Because of pure skills", "Because of coded shoes", "Because the referee helped"],
+      "answer": 0
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "question": "Why did the pirates NOT get the treasure chest?",
+      "options": ["Because they were not truthful", "Because their map was fake", "Because the chest was locked", "Because Harold hid it"],
+      "answer": 0
+    },
+
+    {
+      "book": "Disaster Squad",
+      "question": "Which of the following is an item in the Jacksons' Disaster Squad Kit?",
+      "options": ["First-aid cream and masks", "Sunglasses and snacks", "Water bottle and wipes", "Glow stick only"],
+      "answer": 0
+    },
+    {
+      "book": "Disaster Squad",
+      "question": "What is a tornado?",
+      "options": ["A strong rotating column of air connected to clouds and the earth", "A large tropical storm forming over warm ocean", "A heavy blizzard in the woods", "A flood caused by rain"],
+      "answer": 0
+    },
+    {
+      "book": "Disaster Squad",
+      "question": "What should you DO during a hurricane emergency?",
+      "options": ["Pack water and non-perishable foods", "Touch electrical wires", "Stand near windows", "Ignore evacuation orders"],
+      "answer": 0
+    },
+    {
+      "book": "Disaster Squad",
+      "question": "Why is salt put on the roads during a blizzard?",
+      "options": ["It stops ice from forming and makes driving safer", "It makes the road look white", "To feed wild animals", "To clean the street"],
+      "answer": 0
+    },
+    {
+      "book": "Disaster Squad",
+      "question": "What are the tornado seasons in Oklahoma?",
+      "options": ["Spring and summer", "Fall and winter", "Winter only", "All year round"],
+      "answer": 0
+    },
+
+    {
+      "book": "Dragon Masters",
+      "question": "Where did Drake live before going to the castle?",
+      "options": ["On a farm", "In a tunnel", "In a palace", "In a tower"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon Masters",
+      "question": "What is the special ability of Worm, the Earth Dragon?",
+      "options": ["Looks slow at first but has great power to transport", "Breathes red fire", "Can swim underwater", "Shoots lightning bolts"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon Masters",
+      "question": "Why did the Dragon Masters need to find the Moon Dragon?",
+      "options": ["To save Kepri", "To ask for food", "To learn how to fly", "To fight King Roland"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon Masters",
+      "question": "What secret power did Shu, the Water Dragon, have?",
+      "options": ["She could heal people with water", "She could breathe fire", "She could fly through stone", "She could freeze oceans"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon Masters",
+      "question": "What is the symbol of Vulcan, the Fire Dragon?",
+      "options": ["A flame", "A rock", "A sun", "A skull"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon Masters",
+      "question": "Why are battles between wizards forbidden?",
+      "options": ["Because their magic builds up and gets out of control", "Because wizards are too tired", "Because King Roland banned magic", "Because dragons dislike wizards"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon Masters",
+      "question": "Why is the Rainbow Dragon important to the Kingdom of Ifri?",
+      "options": ["Because it can bring rain that the people need", "Because it brings gold", "Because it gives colors to trees", "Because it scares spiders away"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon Masters",
+      "question": "What is Shaka the Stone Dragon's secret power?",
+      "options": ["Shaka can turn people into stone", "Shaka can melt rocks", "Shaka can fly in storms", "Shaka can create earthquakes"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon Masters",
+      "question": "What was the name of the Lava Dragon?",
+      "options": ["Ka", "Worm", "Wayra", "Sono"],
+      "answer": 0
+    },
+    {
+      "book": "Dragon Masters",
+      "question": "How do Flower Dragons keep humans from seeing them?",
+      "options": ["They release a special mist", "They sing a song", "They hide in the mud", "They fly into clouds"],
+      "answer": 0
+    },
+
+    {
+      "book": "The Last Firehawk",
+      "question": "Why does Tag want to become an Owl of Valor?",
+      "options": ["Because his magical forest is in danger and he wants to protect it", "Because he wants to be the biggest owl", "Because his father told him to", "Because he likes golden swords"],
+      "answer": 0
+    },
+    {
+      "book": "The Last Firehawk",
+      "question": "Why doesn't fire hurt Blaze the firehawk?",
+      "options": ["She was born in flame", "She can fly higher than fire", "She has magic water", "She wears armor"],
+      "answer": 0
+    },
+    {
+      "book": "The Last Firehawk",
+      "question": "How does Tag know that Stanley the sloth is NOT one of Thorn's spies?",
+      "options": ["Because Stanley's eyes are brown (Thorn's spies have orange eyes)", "Because Stanley is too slow", "Because Stanley sings well", "Because Stanley lives in trees"],
+      "answer": 0
+    },
+    {
+      "book": "The Last Firehawk",
+      "question": "What animal is a great digger that helped Tag in the Shadowlands?",
+      "options": ["A mole", "A locust", "A vulture", "A tiger bat"],
+      "answer": 0
+    },
+    {
+      "book": "The Last Firehawk",
+      "question": "What shocking truth did Thorn reveal about Blaze's family?",
+      "options": ["Blaze is not the last firehawk", "Blaze's family was captured", "Blaze has no wings", "Blaze was born in the volcano"],
+      "answer": 0
+    },
+    {
+      "book": "The Last Firehawk",
+      "question": "Who was Claw, the friend who traveled with Tag, Skyla, and Blaze?",
+      "options": ["He is actually their enemy, Thorn, in disguise", "He is a good vulture", "He is an Owl of Valor", "He is a lost firehawk"],
+      "answer": 0
+    },
+    {
+      "book": "The Last Firehawk",
+      "question": "What did Tag trade with Thorn to get the firehawk egg back?",
+      "options": ["The Ember Stone", "A golden slingshot", "A shiny shell", "His wooden dagger"],
+      "answer": 0
+    },
+
+    {
+      "book": "The Notebook of Doom",
+      "question": "What is the slogan of S.S.M.P.?",
+      "options": ["Don't get eaten!", "One for all, all for one!", "No monsters allowed!", "Fight to the end!"],
+      "answer": 0
+    },
+    {
+      "book": "The Notebook of Doom",
+      "question": "What makes megaworms shrivel up according to the monster notebook?",
+      "options": ["Any kind of loud screeching sound", "Pouring water on them", "Sprinkling sugar", "Covering them with leaves"],
+      "answer": 0
+    },
+    {
+      "book": "The Notebook of Doom",
+      "question": "What does S.S.M.P. stand for?",
+      "options": ["Super Secret Monster Patrol", "Stermont School Monster Party", "Same Song My Pal", "Super Sad Monster Patrol"],
+      "answer": 0
+    },
+    {
+      "book": "The Notebook of Doom",
+      "question": "Why did the veggie monsters lower the school temperature?",
+      "options": ["To turn the school into one big vegetable drawer", "Because the air conditioner was broken", "To make ice cream", "To freeze the teachers"],
+      "answer": 0
+    },
+    {
+      "book": "The Notebook of Doom",
+      "question": "What was the monster candidate P-rex actually made of?",
+      "options": ["A dinosaur piñata made of paper strips and candy", "Stone and mud", "Old school buses", "Giant tree branches"],
+      "answer": 0
+    },
+    {
+      "book": "The Notebook of Doom",
+      "question": "What item was the crawling hand holding in the bathtub?",
+      "options": ["A mirror (Reflecto-900)", "A missing telescope", "A bar of soap", "A toothbrush"],
+      "answer": 0
+    },
+    {
+      "book": "The Notebook of Doom",
+      "question": "What ultimate weapon can melt and defeat the ice-crusher and snombies?",
+      "options": ["Salt", "Hot chocolate", "Laser light", "Pepper"],
+      "answer": 0
+    },
+
+    {
+      "book": "Eerie Elementary",
+      "question": "What secret truth did Mr. Nekobi reveal to Sam?",
+      "options": ["The school is alive and full of evil power", "There is a gold treasure under the gym", "The school will be closed", "He is an alien"],
+      "answer": 0
+    },
+    {
+      "book": "Eerie Elementary",
+      "question": "Who designed Eerie Elementary?",
+      "options": ["Orson Eerie", "Oliver Eerie", "Mr. Winik", "Ms. Grinker"],
+      "answer": 0
+    },
+    {
+      "book": "Eerie Elementary",
+      "question": "Where was the secret switch hidden that brought the heat back on?",
+      "options": ["Behind the school clock on the wall", "Inside Ms. Grinker's desk", "Under the stage", "In the locker"],
+      "answer": 0
+    },
+    {
+      "book": "Eerie Elementary",
+      "question": "What vehicle did Lucy and Antonio drive to rescue Sam from the giant monster?",
+      "options": ["The tractor from the hayride", "A yellow school bus", "A fire truck", "A bicycle"],
+      "answer": 0
+    },
+    {
+      "book": "Eerie Elementary",
+      "question": "Where was Orson Eerie trapped forever in the end?",
+      "options": ["Inside Mr. Nekobi's old hall monitor sash", "Inside a giant pumpkin", "In the school basement", "Behind the locker"],
+      "answer": 0
+    }
+  ],
+
+  "matching": [
+    {
+      "book": "Diary of a Roblox Pro",
+      "pairs": [
+        {"item": "avatar", "match": "character you control in a game"},
+        {"item": "portal", "match": "doorway leading to another world"},
+        {"item": "monster", "match": "a scary creature"},
+        {"item": "warehouse", "match": "a place where things are stored"},
+        {"item": "escape", "match": "to get away from a bad place"}
+      ]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "pairs": [
+        {"item": "IDK", "match": "I don't know"},
+        {"item": "cos", "match": "because / cause"},
+        {"item": "Cu@", "match": "See you at"},
+        {"item": "AFK", "match": "away from keyboard"},
+        {"item": "GTG", "match": "got to go"}
+      ]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "pairs": [
+        {"item": "corridor", "match": "a long hallway"},
+        {"item": "sloth", "match": "a slow animal living in trees"},
+        {"item": "rare", "match": "not common / not many"},
+        {"item": "legend", "match": "an old story"},
+        {"item": "hatch", "match": "to come out of an egg"}
+      ]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "pairs": [
+        {"item": "volcano", "match": "mountain exploding with lava"},
+        {"item": "nerd", "match": "person who loves studying"},
+        {"item": "epic", "match": "really amazing or awesome"},
+        {"item": "noob", "match": "new or inexperienced player"},
+        {"item": "lava", "match": "hot melted rock from volcano"}
+      ]
+    },
+
+    {
+      "book": "Disaster Squad",
+      "pairs": [
+        {"item": "jinx", "match": "bad luck or cause of bad luck"},
+        {"item": "RV", "match": "recreational vehicle to live in"},
+        {"item": "wildfire", "match": "fire spreading quickly across forest"},
+        {"item": "squad", "match": "group trained to work together"},
+        {"item": "evacuate", "match": "to get out safely"}
+      ]
+    },
+    {
+      "book": "Disaster Squad",
+      "pairs": [
+        {"item": "hurricane", "match": "violent storm with strong winds (Atlantic)"},
+        {"item": "typhoon", "match": "tropical storm in Northwest Pacific"},
+        {"item": "cyclone", "match": "tropical storm in Indian Ocean"},
+        {"item": "shelter", "match": "protection from bad weather"},
+        {"item": "flood", "match": "large amount of water on dry land"}
+      ]
+    },
+
+    {
+      "book": "Dragon Masters",
+      "pairs": [
+        {"item": "dragon stone", "match": "jewel with dragon magic"},
+        {"item": "wizard", "match": "person who uses magic"},
+        {"item": "curse", "match": "dark magic that hurts people"},
+        {"item": "palace", "match": "big house where king lives"},
+        {"item": "secret", "match": "something kept hidden"}
+      ]
+    },
+    {
+      "book": "Dragon Masters",
+      "pairs": [
+        {"item": "Vulcan", "match": "Flame symbol (Fire Dragon)"},
+        {"item": "Worm", "match": "Rock symbol (Earth Dragon)"},
+        {"item": "Shu", "match": "Water drop symbol (Water Dragon)"},
+        {"item": "Kepri", "match": "Sun symbol (Sun Dragon)"},
+        {"item": "Wati", "match": "Moon symbol (Moon Dragon)"}
+      ]
+    },
+    {
+      "book": "Dragon Masters",
+      "pairs": [
+        {"item": "freeze", "match": "to turn into ice"},
+        {"item": "melt", "match": "to change from ice to water"},
+        {"item": "power", "match": "strong ability"},
+        {"item": "kingdom", "match": "country ruled by king or queen"},
+        {"item": "giant", "match": "a very big creature"}
+      ]
+    },
+
+    {
+      "book": "The Last Firehawk",
+      "pairs": [
+        {"item": "beak", "match": "a bird's hard mouth"},
+        {"item": "slingshot", "match": "Y-shaped toy to shoot small stones"},
+        {"item": "cavern", "match": "very large cave under the ground"},
+        {"item": "acorn", "match": "small nut from an oak tree"},
+        {"item": "screech", "match": "loud, high, and sharp cry"}
+      ]
+    },
+    {
+      "book": "The Last Firehawk",
+      "pairs": [
+        {"item": "nectar", "match": "sweet liquid from flowers"},
+        {"item": "honeycomb", "match": "structure made by bees for honey"},
+        {"item": "desert", "match": "dry land with little water"},
+        {"item": "meadow", "match": "field with green grass and flowers"},
+        {"item": "beetle", "match": "insect with a hard shell"}
+      ]
+    },
+    {
+      "book": "The Last Firehawk",
+      "pairs": [
+        {"item": "sack", "match": "large bag made of strong cloth"},
+        {"item": "locust", "match": "large insect destroying crops"},
+        {"item": "march", "match": "walk with regular soldier steps"},
+        {"item": "tunnel", "match": "underground passage"},
+        {"item": "dagger", "match": "short knife used as weapon"}
+      ]
+    },
+
+    {
+      "book": "The Notebook of Doom",
+      "pairs": [
+        {"item": "fetch", "match": "to go and get something and bring back"},
+        {"item": "glance", "match": "to give a quick look"},
+        {"item": "creepy", "match": "strange and terrifying"},
+        {"item": "snap shut", "match": "to close with sudden sharp noise"},
+        {"item": "shrivel", "match": "to become smaller and dry up"}
+      ]
+    },
+    {
+      "book": "The Notebook of Doom",
+      "pairs": [
+        {"item": "apron", "match": "clothing worn while cooking or cleaning"},
+        {"item": "loom", "match": "to appear or show up large"},
+        {"item": "coatrack", "match": "stand for hanging up coats"},
+        {"item": "disguise", "match": "to conceal, hide, or mask"},
+        {"item": "limbo", "match": "dance going under a low bar"}
+      ]
+    },
+    {
+      "book": "The Notebook of Doom",
+      "pairs": [
+        {"item": "confetti", "match": "shredded paper raining down"},
+        {"item": "jawbreaker", "match": "hard candy the size of a boulder"},
+        {"item": "blindfold", "match": "cloth covering the eyes"},
+        {"item": "snout", "match": "projecting nose of an animal"},
+        {"item": "roared", "match": "made a loud, deep monster sound"}
+      ]
+    },
+
+    {
+      "book": "Eerie Elementary",
+      "pairs": [
+        {"item": "graveyard", "match": "place where dead people are buried"},
+        {"item": "vent", "match": "opening letting air come in and out"},
+        {"item": "basement", "match": "room below ground floor"},
+        {"item": "blueprint", "match": "blue paper map showing building design"},
+        {"item": "curtain", "match": "large cloth covering stage or window"}
+      ]
+    },
+    {
+      "book": "Eerie Elementary",
+      "pairs": [
+        {"item": "architect", "match": "person who designs and plans buildings"},
+        {"item": "blizzard", "match": "very bad snowstorm with strong winds"},
+        {"item": "maze", "match": "puzzle made of many paths"},
+        {"item": "sprinkler", "match": "machine spraying water during fire"},
+        {"item": "thermostat", "match": "device used to control temperature"}
+      ]
+    }
+  ],
+
+  "memory": [
+    {
+      "book": "Diary of a Roblox Pro",
+      "cards": ["avatar", "portal", "monster", "warehouse"]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "cards": ["dragon", "corridor", "sloth", "egg"]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "cards": ["volcano", "lava", "nerd", "noob"]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "cards": ["zombie", "lemonade", "radar", "blaster"]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "cards": ["laptop", "submarine", "shark", "tunnel"]
+    },
+
+    {
+      "book": "Disaster Squad",
+      "cards": ["wildfire", "squad", "evacuate", "RV"]
+    },
+    {
+      "book": "Disaster Squad",
+      "cards": ["hurricane", "shelter", "flood", "mayor"]
+    },
+    {
+      "book": "Disaster Squad",
+      "cards": ["blizzard", "snowplow", "salt", "cattle"]
+    },
+    {
+      "book": "Disaster Squad",
+      "cards": ["tornado", "whistle", "vaccine", "rancher"]
+    },
+
+    {
+      "book": "Dragon Masters",
+      "cards": ["dragon stone", "wizard", "curse", "palace"]
+    },
+    {
+      "book": "Dragon Masters",
+      "cards": ["fire dragon", "flame", "earth dragon", "worm"]
+    },
+    {
+      "book": "Dragon Masters",
+      "cards": ["water dragon", "symbol", "moon dragon", "sun dragon"]
+    },
+    {
+      "book": "Dragon Masters",
+      "cards": ["ice dragon", "freeze", "giant", "kingdom"]
+    },
+    {
+      "book": "Dragon Masters",
+      "cards": ["silver sword", "castle", "portal", "shield"]
+    },
+
+    {
+      "book": "The Last Firehawk",
+      "cards": ["firehawk", "ember stone", "volcano", "tiger bat"]
+    },
+    {
+      "book": "The Last Firehawk",
+      "cards": ["slingshot", "acorn", "cavern", "ice leopard"]
+    },
+    {
+      "book": "The Last Firehawk",
+      "cards": ["honeycomb", "meadow", "beetle", "nectar"]
+    },
+    {
+      "book": "The Last Firehawk",
+      "cards": ["tunnel", "mole", "dagger", "shadow"]
+    },
+    {
+      "book": "The Last Firehawk",
+      "cards": ["magic dome", "waterfall", "swamp", "maze"]
+    },
+
+    {
+      "book": "The Notebook of Doom",
+      "cards": ["notebook", "skull", "megaworm", "balloon goon"]
+    },
+    {
+      "book": "The Notebook of Doom",
+      "cards": ["coatrack", "apron", "flyer", "limbo"]
+    },
+    {
+      "book": "The Notebook of Doom",
+      "cards": ["carrot chef", "greenhouse", "gopher", "radish"]
+    },
+    {
+      "book": "The Notebook of Doom",
+      "cards": ["pinata", "ant farm", "candy-saurus", "jellybean"]
+    },
+    {
+      "book": "The Notebook of Doom",
+      "cards": ["bumpy mummy", "bubble wrap", "scorpion", "lasers"]
+    },
+
+    {
+      "book": "Eerie Elementary",
+      "cards": ["hall monitor", "locker", "quicksand", "snake hose"]
+    },
+    {
+      "book": "Eerie Elementary",
+      "cards": ["graveyard", "blueprint", "vent", "basement"]
+    },
+    {
+      "book": "Eerie Elementary",
+      "cards": ["recess", "jungle", "swamp", "crow"]
+    },
+    {
+      "book": "Eerie Elementary",
+      "cards": ["blizzard", "thermostat", "clock", "tornado"]
+    },
+    {
+      "book": "Eerie Elementary",
+      "cards": ["pumpkin", "tractor", "sash", "revenge"]
+    }
+  ]
+}

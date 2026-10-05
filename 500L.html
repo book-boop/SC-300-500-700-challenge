@@ -331,16 +331,20 @@
   </div>
 
   <!-- 獎狀彈出視窗 -->
-<div class="modal-overlay" id="cert-modal">
-  <div class="modal-content">
-    <button class="close-modal" onclick="closeCertModal()">×</button>
-    <h2 style="color: #ff9800; margin-bottom: 15px;">🏅 榮譽過關獎狀</h2>
-    <img src="images/certificates/cert-500l.png" alt="500L 過關獎狀" id="cert-img">
-    <div>
-      <a href="images/certificates/cert-500l.png" download="Scholastic-500L-Certificate.png" class="action-btn cert-btn" style="text-decoration:none; display:inline-block;">📥 下載獎狀</a>
+  <div class="modal-overlay" id="cert-modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeCertModal()">×</button>
+      <h2 style="color: #ff9800; margin-bottom: 15px;">🏅 榮譽過關獎狀</h2>
+      
+      <!-- 隱藏 canvas，用 img 呈現繪製後的專屬獎狀 -->
+      <canvas id="cert-canvas" style="display:none;"></canvas>
+      <img id="cert-display-img" src="" alt="專屬過關獎狀" style="max-width:100%; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-bottom:15px;">
+      
+      <div>
+        <a id="cert-download-link" href="#" download="Scholastic-500L-Certificate.png" class="action-btn cert-btn" style="text-decoration:none; display:inline-block;">📥 下載專屬獎狀</a>
+      </div>
     </div>
   </div>
-</div>
 
   <script>
     /* =========================================================
@@ -743,8 +747,57 @@
     }
 
     /* 獎狀彈窗控制 */
+    /* 500L 獎狀動態合成與彈窗控制 */
     function openCertModal() {
-      document.getElementById('cert-modal').style.display = 'flex';
+      // 1. 抓取答題者在表單中輸入的「本名」
+      const nameInput = document.getElementById('user-name');
+      let studentName = nameInput ? nameInput.value.trim() : "";
+      if (!studentName) {
+        studentName = "小小閱讀家"; // 未輸入時的預設稱呼
+      }
+
+      // 2. 取得隱藏的 canvas 畫布
+      const canvas = document.getElementById('cert-canvas');
+      const ctx = canvas.getContext('2d');
+      const certImg = new Image();
+
+      // 3. 載入 500L 專屬藍色獎狀底圖
+      certImg.src = 'images/certificates/cert-500l.png';
+
+      // 4. 底圖讀取完畢後進行繪製合成
+      certImg.onload = function() {
+        // 設定畫布解析度為圖片原始大小
+        canvas.width = certImg.naturalWidth;
+        canvas.height = certImg.naturalHeight;
+
+        // 繪製獎狀底圖
+        ctx.drawImage(certImg, 0, 0);
+
+        // 設定文字字型與樣式（隨圖片寬度等比縮放）
+        const fontSize = Math.floor(canvas.width * 0.045);
+        ctx.font = `bold ${fontSize}px "PingFang TC", "Microsoft JhengHei", sans-serif`;
+        ctx.fillStyle = '#2c3e50'; // 深灰藍色字體
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+
+        // 坐標定位：已校正至橫線正中心（寬度 68%、高度 46.5%）
+        const lineX = canvas.width * 0.68;
+        const lineY = canvas.height * 0.465;
+
+        // 繪製姓名
+        ctx.fillText(studentName, lineX, lineY);
+
+        // 5. 輸出為 PNG 圖片並帶入下載連結
+        const finalImageURL = canvas.toDataURL('image/png');
+        document.getElementById('cert-display-img').src = finalImageURL;
+        
+        const downloadBtn = document.getElementById('cert-download-link');
+        downloadBtn.href = finalImageURL;
+        downloadBtn.download = `${studentName}_500L_闖關獎狀.png`;
+
+        // 6. 開啟彈窗
+        document.getElementById('cert-modal').style.display = 'flex';
+      };
     }
     function closeCertModal() {
       document.getElementById('cert-modal').style.display = 'none';

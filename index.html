@@ -11,8 +11,10 @@
       padding: 0;
     }
 
+    /* 【關鍵修改】：將最外圍綠色背景替換為全螢幕自適應背景圖 */
     body {
-      background: radial-gradient(circle at center, #358c49 0%, #1f5a2e 100%);
+      background: url('images/bg-page.jpg') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -21,19 +23,19 @@
       padding: 20px;
     }
 
-    /* 遊戲主畫面容器：鎖定 1:1 正方形比例 */
+    /* 遊戲主畫面容器：維持 1:1 正方形比例 */
     .game-board {
       position: relative;
       width: 100%;
       max-width: 950px;
       aspect-ratio: 1 / 1;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
       border-radius: 28px;
       overflow: hidden;
       background-color: #f7f9f4;
     }
 
-    /* 底圖 */
+    /* 正方形中央底圖 */
     .map-bg {
       position: absolute;
       top: 0;
@@ -52,11 +54,7 @@
       cursor: pointer;
       text-decoration: none;
       z-index: 10;
-      
-      /* 平常完全透明隱形，只顯示底圖 */
-      opacity: 0;
-      
-      /* 淡入淡出與縮放平滑過渡 */
+      opacity: 0; /* 平常完全透明隱形 */
       transition: opacity 0.3s ease, transform 0.25s ease-out, filter 0.25s ease-out;
       overflow: visible;
     }
@@ -69,21 +67,16 @@
       pointer-events: none;
     }
 
-    /* 滑鼠懸停 Hover：圖案平滑浮現 + 金黃霓虹外發光 + 放大跳動 */
+    /* 滑鼠懸停 Hover：浮現 + 金黃霓虹外發光 + 放大跳動 */
     .img-btn:hover {
       z-index: 25;
-      opacity: 1; /* 浮現出來 */
-      
-      /* 金黃色高強度外發光（精準貼合 PNG 邊緣） */
+      opacity: 1;
       filter: drop-shadow(0 0 12px #ffe600)
               drop-shadow(0 0 25px #ffb300)
               drop-shadow(0 0 40px rgba(255, 235, 59, 0.9));
-      
-      /* 浮動跳動動畫 */
       animation: floatBounce 1.1s ease-in-out infinite alternate;
     }
 
-    /* 輕微跳動動畫 */
     @keyframes floatBounce {
       0% {
         transform: translateY(0) scale(1.02);
@@ -93,17 +86,16 @@
       }
     }
 
-    /* 點擊時按鈕下壓回饋 */
     .img-btn:active {
       transform: translateY(2px) scale(0.98);
       filter: drop-shadow(0 0 14px #ffd700);
     }
 
     /* ========================================================
-       按鈕大小與定位
+       按鈕大小與定位配置
        ======================================================== */
 
-    /* 0. 右上方熱氣球與布條按鈕（Scholastic × 堂奧圖書） */
+    /* 右上方熱氣球與布條按鈕（依先前設定定位） */
     .btn-balloon {
       top: 1.2%;
       left: 56.5%;
@@ -111,7 +103,7 @@
       height: 17.5%;
     }
 
-    /* 1. 藍思值 700L 探索冒險（上方中央偏左，含城堡、樹屋與書本） */
+    /* 藍思值 700L 探索冒險按鈕 */
     .btn-700l {
       top: 19.5%;
       left: 23.8%;
@@ -119,7 +111,7 @@
       height: 40.5%;
     }
 
-    /* 2. 藍思值 500L 水上狂歡（左下角滑水道與水池） */
+    /* 藍思值 500L 水上狂歡按鈕 */
     .btn-500l {
       top: 49.5%;
       left: 0.5%;
@@ -127,7 +119,7 @@
       height: 43.5%;
     }
 
-    /* 3. 藍思值 300L 奇幻樂園（右下角旋轉木馬與粉紅攤位） */
+    /* 藍思值 300L 奇幻樂園按鈕 */
     .btn-300l {
       top: 57.5%;
       left: 50%;
@@ -139,29 +131,29 @@
 <body>
 
   <div class="game-board">
-  <!-- 主背景底圖 -->
-  <img src="images/bg-main.jpg" alt="學樂閱讀闖關玩地圖" class="map-bg">
+    <!-- 主背景底圖（中央 1:1 正方形地圖） -->
+    <img src="images/bg-main.jpg" alt="學樂閱讀闖關玩地圖" class="map-bg">
 
-  <!-- 右上角熱氣球 -->
-  <a href="https://www.tangao.com.tw/" target="_blank" rel="noopener noreferrer" class="img-btn btn-balloon" title="前往官方網站">
-    <img src="images/btn-balloon.png" alt="Scholastic x 堂奧圖書">
-  </a>
+    <!-- 熱氣球外部連結按鈕 -->
+    <a href="https://www.tangao.com.tw" target="_blank" rel="noopener noreferrer" class="img-btn btn-balloon" title="前往官方網站">
+      <img src="images/btn-balloon.png" alt="Scholastic x 堂奧圖書">
+    </a>
 
-  <!-- 700L 探索冒險按鈕 -->
-  <a href="700L.html" class="img-btn btn-700l" title="進入 藍思值 700L 探索冒險">
-    <img src="images/btn-700l.png" alt="700L 探索冒險">
-  </a>
+    <!-- 700L 探索冒險按鈕 -->
+    <a href="700L.html" class="img-btn btn-700l" title="進入 藍思值 700L 探索冒險">
+      <img src="images/btn-700l.png" alt="700L 探索冒險">
+    </a>
 
-  <!-- 500L 水上狂歡按鈕 -->
-  <a href="500L.html" class="img-btn btn-500l" title="進入 藍思值 500L 水上狂歡">
-    <img src="images/btn-500l.png" alt="500L 水上狂歡">
-  </a>
+    <!-- 500L 水上狂歡按鈕 -->
+    <a href="500L.html" class="img-btn btn-500l" title="進入 藍思值 500L 水上狂歡">
+      <img src="images/btn-500l.png" alt="500L 水上狂歡">
+    </a>
 
-  <!-- 300L 奇幻樂園按鈕 -->
-  <a href="300L.html" class="img-btn btn-300l" title="進入 藍思值 300L 奇幻樂園">
-    <img src="images/btn-300l.png" alt="300L 奇幻樂園">
-  </a>
-</div>
+    <!-- 300L 奇幻樂園按鈕 -->
+    <a href="300L.html" class="img-btn btn-300l" title="進入 藍思值 300L 奇幻樂園">
+      <img src="images/btn-300l.png" alt="300L 奇幻樂園">
+    </a>
+  </div>
 
 </body>
 </html>

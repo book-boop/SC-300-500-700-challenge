@@ -67,13 +67,13 @@
       pointer-events: none;
     }
 
-    /* 滑鼠懸停 Hover：浮現 + 金黃霓虹外發光 + 放大跳動 */
+    /* 滑鼠懸停 Hover：浮現 + 純白霓虹亮光 + 放大跳動 */
     .img-btn:hover {
       z-index: 25;
       opacity: 1;
-      filter: drop-shadow(0 0 12px #ffe600)
-              drop-shadow(0 0 25px #ffb300)
-              drop-shadow(0 0 40px rgba(255, 235, 59, 0.9));
+      filter: drop-shadow(0 0 10px #ffffff)
+              drop-shadow(0 0 20px rgba(255, 255, 255, 0.95))
+              drop-shadow(0 0 35px rgba(255, 255, 255, 0.8));
       animation: floatBounce 1.1s ease-in-out infinite alternate;
     }
 
@@ -86,9 +86,10 @@
       }
     }
 
+    /* 點擊 Active：純白微光 */
     .img-btn:active {
       transform: translateY(2px) scale(0.98);
-      filter: drop-shadow(0 0 14px #ffd700);
+      filter: drop-shadow(0 0 14px #ffffff);
     }
 
     /* ========================================================

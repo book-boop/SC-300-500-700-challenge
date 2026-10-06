@@ -47,7 +47,7 @@
     },
     {
       "book": "Diary of a Pug",
-      "question": "Who has stage fright in the talent show?",
+      "question": "Who has stage fright in the pet talent show?",
       "options": ["Duchess", "Luna", "Bub", "Bella"],
       "answer": 0
     },
@@ -61,54 +61,6 @@
       "book": "Diary of a Pug",
       "question": "The two shadows they saw in the attic were owls, not ghosts.",
       "options": ["True", "False"],
-      "answer": 0
-    },
-    {
-      "book": "Diary of a Pug",
-      "question": "What makes Bella think of a pirate theme for the sleepover?",
-      "options": ["Bub's growl ('Arrrrr!')", "Duchess's cat food", "A pirate movie", "A treasure map"],
-      "answer": 0
-    },
-    {
-      "book": "Diary of a Pug",
-      "question": "What does Duchess tell Bub that worries him about sleepovers?",
-      "options": ["No one sleeps at a sleepover!", "Pirates don't eat breakfast!", "Ghosts come out", "Dogs sleep outside"],
-      "answer": 0
-    },
-    {
-      "book": "Diary of a Pug",
-      "question": "What is the last surprise that Bella brings home from the road trip?",
-      "options": ["Moon pies", "A pirate map", "A collar", "A toy truck"],
-      "answer": 0
-    },
-    {
-      "book": "Diary of a Pug",
-      "question": "If Bella is a queen, what is Bub's royal title?",
-      "options": ["Prince", "King", "Knight", "Captain"],
-      "answer": 0
-    },
-    {
-      "book": "Diary of a Pug",
-      "question": "The low tide is not good for surfing.",
-      "options": ["True", "False"],
-      "answer": 0
-    },
-    {
-      "book": "Diary of a Pug",
-      "question": "Finally at the beach, what did they find is the best treasure of all?",
-      "options": ["Friendship!", "Gold coins", "Seagulls", "Shells"],
-      "answer": 0
-    },
-    {
-      "book": "Diary of a Pug",
-      "question": "Why did Bub need to wear the Big, Bad Cone?",
-      "options": ["To keep him from chewing on the cast", "To look like a scary lion", "To protect his ears", "To sleep better"],
-      "answer": 0
-    },
-    {
-      "book": "Diary of a Pug",
-      "question": "When the real fire happened, what did Bub choose to save?",
-      "options": ["His friend", "His treats", "His skateboard", "His bed"],
       "answer": 0
     },
 
@@ -166,12 +118,6 @@
       "options": ["The wet leaves beneath Dragon's feet", "A scary monster", "A muddy frog", "A falling tree"],
       "answer": 0
     },
-    {
-      "book": "Dragon",
-      "question": "What was the awful rumbling sound Dragon heard in the woods?",
-      "options": ["Dragon's hungry stomach!", "A scary ghost", "A bear growling", "Thunder in the sky"],
-      "answer": 0
-    },
 
     {
       "book": "Mister Shivers",
@@ -213,18 +159,6 @@
       "book": "Mister Shivers",
       "question": "In 'The Cast', what grew under Danny's cast when it was cut open?",
       "options": ["Thousands of worms", "Green moss", "Flowers", "Spiders"],
-      "answer": 0
-    },
-    {
-      "book": "Mister Shivers",
-      "question": "In 'A Walk in the Dark', Jason went to the bathroom at midnight and saw...",
-      "options": ["The woman from the painting", "A friendly ghost", "His uncle", "A monster with horns"],
-      "answer": 0
-    },
-    {
-      "book": "Mister Shivers",
-      "question": "In 'The Face in the Mirror', where was the girl pulled into by her doll?",
-      "options": ["Into the mirror", "Under the bed", "Into the closet", "Outside in the dark"],
       "answer": 0
     },
     {
@@ -274,6 +208,12 @@
       "book": "Owl Diaries",
       "question": "Owls are awake when the ______ is out.",
       "options": ["Moon", "Sun", "Rainbow", "Cloud"],
+      "answer": 0
+    },
+    {
+      "book": "Owl Diaries",
+      "question": "True or False: Owls can fly for miles before their wings get tired.",
+      "options": ["True", "False"],
       "answer": 0
     },
 
@@ -380,12 +320,6 @@
       "options": ["At the top of Mount Boom", "At the bottom of Splish Splash Sea", "Inside Carrot Castle", "In Cloudy Hills"],
       "answer": 0
     },
-    {
-      "book": "Press Start!",
-      "question": "Why does the giant Gigabot explode when it reaches the sea?",
-      "options": ["It was stolen before King Viking could make it waterproof", "Super Rabbit Boy lasered it", "It was out of fuel", "A mine hit it"],
-      "answer": 0
-    },
 
     {
       "book": "The Adventure Friends",
@@ -422,365 +356,812 @@
       "question": "What did Miguel trade their park treasure for at the end?",
       "options": ["Two large ice cream cones", "A new compass", "Two books", "Dog treats"],
       "answer": 0
+    },
+    {
+      "book": "The Adventure Friends",
+      "question": "What animal does Spider the dog chase in the backyard?",
+      "options": ["A squirrel", "A cat", "A rabbit", "A frog"],
+      "answer": 0
     }
   ],
-
   "matching": [
     {
       "book": "Diary of a Pug",
       "pairs": [
-        {"item": "mess", "match": "dirty or untidy conditions"},
-        {"item": "adopt", "match": "to take a pet into your home"},
-        {"item": "treat", "match": "a special snack for pets or kids"},
-        {"item": "trial run", "match": "a test to see if something works"},
-        {"item": "hose", "match": "a long tube used to spray water"}
+        { "item": "mess", "match": "dirty or untidy conditions" },
+        { "item": "adopt", "match": "to take a pet into your home" },
+        { "item": "treat", "match": "a special snack for pets or kids" },
+        { "item": "trial run", "match": "a test to see if something works" },
+        { "item": "hose", "match": "a long tube used to spray water" }
       ]
     },
     {
       "book": "Diary of a Pug",
       "pairs": [
-        {"item": "audition", "match": "short performance to try to get a role"},
-        {"item": "rehearsal", "match": "practice for a play, concert, or show"},
-        {"item": "costume", "match": "special clothes worn by an actor"},
-        {"item": "break a leg", "match": "phrase used to wish good luck"},
-        {"item": "talent show", "match": "competition to show your skills"}
+        { "item": "audition", "match": "short performance to try to get a role" },
+        { "item": "rehearsal", "match": "practice for a play, concert, or show" },
+        { "item": "costume", "match": "special clothes worn by an actor" },
+        { "item": "break a leg", "match": "phrase used to wish good luck" },
+        { "item": "talent show", "match": "competition to show your skills" }
       ]
     },
     {
       "book": "Diary of a Pug",
       "pairs": [
-        {"item": "brave", "match": "showing no fear in danger"},
-        {"item": "tease", "match": "to joke or laugh playfully"},
-        {"item": "armor", "match": "metal clothing worn for protection"},
-        {"item": "collar", "match": "band worn around the neck of a pet"},
-        {"item": "adventure", "match": "an exciting and unusual journey"}
+        { "item": "brave", "match": "showing no fear in danger" },
+        { "item": "tease", "match": "to joke or laugh playfully" },
+        { "item": "armor", "match": "metal clothing worn for protection" },
+        { "item": "collar", "match": "band worn around the neck of a pet" },
+        { "item": "adventure", "match": "an exciting and unusual journey" }
       ]
     },
     {
       "book": "Diary of a Pug",
       "pairs": [
-        {"item": "theme", "match": "main subject or idea of a party"},
-        {"item": "sleepover", "match": "party where friends stay and sleep"},
-        {"item": "ingredient", "match": "food used to make a dish"},
-        {"item": "tummy", "match": "a child's word for stomach"},
-        {"item": "mattress", "match": "soft part of a bed to sleep on"}
+        { "item": "theme", "match": "main subject or idea of a party" },
+        { "item": "sleepover", "match": "party where friends stay and sleep" },
+        { "item": "ingredient", "match": "food used to make a dish" },
+        { "item": "tummy", "match": "a child's word for stomach" },
+        { "item": "mattress", "match": "soft part of a bed to sleep on" }
+      ]
+    },
+    {
+      "book": "Diary of a Pug",
+      "pairs": [
+        { "item": "souvenir", "match": "something bought to remember a trip" },
+        { "item": "canyon", "match": "deep valley with steep rock sides" },
+        { "item": "snuggle", "match": "settling into a warm cozy position" },
+        { "item": "crow", "match": "large black bird that caws loudly" }
+      ]
+    },
+    {
+      "book": "Diary of a Pug",
+      "pairs": [
+        { "item": "dribble", "match": "to bounce the ball up and down" },
+        { "item": "rebound", "match": "to catch ball after missed shot" },
+        { "item": "scoop", "match": "underhand shot flipping the ball up" },
+        { "item": "autograph", "match": "famous person's signature" }
       ]
     },
 
     {
       "book": "Dragon",
       "pairs": [
-        {"item": "backyard", "match": "後院"},
-        {"item": "lonely", "match": "寂寞的"},
-        {"item": "sign", "match": "牌子"},
-        {"item": "hit", "match": "撞擊"},
-        {"item": "friend", "match": "朋友"}
+        { "item": "backyard", "match": "後院" },
+        { "item": "lonely", "match": "寂寞的" },
+        { "item": "sign", "match": "牌子" },
+        { "item": "hit", "match": "撞擊" },
+        { "item": "friend", "match": "朋友" }
       ]
     },
     {
       "book": "Dragon",
       "pairs": [
-        {"item": "litter box", "match": "貓砂盆/垃圾桶"},
-        {"item": "train", "match": "訓練"},
-        {"item": "teach", "match": "教導"},
-        {"item": "feed", "match": "餵養"},
-        {"item": "problem", "match": "問題"}
+        { "item": "litter box", "match": "貓砂盆" },
+        { "item": "train", "match": "訓練" },
+        { "item": "teach", "match": "教導" },
+        { "item": "feed", "match": "餵養" },
+        { "item": "problem", "match": "問題" }
       ]
     },
     {
       "book": "Dragon",
       "pairs": [
-        {"item": "broom", "match": "掃把"},
-        {"item": "sweep", "match": "掃地"},
-        {"item": "dirty", "match": "髒的"},
-        {"item": "shovel", "match": "鏟子"},
-        {"item": "basement", "match": "地下室"}
+        { "item": "broom", "match": "掃把" },
+        { "item": "sweep", "match": "掃地" },
+        { "item": "dirty", "match": "髒的" },
+        { "item": "shovel", "match": "鏟子" },
+        { "item": "basement", "match": "地下室" }
       ]
     },
     {
       "book": "Dragon",
       "pairs": [
-        {"item": "cupboard", "match": "櫥櫃"},
-        {"item": "bare", "match": "空的"},
-        {"item": "parking lot", "match": "停車場"},
-        {"item": "bedtime", "match": "就寢時間"},
-        {"item": "groggy", "match": "昏昏沉沉的"}
+        { "item": "cupboard", "match": "櫥櫃" },
+        { "item": "bare", "match": "空的" },
+        { "item": "parking lot", "match": "停車場" },
+        { "item": "bedtime", "match": "就寢時間" },
+        { "item": "groggy", "match": "昏昏沉沉的" }
+      ]
+    },
+    {
+      "book": "Dragon",
+      "pairs": [
+        { "item": "pumpkin", "match": "南瓜" },
+        { "item": "cart", "match": "手推車" },
+        { "item": "autumn", "match": "秋天" },
+        { "item": "jack-o'-lantern", "match": "南瓜燈籠" }
+      ]
+    },
+    {
+      "book": "Dragon",
+      "pairs": [
+        { "item": "squish", "match": "踩踏潮濕落葉的軟爛聲" },
+        { "item": "forest", "match": "樹木繁密的大森林" },
+        { "item": "stomach", "match": "肚子胃部" },
+        { "item": "feast", "match": "豐盛美味的大餐宴席" }
       ]
     },
 
     {
       "book": "Mister Shivers",
       "pairs": [
-        {"item": "Beneath the Bed", "match": "A doll speaks: 'Just the three of us.'"},
-        {"item": "A Hair Down to My Stomach", "match": "A doctor finds a bizarre hair problem"},
-        {"item": "The Statue", "match": "A frozen stone figure might be watching"},
-        {"item": "A Dark and Stormy Night", "match": "Toys left outside get scratched by a cat"},
-        {"item": "The Noise at the Window", "match": "Scratched glass from the inside"}
+        { "item": "Beneath the Bed", "match": "A doll speaks: 'Just the three of us.'" },
+        { "item": "A Hair Down to My Stomach", "match": "A doctor finds a bizarre hair problem" },
+        { "item": "The Statue", "match": "A frozen stone figure might be watching" },
+        { "item": "A Dark and Stormy Night", "match": "Toys left outside get scratched by a cat" },
+        { "item": "The Noise at the Window", "match": "Scratched glass from the inside" }
       ]
     },
     {
       "book": "Mister Shivers",
       "pairs": [
-        {"item": "The Doll in the Hall", "match": "A life-sized doll sits on a chair"},
-        {"item": "The Cast", "match": "Worms grow under the broken arm cast"},
-        {"item": "Bright White Teeth", "match": "Eats all carrots and surrounded by rabbits"},
-        {"item": "The Jack-O'-Lantern", "match": "Buries pumpkin Willy and pumpkin patch grows"},
-        {"item": "Billy Smiled", "match": "Rotten popcorn kernels for teeth"}
+        { "item": "The Doll in the Hall", "match": "A life-sized doll sits on a chair" },
+        { "item": "The Cast", "match": "Worms grow under the broken arm cast" },
+        { "item": "Bright White Teeth", "match": "Eats all carrots and surrounded by rabbits" },
+        { "item": "The Jack-O'-Lantern", "match": "Buries pumpkin Willy and patch grows" },
+        { "item": "Billy Smiled", "match": "Rotten popcorn kernels for teeth" }
+      ]
+    },
+    {
+      "book": "Mister Shivers",
+      "pairs": [
+        { "item": "Shadow in the Woods", "match": "Monster shadow calling his name" },
+        { "item": "The Monster in My Room", "match": "Boxes pushed under bed so monster has no hideout" },
+        { "item": "Fingernails", "match": "Chews grandmother's nails instead" },
+        { "item": "The Writing on the Wall", "match": "Red marker changed into a black one" },
+        { "item": "Behind the Locker", "match": "Locker back snapped and trapped Emma" }
+      ]
+    },
+    {
+      "book": "Mister Shivers",
+      "pairs": [
+        { "item": "A Walk in the Dark", "match": "Sees the woman from the painting" },
+        { "item": "My First Haircut", "match": "Her hair screams when cut" },
+        { "item": "Fingernail Beach", "match": "Wakes up with no fingernails at all" },
+        { "item": "The Forever Hotel", "match": "Room numbers keep changing" },
+        { "item": "The Stolen Pen", "match": "Ends up with no eyes at all" }
+      ]
+    },
+    {
+      "book": "Mister Shivers",
+      "pairs": [
+        { "item": "The Face in the Mirror", "match": "Girl gets pulled into mirror by her doll" },
+        { "item": "Like Pulling Teeth", "match": "Dentist mouth filled with hundreds of real teeth" },
+        { "item": "As You Wish...", "match": "Stuffed animals take blanket and hold too tight" },
+        { "item": "The Fox in the Circle", "match": "Loser gets turned into a real goose" }
+      ]
+    },
+    {
+      "book": "Mister Shivers",
+      "pairs": [
+        { "item": "Teacher Know Better", "match": "Real monster leaps out of bag" },
+        { "item": "Dr. Smiles", "match": "Free dentist who keeps pulled teeth" },
+        { "item": "Willy", "match": "Lila's favorite pumpkin friend" },
+        { "item": "popcorn", "match": "kernels that turned into rotten teeth" }
       ]
     },
 
     {
       "book": "Owl Diaries",
       "pairs": [
-        {"item": "In the beginning", "match": "Doesn't like Baxter to go near squirrels"},
-        {"item": "In the middle", "match": "Those stinky squirrels had to do with missing"},
-        {"item": "At the end", "match": "The squirrels are pretty cute"}
+        { "item": "In the beginning", "match": "Doesn't like Baxter to go near squirrels" },
+        { "item": "In the middle", "match": "Those squirrels had to do with missing" },
+        { "item": "At the end", "match": "The squirrels are pretty cute" }
       ]
     },
     {
       "book": "Owl Diaries",
       "pairs": [
-        {"item": "hero", "match": "someone admired for bravery"},
-        {"item": "clues", "match": "hints that help solve a mystery"},
-        {"item": "posters", "match": "large notices put up in public"},
-        {"item": "lullaby", "match": "quiet song to help babies sleep"},
-        {"item": "trophy", "match": "prize for winning a competition"}
+        { "item": "hero", "match": "someone admired for bravery" },
+        { "item": "clues", "match": "hints that help solve a mystery" },
+        { "item": "posters", "match": "notices put up in public" },
+        { "item": "lullaby", "match": "quiet song to help babies sleep" },
+        { "item": "trophy", "match": "prize for winning a competition" }
+      ]
+    },
+    {
+      "book": "Owl Diaries",
+      "pairs": [
+        { "item": "oath", "match": "solemn promise to be wise, brave, and kind" },
+        { "item": "storms", "match": "violent weather with rain and thunder" },
+        { "item": "cave", "match": "natural underground hollow shelter" },
+        { "item": "wingchair", "match": "special wheelchair for owls who cannot fly" }
+      ]
+    },
+    {
+      "book": "Owl Diaries",
+      "pairs": [
+        { "item": "article", "match": "piece of writing in a newspaper" },
+        { "item": "sleepover", "match": "staying and sleeping at a friend's house" },
+        { "item": "hobby", "match": "activity done in free time for pleasure" },
+        { "item": "lemonade", "match": "sweet lemon drink for parties" }
+      ]
+    },
+    {
+      "book": "Owl Diaries",
+      "pairs": [
+        { "item": "cupcake", "match": "small sweet cake baked in a cup-shaped foil" },
+        { "item": "bakery", "match": "place where bread and pastries are made" },
+        { "item": "carrots", "match": "orange root vegetables tracked by ninjas" },
+        { "item": "moon dollars", "match": "currency saved up by owls" }
+      ]
+    },
+    {
+      "book": "Owl Diaries",
+      "pairs": [
+        { "item": "burp", "match": "expelling gas noisily from the stomach" },
+        { "item": "babysitter", "match": "person who looks after children" },
+        { "item": "invitation", "match": "written request inviting someone to a party" },
+        { "item": "truth", "match": "that which is true or in accordance with fact" }
       ]
     },
 
     {
       "book": "Poppleton",
       "pairs": [
-        {"item": "geese", "match": "more than one goose"},
-        {"item": "lonely", "match": "feeling sad because you are alone"},
-        {"item": "chilly", "match": "slightly cold"},
-        {"item": "measure", "match": "to find size, length or amount"},
-        {"item": "depressed", "match": "very sad and without hope"}
+        { "item": "geese", "match": "more than one goose" },
+        { "item": "lonely", "match": "feeling sad because you are alone" },
+        { "item": "chilly", "match": "slightly cold" },
+        { "item": "measure", "match": "to find size, length or amount" },
+        { "item": "depressed", "match": "very sad and without hope" }
       ]
     },
     {
       "book": "Poppleton",
       "pairs": [
-        {"item": "stargaze", "match": "looking at stars in the night"},
-        {"item": "dresser", "match": "a person who dresses smartly"},
-        {"item": "porch", "match": "covered shelter at entrance of house"},
-        {"item": "mud", "match": "wet, soft earth"},
-        {"item": "roof", "match": "the top covering of a house"}
+        { "item": "stargaze", "match": "looking at stars in the night" },
+        { "item": "dresser", "match": "a person who dresses smartly" },
+        { "item": "porch", "match": "covered shelter at entrance of house" },
+        { "item": "mud", "match": "wet, soft earth" },
+        { "item": "roof", "match": "the top covering of a house" }
+      ]
+    },
+    {
+      "book": "Poppleton",
+      "pairs": [
+        { "item": "library", "match": "place where books are kept to read and borrow" },
+        { "item": "spaghetti", "match": "long thin pasta served with sauce" },
+        { "item": "grapefruit", "match": "large round yellow citrus fruit" },
+        { "item": "sunglasses", "match": "glasses protecting eyes from bright sunlight" }
+      ]
+    },
+    {
+      "book": "Poppleton",
+      "pairs": [
+        { "item": "sailing", "match": "traveling across water in a boat" },
+        { "item": "pancake", "match": "flat round cake cooked in a pan" },
+        { "item": "shower", "match": "brief fall of rain" },
+        { "item": "shells", "match": "hard protective coverings of sea animals" }
+      ]
+    },
+    {
+      "book": "Poppleton",
+      "pairs": [
+        { "item": "poker", "match": "card game played for points or money" },
+        { "item": "lint", "match": "short, fine fibers that separate from clothes" },
+        { "item": "jeep", "match": "sturdy vehicle designed for rough terrain" },
+        { "item": "ivy", "match": "evergreen climbing plant with green leaves" }
+      ]
+    },
+    {
+      "book": "Poppleton",
+      "pairs": [
+        { "item": "Big Dipper", "match": "group of seven bright stars in the north" },
+        { "item": "heavenly", "match": "delightful, wonderful, and sublime" },
+        { "item": "relax", "match": "to become less tense and rest" },
+        { "item": "dizzy", "match": "having a sensation of spinning around" }
       ]
     },
 
     {
       "book": "Press Start!",
       "pairs": [
-        {"item": "dodge", "match": "to move quickly to avoid something"},
-        {"item": "fake", "match": "not real; made to look real"},
-        {"item": "wand", "match": "a stick used to do magic"},
-        {"item": "coin", "match": "small round piece of metal money"},
-        {"item": "slime", "match": "sticky, wet, and soft stuff"}
+        { "item": "dodge", "match": "to move quickly to avoid something" },
+        { "item": "fake", "match": "not real; made to look real" },
+        { "item": "wand", "match": "a stick used to do magic" },
+        { "item": "coin", "match": "small round piece of metal money" },
+        { "item": "slime", "match": "sticky, wet, and soft stuff" }
       ]
     },
     {
       "book": "Press Start!",
       "pairs": [
-        {"item": "orb", "match": "a round ball, often glowing"},
-        {"item": "dungeon", "match": "dark, scary underground prison"},
-        {"item": "spooky", "match": "scary or creepy"},
-        {"item": "troublemaker", "match": "a person who causes problems"},
-        {"item": "vacuum", "match": "machine that cleans by sucking dirt"}
+        { "item": "orb", "match": "a round ball, often glowing" },
+        { "item": "dungeon", "match": "dark, scary underground prison" },
+        { "item": "spooky", "match": "scary or creepy" },
+        { "item": "troublemaker", "match": "a person who causes problems" },
+        { "item": "vacuum", "match": "machine that cleans by sucking dirt" }
       ]
     },
     {
       "book": "Press Start!",
       "pairs": [
-        {"item": "villain", "match": "a bad person in a story or game"},
-        {"item": "tournament", "match": "competition with many players"},
-        {"item": "gorilla", "match": "a large, strong ape"},
-        {"item": "semifinal", "match": "second-to-last round of competition"},
-        {"item": "portal", "match": "magical doorway connecting worlds"}
+        { "item": "villain", "match": "a bad person in a story or game" },
+        { "item": "tournament", "match": "competition with many players" },
+        { "item": "gorilla", "match": "a large, strong ape" },
+        { "item": "semifinal", "match": "second-to-last round of competition" },
+        { "item": "portal", "match": "magical doorway connecting worlds" }
+      ]
+    },
+    {
+      "book": "Press Start!",
+      "pairs": [
+        { "item": "antenna", "match": "metal rod catching radio signals" },
+        { "item": "chimney", "match": "tall pipe carrying smoke outside" },
+        { "item": "fuel", "match": "substance burned to create heat and energy" },
+        { "item": "supplies", "match": "useful goods needed for a journey" }
+      ]
+    },
+    {
+      "book": "Press Start!",
+      "pairs": [
+        { "item": "unstable", "match": "weak, shaky, or easily going to fall" },
+        { "item": "collapse", "match": "to suddenly fall down and break apart" },
+        { "item": "trapped", "match": "stuck inside and unable to get out" },
+        { "item": "vanish", "match": "to disappear suddenly and completely" }
+      ]
+    },
+    {
+      "book": "Press Start!",
+      "pairs": [
+        { "item": "massive", "match": "very large, heavy, and solid" },
+        { "item": "trigger", "match": "to cause a machine to start working" },
+        { "item": "waterproof", "match": "designed so water cannot get inside" },
+        { "item": "explode", "match": "to burst or blow up with a loud noise" }
       ]
     },
 
     {
       "book": "The Adventure Friends",
       "pairs": [
-        {"item": "Over and Out.", "match": "I'm done talking."},
-        {"item": "Roger that.", "match": "Yep!"},
-        {"item": "NORTH", "match": "The direction red needle points"},
-        {"item": "walkie-talkie", "match": "Like a phone for spies"}
+        { "item": "Over and Out.", "match": "I'm done talking." },
+        { "item": "Roger that.", "match": "Yep!" },
+        { "item": "NORTH", "match": "The direction red needle points" },
+        { "item": "walkie-talkie", "match": "Like a phone for spies" }
       ]
     },
     {
       "book": "The Adventure Friends",
       "pairs": [
-        {"item": "sleeping bag", "match": "warm soft bag used for camping"},
-        {"item": "planet", "match": "large round object moving around a star"},
-        {"item": "outer space", "match": "area beyond Earth where stars are"},
-        {"item": "trampoline", "match": "bouncy mat you jump on for fun"},
-        {"item": "alien", "match": "creature from another planet"}
+        { "item": "sleeping bag", "match": "warm soft bag used for camping" },
+        { "item": "planet", "match": "large round object moving around a star" },
+        { "item": "outer space", "match": "area beyond Earth where stars are" },
+        { "item": "trampoline", "match": "bouncy mat you jump on for fun" },
+        { "item": "alien", "match": "creature from another planet" }
       ]
     },
     {
       "book": "The Adventure Friends",
       "pairs": [
-        {"item": "out of", "match": "no more"},
-        {"item": "reach for", "match": "to get"},
-        {"item": "bakery", "match": "place where bread and cakes are sold"},
-        {"item": "ton", "match": "a lot, a very large amount"},
-        {"item": "jar", "match": "glass or plastic container with a lid"}
+        { "item": "out of", "match": "no more" },
+        { "item": "reach for", "match": "to get" },
+        { "item": "bakery", "match": "place where bread and cakes are sold" },
+        { "item": "ton", "match": "a lot, a very large amount" },
+        { "item": "jar", "match": "glass or plastic container with a lid" }
+      ]
+    },
+    {
+      "book": "The Adventure Friends",
+      "pairs": [
+        { "item": "creek", "match": "a small narrow stream of water" },
+        { "item": "hike", "match": "a long walk in nature" },
+        { "item": "tunnel", "match": "underground passage" },
+        { "item": "bridge", "match": "structure built over a river" }
+      ]
+    },
+    {
+      "book": "The Adventure Friends",
+      "pairs": [
+        { "item": "gazebo", "match": "outdoor pavilion with open sides" },
+        { "item": "sand pit", "match": "area filled with sand for children to play" },
+        { "item": "pond", "match": "small body of still freshwater" },
+        { "item": "playground", "match": "outdoor area provided for recreation" }
+      ]
+    },
+    {
+      "book": "The Adventure Friends",
+      "pairs": [
+        { "item": "code name", "match": "secret name used to hide true identity" },
+        { "item": "flavor", "match": "taste of food or drink" },
+        { "item": "scream", "match": "loud high cry made from excitement or fear" },
+        { "item": "cent", "match": "small monetary unit equal to 0.01 dollar" }
       ]
     }
   ],
-
   "memory": [
     {
       "book": "Diary of a Pug",
-      "cards": ["rocket", "peanut butter", "skateboard", "assistant"]
+      "pairs": [
+        { "en": "rocket", "zh": "火箭" },
+        { "en": "peanut butter", "zh": "花生醬" },
+        { "en": "skateboard", "zh": "滑板" },
+        { "en": "assistant", "zh": "小助手" }
+      ]
     },
     {
       "book": "Diary of a Pug",
-      "cards": ["detective", "rescue", "fort", "fence"]
+      "pairs": [
+        { "en": "detective", "zh": "偵探" },
+        { "en": "rescue", "zh": "拯救" },
+        { "en": "fort", "zh": "樹屋堡壘" },
+        { "en": "fence", "zh": "木柵欄" }
+      ]
     },
     {
       "book": "Diary of a Pug",
-      "cards": ["audition", "costume", "stunt", "rehearsal"]
+      "pairs": [
+        { "en": "costume", "zh": "表演服裝" },
+        { "en": "stunt", "zh": "特技絕活" },
+        { "en": "rehearsal", "zh": "彩排排練" },
+        { "en": "audition", "zh": "試鏡徵選" }
+      ]
     },
     {
       "book": "Diary of a Pug",
-      "cards": ["armor", "collar", "shadow", "adventure"]
+      "pairs": [
+        { "en": "souvenir", "zh": "旅遊紀念品" },
+        { "en": "canyon", "zh": "大峽谷" },
+        { "en": "snuggle", "zh": "依偎靠著" },
+        { "en": "memory", "zh": "美好回憶" }
+      ]
     },
     {
       "book": "Diary of a Pug",
-      "cards": ["souvenir", "canyon", "cousin", "memory"]
+      "pairs": [
+        { "en": "armor", "zh": "鐵甲盔甲" },
+        { "en": "collar", "zh": "項圈" },
+        { "en": "shadow", "zh": "影子黑影" },
+        { "en": "adventure", "zh": "刺激冒險" }
+      ]
+    },
+    {
+      "book": "Diary of a Pug",
+      "pairs": [
+        { "en": "theme", "zh": "主題風格" },
+        { "en": "sleepover", "zh": "過夜派對" },
+        { "en": "ingredient", "zh": "料理食材" },
+        { "en": "mattress", "zh": "舒適床墊" }
+      ]
     },
 
     {
       "book": "Dragon",
-      "cards": ["apple", "backyard", "sign", "friend"]
+      "pairs": [
+        { "en": "apple", "zh": "蘋果好朋友" },
+        { "en": "backyard", "zh": "後院" },
+        { "en": "sign", "zh": "告示牌" },
+        { "en": "lonely", "zh": "孤單寂寞" }
+      ]
     },
     {
       "book": "Dragon",
-      "cards": ["litter box", "toilet", "train", "feed"]
+      "pairs": [
+        { "en": "litter box", "zh": "貓砂盆" },
+        { "en": "toilet", "zh": "馬桶" },
+        { "en": "train", "zh": "訓練" },
+        { "en": "feed", "zh": "餵食餵養" }
+      ]
     },
     {
       "book": "Dragon",
-      "cards": ["broom", "shovel", "basement", "toast"]
+      "pairs": [
+        { "en": "broom", "zh": "掃把" },
+        { "en": "shovel", "zh": "鏟子" },
+        { "en": "basement", "zh": "地下室" },
+        { "en": "toast", "zh": "吐司麵包" }
+      ]
     },
     {
       "book": "Dragon",
-      "cards": ["cupboard", "parking lot", "kitchen", "groggy"]
+      "pairs": [
+        { "en": "pumpkin", "zh": "南瓜" },
+        { "en": "cupboard", "zh": "碗櫥櫃" },
+        { "en": "kitchen", "zh": "廚房" },
+        { "en": "groggy", "zh": "昏昏沉沉" }
+      ]
     },
     {
       "book": "Dragon",
-      "cards": ["pumpkin", "jack-o'-lantern", "leaves", "candle"]
+      "pairs": [
+        { "en": "wheelbarrow", "zh": "獨輪手推車" },
+        { "en": "cart", "zh": "載物拖車" },
+        { "en": "autumn", "zh": "秋季秋天" },
+        { "en": "jack-o'-lantern", "zh": "南瓜燈籠" }
+      ]
+    },
+    {
+      "book": "Dragon",
+      "pairs": [
+        { "en": "squish", "zh": "踩泥軟爛聲" },
+        { "en": "forest", "zh": "幽暗森林" },
+        { "en": "stomach", "zh": "肚子飢餓" },
+        { "en": "feast", "zh": "豐盛盛宴" }
+      ]
     },
 
     {
       "book": "Mister Shivers",
-      "cards": ["doll", "window", "statue", "noise"]
+      "pairs": [
+        { "en": "doll", "zh": "會說話洋娃娃" },
+        { "en": "window", "zh": "刮痕窗戶" },
+        { "en": "statue", "zh": "注視石雕像" },
+        { "en": "noise", "zh": "怪異聲響" }
+      ]
     },
     {
       "book": "Mister Shivers",
-      "cards": ["shadow", "monster", "marker", "locker"]
+      "pairs": [
+        { "en": "shadow", "zh": "森林黑影" },
+        { "en": "monster", "zh": "床底怪獸" },
+        { "en": "marker", "zh": "變色彩色筆" },
+        { "en": "locker", "zh": "陷阱置物櫃" }
+      ]
     },
     {
       "book": "Mister Shivers",
-      "cards": ["cast", "worms", "carrots", "rabbits"]
+      "pairs": [
+        { "en": "cast", "zh": "長蟲石膏套" },
+        { "en": "worms", "zh": "蠕蟲小蟲" },
+        { "en": "carrots", "zh": "大量胡蘿蔔" },
+        { "en": "rabbits", "zh": "包圍野兔" }
+      ]
     },
     {
       "book": "Mister Shivers",
-      "cards": ["painting", "haircut", "beach", "hotel"]
+      "pairs": [
+        { "en": "mirror", "zh": "吸人鏡子" },
+        { "en": "dentist", "zh": "詭異牙醫" },
+        { "en": "teeth", "zh": "滿口牙齒" },
+        { "en": "haircut", "zh": "尖叫頭髮" }
+      ]
     },
     {
       "book": "Mister Shivers",
-      "cards": ["mirror", "dentist", "teeth", "fangs"]
+      "pairs": [
+        { "en": "beach", "zh": "指甲海灘" },
+        { "en": "hotel", "zh": "迷宮飯店" },
+        { "en": "pen", "zh": "改寫現實魔筆" },
+        { "en": "painting", "zh": "走出來的畫" }
+      ]
+    },
+    {
+      "book": "Mister Shivers",
+      "pairs": [
+        { "en": "goose", "zh": "變身天鵝野鵝" },
+        { "en": "fangs", "zh": "怪物尖牙" },
+        { "en": "stuffed animals", "zh": "活過來玩偶" },
+        { "en": "popcorn", "zh": "腐爛玉米齒" }
+      ]
     },
 
     {
       "book": "Owl Diaries",
-      "cards": ["clues", "posters", "hero", "squirrel"]
+      "pairs": [
+        { "en": "clues", "zh": "破案線索" },
+        { "en": "posters", "zh": "尋人海報" },
+        { "en": "hero", "zh": "英勇主角" },
+        { "en": "squirrel", "zh": "小松鼠" }
+      ]
     },
     {
       "book": "Owl Diaries",
-      "cards": ["bakery", "wingchair", "cupcakes", "sugar"]
+      "pairs": [
+        { "en": "bakery", "zh": "愛心烘焙坊" },
+        { "en": "wingchair", "zh": "飛行輪椅" },
+        { "en": "cupcakes", "zh": "杯子蛋糕" },
+        { "en": "sugar", "zh": "砂糖糖粉" }
+      ]
     },
     {
       "book": "Owl Diaries",
-      "cards": ["storms", "cave", "oath", "outfit"]
+      "pairs": [
+        { "en": "storms", "zh": "驚險暴風雨" },
+        { "en": "cave", "zh": "避雨山洞" },
+        { "en": "oath", "zh": "神聖誓言" },
+        { "en": "outfit", "zh": "禮服盛裝" }
+      ]
     },
     {
       "book": "Owl Diaries",
-      "cards": ["sleepover", "article", "photo", "lemonade"]
+      "pairs": [
+        { "en": "trophy", "zh": "榮譽獎盃" },
+        { "en": "hobby", "zh": "休閒愛好" },
+        { "en": "lullaby", "zh": "安眠催眠曲" },
+        { "en": "burp", "zh": "拍背打嗝" }
+      ]
     },
     {
       "book": "Owl Diaries",
-      "cards": ["trophy", "hobby", "lullaby", "burp"]
+      "pairs": [
+        { "en": "sleepover", "zh": "同樂過夜派對" },
+        { "en": "article", "zh": "班級報紙報導" },
+        { "en": "lemonade", "zh": "野莓檸檬汁" },
+        { "en": "photo booth", "zh": "拍貼相片亭" }
+      ]
+    },
+    {
+      "book": "Owl Diaries",
+      "pairs": [
+        { "en": "cabbage", "zh": "甘藍包心菜" },
+        { "en": "slug stew", "zh": "蛞蝓濃湯" },
+        { "en": "beakbrush", "zh": "專用鳥喙刷" },
+        { "en": "ninja", "zh": "隱密忍者裝" }
+      ]
     },
 
     {
       "book": "Poppleton",
-      "cards": ["spaghetti", "cake", "library", "neighbor"]
+      "pairs": [
+        { "en": "spaghetti", "zh": "義大利麵" },
+        { "en": "cake", "zh": "天堂蛋糕" },
+        { "en": "library", "zh": "社區圖書館" },
+        { "en": "neighbor", "zh": "熱情鄰居" }
+      ]
     },
     {
       "book": "Poppleton",
-      "cards": ["grapefruit", "poker", "sweater", "shells"]
+      "pairs": [
+        { "en": "grapefruit", "zh": "長壽葡萄柚" },
+        { "en": "sweater", "zh": "毛線毛衣" },
+        { "en": "shells", "zh": "海灘貝殼" },
+        { "en": "lint", "zh": "毛球絮屑" }
+      ]
     },
     {
       "book": "Poppleton",
-      "cards": ["stargaze", "shopping", "sailing", "bed"]
+      "pairs": [
+        { "en": "stargaze", "zh": "仰望星空" },
+        { "en": "sailing", "zh": "搭帆船航行" },
+        { "en": "bed", "zh": "加大舒適床" },
+        { "en": "shopping", "zh": "採購街逛街" }
+      ]
     },
     {
       "book": "Poppleton",
-      "cards": ["geese", "pancake", "coat", "chilly"]
+      "pairs": [
+        { "en": "geese", "zh": "南飛野雁" },
+        { "en": "pancake", "zh": "秋季年節鬆餅" },
+        { "en": "coat", "zh": "合身保暖大衣" },
+        { "en": "chilly", "zh": "微涼寒意" }
+      ]
     },
     {
       "book": "Poppleton",
-      "cards": ["sunglasses", "jeep", "porch", "shower"]
+      "pairs": [
+        { "en": "sunglasses", "zh": "時尚墨鏡" },
+        { "en": "jeep", "zh": "受困吉普車" },
+        { "en": "porch", "zh": "前門門廊" },
+        { "en": "shower", "zh": "清爽夏雨" }
+      ]
+    },
+    {
+      "book": "Poppleton",
+      "pairs": [
+        { "en": "mud", "zh": "濕黏泥坑" },
+        { "en": "roof", "zh": "乘涼屋頂" },
+        { "en": "ivy", "zh": "長青常春藤" },
+        { "en": "violet", "zh": "紫羅蘭花" }
+      ]
     },
 
     {
       "book": "Press Start!",
-      "cards": ["super carrot", "maze", "robot", "king viking"]
+      "pairs": [
+        { "en": "super carrot", "zh": "超級魔法胡蘿蔔" },
+        { "en": "maze", "zh": "考驗迷宮" },
+        { "en": "robot", "zh": "機械人偶" },
+        { "en": "army", "zh": "龐大軍團" }
+      ]
     },
     {
       "book": "Press Start!",
-      "cards": ["power up", "spider", "flame", "shadow"]
+      "pairs": [
+        { "en": "power up", "zh": "力量升級道具" },
+        { "en": "spider", "zh": "蜘蛛魔王" },
+        { "en": "flame", "zh": "烈火頭目" },
+        { "en": "shadow", "zh": "暗影守護者" }
+      ]
     },
     {
       "book": "Press Start!",
-      "cards": ["rocket", "space", "blast", "ufo"]
+      "pairs": [
+        { "en": "rocket", "zh": "宇宙火箭" },
+        { "en": "space", "zh": "外太空世界" },
+        { "en": "laser", "zh": "破壞光束" },
+        { "en": "ufo", "zh": "巨型飛碟" }
+      ]
     },
     {
       "book": "Press Start!",
-      "cards": ["wand", "battery", "coin", "shop"]
+      "pairs": [
+        { "en": "wand", "zh": "超能魔杖" },
+        { "en": "battery", "zh": "驅動電池" },
+        { "en": "coin", "zh": "任務金幣" },
+        { "en": "shop", "zh": "萬物雜貨店" }
+      ]
     },
     {
       "book": "Press Start!",
-      "cards": ["orb", "dungeon", "vacuum", "chip"]
+      "pairs": [
+        { "en": "orb", "zh": "發光月光寶珠" },
+        { "en": "dungeon", "zh": "漆黑地牢" },
+        { "en": "vacuum", "zh": "吸塵機關" },
+        { "en": "chip", "zh": "超級電腦晶片" }
+      ]
     },
     {
       "book": "Press Start!",
-      "cards": ["time crystal", "tunnel", "disguise", "portal"]
+      "pairs": [
+        { "en": "time crystal", "zh": "時光能量水晶" },
+        { "en": "tunnel", "zh": "穿越地道" },
+        { "en": "disguise", "zh": "巧妙偽裝" },
+        { "en": "portal", "zh": "傳送時空門" }
+      ]
+    },
+    {
+      "book": "Press Start!",
+      "pairs": [
+        { "en": "diamond", "zh": "終極鑽石" },
+        { "en": "earthquake", "zh": "劇烈地震" },
+        { "en": "digger", "zh": "超級挖掘機" },
+        { "en": "cavern", "zh": "巨大地底洞穴" }
+      ]
     },
 
     {
       "book": "The Adventure Friends",
-      "cards": ["library", "superpower", "steps", "cart"]
+      "pairs": [
+        { "en": "library", "zh": "市立圖書館" },
+        { "en": "superpower", "zh": "找書超能力" },
+        { "en": "cart", "zh": "借書推車" },
+        { "en": "steps", "zh": "門前階梯" }
+      ]
     },
     {
       "book": "The Adventure Friends",
-      "cards": ["spaceship", "spy", "flashlight", "backyard"]
+      "pairs": [
+        { "en": "spaceship", "zh": "手造太空船" },
+        { "en": "spy", "zh": "秘密偵探特務" },
+        { "en": "flashlight", "zh": "探險手電筒" },
+        { "en": "backyard", "zh": "後院基地" }
+      ]
     },
     {
       "book": "The Adventure Friends",
-      "cards": ["trampoline", "alien", "planet", "sleeping bag"]
+      "pairs": [
+        { "en": "trampoline", "zh": "彈跳床" },
+        { "en": "alien", "zh": "外星螢火蟲" },
+        { "en": "planet", "zh": "神秘新星球" },
+        { "en": "sleeping bag", "zh": "露營睡袋" }
+      ]
     },
     {
       "book": "The Adventure Friends",
-      "cards": ["mayor", "treats", "woods", "photo"]
+      "pairs": [
+        { "en": "compass", "zh": "導航指南針" },
+        { "en": "walkie-talkie", "zh": "無線對講機" },
+        { "en": "needle", "zh": "紅色磁針" },
+        { "en": "north", "zh": "正北方" }
+      ]
     },
     {
       "book": "The Adventure Friends",
-      "cards": ["compass", "walkie-talkie", "needle", "north"]
+      "pairs": [
+        { "en": "mayor", "zh": "城鎮女市長" },
+        { "en": "treats", "zh": "狗狗零食點心" },
+        { "en": "woods", "zh": "後方小樹林" },
+        { "en": "photo", "zh": "尋狗照片" }
+      ]
+    },
+    {
+      "book": "The Adventure Friends",
+      "pairs": [
+        { "en": "bridge", "zh": "過河小橋" },
+        { "en": "tunnel", "zh": "隱密地道" },
+        { "en": "creek", "zh": "潺潺小溪" },
+        { "en": "snack", "zh": "探險乾糧點心" }
+      ]
     }
   ]
 }

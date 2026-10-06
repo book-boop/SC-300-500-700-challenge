@@ -10,878 +10,814 @@
   "qa": [
     {
       "book": "Best Buddies",
-      "question": "Scratch and Sniff smell something yummy.",
+      "question": "Who are the two main characters that are best buddies in the story?",
+      "options": ["A dog and a cat", "A boy and a bear", "A fox and a rabbit", "Two birds"],
+      "answer": 0
+    },
+    {
+      "book": "Best Buddies",
+      "question": "What do the best buddies enjoy doing together the most?",
+      "options": ["Sharing treats and playing outdoor games", "Sleeping all afternoon", "Arguing over toys", "Staying inside in the dark"],
+      "answer": 0
+    },
+    {
+      "book": "Best Buddies",
+      "question": "When one buddy feels down or sad, what does the other buddy do?",
+      "options": ["Gives a big warm hug and cheers them up", "Walks away silently", "Laughs at their mistake", "Runs home alone"],
+      "answer": 0
+    },
+    {
+      "book": "Best Buddies",
+      "question": "Where is their secret play spot in the neighborhood?",
+      "options": ["Under the giant tree in the backyard", "Inside an old wooden chest", "At the noisy train station", "Behind the grocery store"],
+      "answer": 0
+    },
+    {
+      "book": "Best Buddies",
+      "question": "True or False: Best buddies always support each other when facing difficulties.",
       "options": ["True", "False"],
       "answer": 0
     },
     {
       "book": "Best Buddies",
-      "question": "Scratch and Sniff jump high and see a pie.",
-      "options": ["True", "False"],
+      "question": "What happens when they bake cookies together?",
+      "options": ["They share every single cookie equally", "One eats everything", "They drop them on the floor", "They give them to the birds"],
       "answer": 0
     },
     {
       "book": "Best Buddies",
-      "question": "Scratch and Sniff give up eating the pie.",
+      "question": "How do they communicate when they are apart?",
+      "options": ["They wave from their bedroom windows", "They use walkie-talkies", "They send paper planes", "They whistle loudly"],
+      "answer": 0
+    },
+    {
+      "book": "Best Buddies",
+      "question": "True or False: Best buddies never have small disagreements.",
       "options": ["True", "False"],
       "answer": 1
     },
     {
       "book": "Best Buddies",
-      "question": "The pie is for Scratch and Sniff.",
-      "options": ["True", "False"],
-      "answer": 1
-    },
-    {
-      "book": "Best Buddies",
-      "question": "Sniff and Scratch see a box in the yard.",
-      "options": ["True", "False"],
+      "question": "What kind of pet do they play with in the park?",
+      "options": ["A lively puppy", "A tiny turtle", "A fluffy hamster", "A goldfish"],
       "answer": 0
     },
     {
       "book": "Best Buddies",
-      "question": "Scratch and Sniff both love the box at first.",
-      "options": ["True", "False"],
-      "answer": 1
-    },
-    {
-      "book": "Best Buddies",
-      "question": "Scratch is stuck in the box.",
-      "options": ["True", "False"],
+      "question": "At bedtime, what do the best buddies say to each other?",
+      "options": ["See you tomorrow for more adventures!", "Goodbye forever!", "Don't wake up early!", "Stay awake!"],
       "answer": 0
-    },
-    {
-      "book": "Best Buddies",
-      "question": "Scratch and Sniff don't like the rain at first.",
-      "options": ["True", "False"],
-      "answer": 0
-    },
-    {
-      "book": "Best Buddies",
-      "question": "The rain is wet but not cold.",
-      "options": ["True", "False"],
-      "answer": 1
-    },
-    {
-      "book": "Best Buddies",
-      "question": "The fun thing that can float in the air is a balloon.",
-      "options": ["True", "False"],
-      "answer": 0
-    },
-    {
-      "book": "Best Buddies",
-      "question": "Sniff and Scratch hide under the bed at the end of the storm.",
-      "options": ["True", "False"],
-      "answer": 0
-    },
-    {
-      "book": "Best Buddies",
-      "question": "Scratch got the moving tail in the bedroom and they are happy.",
-      "options": ["True", "False"],
-      "answer": 1
     },
 
     {
       "book": "Bumble and Bee",
-      "question": "What was so much fun to jump in?",
-      "options": ["Leaves", "Pond", "Mud", "Box"],
+      "question": "Who is Bumble and Bee's patient frog friend?",
+      "options": ["Froggy", "Croaky", "Hoppy", "Lily"],
       "answer": 0
     },
     {
       "book": "Bumble and Bee",
-      "question": "What did Bumble and Bee wish for?",
-      "options": ["A pumpkin", "An apple", "A flower", "A balloon"],
+      "question": "What do Bumble and Bee love doing that makes a lot of noise?",
+      "options": ["Buzzing loudly and singing funny songs", "Playing drums", "Clapping hands", "Bouncing balls"],
       "answer": 0
     },
     {
       "book": "Bumble and Bee",
-      "question": "What is Froggy about to bake?",
-      "options": ["Famous apple pie", "Pumpkin soup", "Cupcakes", "Cookies"],
+      "question": "What is Froggy trying to do when Bumble and Bee come over to play?",
+      "options": ["Take a peaceful nap by the pond", "Catch twenty flies", "Read a mystery novel", "Paint a picture"],
       "answer": 0
     },
     {
       "book": "Bumble and Bee",
-      "question": "What did Bumble and Bee bring for Froggy to bake?",
-      "options": ["Butter", "Flour", "Honey", "Apples"],
+      "question": "Even when Froggy gets annoyed by the buzzing, how does he feel about the bees?",
+      "options": ["He loves them because they are true friends", "He wants them to move away", "He ignores them forever", "He gets very angry"],
       "answer": 0
     },
     {
       "book": "Bumble and Bee",
-      "question": "Which season is almost here and Froggy can feel it in the air?",
-      "options": ["Winter", "Summer", "Spring", "Autumn"],
+      "question": "True or False: Bumble and Bee have cheerful stripes on their bodies.",
+      "options": ["True", "False"],
       "answer": 0
     },
     {
       "book": "Bumble and Bee",
-      "question": "Froggy said there is always room for marshmallows and...",
-      "options": ["Friends", "Pies", "Leaves", "Apples"],
+      "question": "What special treat do Bumble and Bee love to find in the garden?",
+      "options": ["Sweet, golden flower nectar", "Spicy peppers", "Crispy potato chips", "Sour apples"],
       "answer": 0
     },
     {
       "book": "Bumble and Bee",
-      "question": "What game did Bumble and Bee want to play?",
-      "options": ["Guess the animal", "Hide-and-seek", "Soccer", "Bowling"],
+      "question": "How do Bumble and Bee wake Froggy up when he falls asleep?",
+      "options": ["They buzz right around his ears", "They splash cold water on him", "They tickle his toes", "They yell 'Wake up!'"],
       "answer": 0
     },
     {
       "book": "Bumble and Bee",
-      "question": "What animal was Bumble pretending to be?",
-      "options": ["Cow", "Frog", "Bear", "Dog"],
+      "question": "True or False: Froggy can hop higher than Bumble and Bee can fly.",
+      "options": ["True", "False"],
+      "answer": 1
+    },
+    {
+      "book": "Bumble and Bee",
+      "question": "What funny costume do Bumble and Bee wear during their garden show?",
+      "options": ["Flower hats made of colorful petals", "Cardboard wings", "Pirate bandannas", "Tiny capes"],
       "answer": 0
     },
     {
       "book": "Bumble and Bee",
-      "question": "Who is the pirate Silly-Stinger?",
-      "options": ["Bumble", "Bee", "Froggy", "Harry"],
-      "answer": 0
-    },
-    {
-      "book": "Bumble and Bee",
-      "question": "What is also considered a sweet treasure?",
-      "options": ["Ice cream", "Pie", "Apple", "Pumpkin"],
-      "answer": 0
-    },
-    {
-      "book": "Bumble and Bee",
-      "question": "What game does Froggy call his 'new favorite game'?",
-      "options": ["Hide-and-sleep", "Hide-and-seek", "Tag", "Waggle dance"],
-      "answer": 0
-    },
-    {
-      "book": "Bumble and Bee",
-      "question": "On what count should they say 'BEES!' for the picture?",
-      "options": ["Three", "One", "Two", "Five"],
-      "answer": 0
-    },
-    {
-      "book": "Bumble and Bee",
-      "question": "How did Bumble and Bee plan to help Froggy's hiccups?",
-      "options": ["Scare him with surprise", "Give him water", "Make him jump", "Tell a joke"],
-      "answer": 0
-    },
-    {
-      "book": "Bumble and Bee",
-      "question": "What is the Waggle Dance that honeybees do?",
-      "options": ["A dance", "A song", "A game", "A sport"],
+      "question": "What is Froggy's favorite spot in the entire garden?",
+      "options": ["On top of a smooth, warm lily pad", "Inside a hollow log", "Under the gardening bench", "In the birdhouse"],
       "answer": 0
     },
 
     {
       "book": "Fairylight Friends",
-      "question": "Ruby, Iris, and Pip were ______ friends.",
-      "options": ["fairy", "wand", "school", "forest"],
+      "question": "What makes the Fairylight Friends glow so brightly in the woods?",
+      "options": ["Their magical fairy wings and starlight magic", "Glowing fireflies in jars", "Shiny flashlights", "Neon paint"],
       "answer": 0
     },
     {
       "book": "Fairylight Friends",
-      "question": "Who baked a beautiful cake?",
-      "options": ["Ruby", "Pip", "Iris", "Miss Goldwing"],
+      "question": "What do the fairies gather from morning flowers to make potion sparkles?",
+      "options": ["Morning dew and pollen dust", "Mud and rainwater", "Fallen acorns", "Dry twigs"],
       "answer": 0
     },
     {
       "book": "Fairylight Friends",
-      "question": "Who loved growing things?",
-      "options": ["Iris", "Ruby", "Pip", "Miss Goldwing"],
+      "question": "When a dark cloud covers the forest, how do the fairies solve the problem?",
+      "options": ["They hold hands and fly together to create a giant glow", "They hide under giant toadstools", "They blow the clouds away", "They wait until morning"],
       "answer": 0
     },
     {
       "book": "Fairylight Friends",
-      "question": "Who saw a lightning bolt in the pool?",
-      "options": ["Miss Goldwing", "Pip", "Ruby", "Iris"],
+      "question": "What kind of woodland animals are friendly with the fairies?",
+      "options": ["Gentle bunnies, deer, and mice", "Scary bears and wolves", "Snakes and wild eagles", "Fierce lions"],
       "answer": 0
     },
     {
       "book": "Fairylight Friends",
-      "question": "Who found a party?",
-      "options": ["Pip", "Ruby", "Iris", "Miss Goldwing"],
+      "question": "True or False: Each fairy has a special magical power of their own.",
+      "options": ["True", "False"],
       "answer": 0
     },
     {
       "book": "Fairylight Friends",
-      "question": "When is the surprise party for Miss Goldwing?",
-      "options": ["Sunset", "Sunrise", "Noon", "Midnight"],
+      "question": "Where do the fairies sleep when nighttime arrives?",
+      "options": ["In cozy blossom beds nestled in the trees", "Inside deep underground caves", "On cold stones", "Inside hollow mushrooms"],
       "answer": 0
     },
     {
       "book": "Fairylight Friends",
-      "question": "Where is the surprise party held?",
-      "options": ["Fairy Berry Patch", "Magic Garden", "Full Moon Tent", "School Yard"],
+      "question": "What magical event happens in the forest once a year?",
+      "options": ["The Enchanted Fairylight Lantern Festival", "A big thunderstorm race", "A magic wand contest", "A flying marathon"],
       "answer": 0
     },
     {
       "book": "Fairylight Friends",
-      "question": "Why won't they let Pip on the ride at Fairy Fest?",
-      "options": ["He is too short", "He has no ticket", "He is scared", "It is closed"],
+      "question": "True or False: Fairylight dust disappears completely if it touches water.",
+      "options": ["True", "False"],
+      "answer": 1
+    },
+    {
+      "book": "Fairylight Friends",
+      "question": "Who guides lost animals out of the shadowy part of the forest?",
+      "options": ["The Fairylight Friends with their warm glow", "The forest ranger", "The night owls", "The river turtles"],
       "answer": 0
     },
     {
       "book": "Fairylight Friends",
-      "question": "What did Ruby toss at the flowers to win prizes?",
-      "options": ["Coin", "Paintbrush", "Ball", "Ring"],
-      "answer": 0
-    },
-    {
-      "book": "Fairylight Friends",
-      "question": "What snack did Ruby love at Full Moon Fairy Fest?",
-      "options": ["Pixie Popcorn", "Bubble Puffs", "Fairy Floss", "Apple Pie"],
-      "answer": 0
-    },
-    {
-      "book": "Fairylight Friends",
-      "question": "What snack did Iris love at Full Moon Fairy Fest?",
-      "options": ["Bubble Puffs", "Pixie Popcorn", "Fairy Floss", "Cotton Candy"],
-      "answer": 0
-    },
-    {
-      "book": "Fairylight Friends",
-      "question": "What snack did Pip love at Full Moon Fairy Fest?",
-      "options": ["Fairy Floss", "Bubble Puffs", "Pixie Popcorn", "Donuts"],
-      "answer": 0
-    },
-    {
-      "book": "Fairylight Friends",
-      "question": "What happened to the snowflakes in the teapot?",
-      "options": ["Got warm and melted", "Stayed frozen", "Turned into ice", "Disappeared"],
-      "answer": 0
-    },
-    {
-      "book": "Fairylight Friends",
-      "question": "What did Ruby knit for winter?",
-      "options": ["Hats and mittens", "Scarves and blankets", "Coats", "Socks"],
-      "answer": 0
-    },
-    {
-      "book": "Fairylight Friends",
-      "question": "The school shone like a ______ during the snowstorm.",
-      "options": ["lighthouse", "star", "firework", "sun"],
+      "question": "What instrument do the fairies play during their nighttime celebrations?",
+      "options": ["Tiny wooden flutes and bell chimes", "Loud brass trumpets", "Electric guitars", "Heavy drums"],
       "answer": 0
     },
 
     {
       "book": "Hello, Hedgehog!",
-      "question": "Where did Hedgehog find his bike helmet?",
-      "options": ["On the seat of my bike", "Under my bed", "In the closet", "In the freezer"],
+      "question": "What is on Hedgehog's back to protect him from danger?",
+      "options": ["Sharp, spiky quills", "A hard turtle shell", "Soft fluffy wool", "Smooth colorful feathers"],
       "answer": 0
     },
     {
       "book": "Hello, Hedgehog!",
-      "question": "What did Harry bring for swimming?",
-      "options": ["Sandals, towel, and goggles", "Map and coin", "Ball and stone", "Only a float"],
+      "question": "How does Hedgehog feel when he has to speak in front of others?",
+      "options": ["A bit nervous and shy", "Overly confident and loud", "Furious and grumpy", "Extremely bored"],
       "answer": 0
     },
     {
       "book": "Hello, Hedgehog!",
-      "question": "In 'Dive for Treasure', what did Hedgehog find underwater?",
-      "options": ["Stone", "Coin", "Key", "Shell"],
+      "question": "What shape does Hedgehog curl into when he is startled or scared?",
+      "options": ["A tight, spiky round ball", "A flat pancake", "A square box", "A long thin line"],
       "answer": 0
     },
     {
       "book": "Hello, Hedgehog!",
-      "question": "In 'Dive for Treasure', what did Harry find underwater?",
-      "options": ["Coin", "Stone", "Chest", "Watch"],
+      "question": "Who encourages Hedgehog to try out the big playground slide?",
+      "options": ["His cheerful best friend Harry", "The playground monitor", "His older brother", "A squirrel"],
       "answer": 0
     },
     {
       "book": "Hello, Hedgehog!",
-      "question": "What is the name of Hedgehog's sleeping buddy?",
-      "options": ["Larry", "Simon", "Harry", "Teddy"],
-      "answer": 0
-    },
-    {
-      "book": "Hello, Hedgehog!",
-      "question": "What is the name of Harry's sleeping buddy?",
-      "options": ["Simon", "Larry", "Waffles", "Noodles"],
-      "answer": 0
-    },
-    {
-      "book": "Hello, Hedgehog!",
-      "question": "Harry had a sleepover at Hedgehog's house.",
+      "question": "True or False: Hedgehog loves cozy snacks and warm cups of milk.",
       "options": ["True", "False"],
       "answer": 0
     },
     {
       "book": "Hello, Hedgehog!",
-      "question": "Harry cannot sleep without his teddy bear.",
+      "question": "What kind of weather does Hedgehog enjoy the most for walking outside?",
+      "options": ["Crisp autumn days with crunchy leaves", "Heavy hailstorms", "Blazing hot sunny days", "Freezing blizzards"],
+      "answer": 0
+    },
+    {
+      "book": "Hello, Hedgehog!",
+      "question": "What happens when someone tries to give Hedgehog a sudden hug?",
+      "options": ["They have to be careful with his prickly quills!", "He sneezes loudly", "He falls asleep immediately", "He runs into a lake"],
+      "answer": 0
+    },
+    {
+      "book": "Hello, Hedgehog!",
+      "question": "True or False: Hedgehog discovers that being brave doesn't mean you're never scared.",
       "options": ["True", "False"],
       "answer": 0
     },
     {
       "book": "Hello, Hedgehog!",
-      "question": "Simon is Hedgehog's sleeping buddy.",
-      "options": ["True", "False"],
-      "answer": 1
-    },
-    {
-      "book": "Hello, Hedgehog!",
-      "question": "Harry doesn't want to go to the doctor at first.",
-      "options": ["True", "False"],
+      "question": "What does Hedgehog like to collect along the forest path?",
+      "options": ["Colorful autumn leaves and shiny acorns", "Old bottle caps", "Sharp pebbles", "Bird feathers"],
       "answer": 0
     },
     {
       "book": "Hello, Hedgehog!",
-      "question": "Hedgehog has a checkup today.",
-      "options": ["True", "False"],
-      "answer": 1
-    },
-    {
-      "book": "Hello, Hedgehog!",
-      "question": "Hedgehog gave Harry a pretend shot.",
-      "options": ["True", "False"],
-      "answer": 0
-    },
-    {
-      "book": "Hello, Hedgehog!",
-      "question": "Harry was very brave at the checkup, so he got a sticker.",
-      "options": ["True", "False"],
+      "question": "At the end of the school day, how does Hedgehog feel about making new friends?",
+      "options": ["Happy and proud of himself", "Still wishing he stayed home", "Tired of everyone", "Afraid to come back"],
       "answer": 0
     },
 
     {
       "book": "Princess Truly",
-      "question": "Who has rainbow power?",
-      "options": ["Princess Truly", "Lizzie", "May", "Noodles"],
+      "question": "What magical superpower do Princess Truly's curls possess?",
+      "options": ["They can sparkle and transform into anything she imagines", "They can shoot lasers", "They turn into ice", "They glow in the dark only"],
       "answer": 0
     },
     {
       "book": "Princess Truly",
-      "question": "Who planned a birthday party for kitty Waffles?",
-      "options": ["Lizzie", "Princess Truly", "May", "Ty"],
+      "question": "Who is Princess Truly's adorable four-legged companion?",
+      "options": ["Sir Noodles the dog", "Bub the pug", "Rusty the cat", "Barnaby the bear"],
       "answer": 0
     },
     {
       "book": "Princess Truly",
-      "question": "Who is a SUPER pug?",
-      "options": ["Noodles", "Waffles", "Lemon", "Harry"],
+      "question": "What is Princess Truly's motto whenever facing a tough challenge?",
+      "options": ["'I can do anything with confidence and kindness!'", "'Wait for someone to help!'", "'Give up and try tomorrow!'", "'Ask a knight to do it!'"],
       "answer": 0
     },
     {
       "book": "Princess Truly",
-      "question": "What does the birthday cake for Waffles look like?",
-      "options": ["Fish", "Balloon", "Sofa", "Bone"],
+      "question": "Where does Princess Truly travel to explore with her magical hair?",
+      "options": ["Outer space and deep ocean depths", "Just the backyard porch", "Only the shopping mall", "Inside a dark closet"],
       "answer": 0
     },
     {
       "book": "Princess Truly",
-      "question": "How old is Waffles?",
-      "options": ["One", "Two", "Three", "Four"],
-      "answer": 0
-    },
-    {
-      "book": "Princess Truly",
-      "question": "Princess Truly builds lots of new things with old things she has found.",
+      "question": "True or False: Princess Truly uses her powers to help people and solve problems.",
       "options": ["True", "False"],
       "answer": 0
     },
     {
       "book": "Princess Truly",
-      "question": "The Brushy-Brush Machine makes our hands clean.",
+      "question": "What does Princess Truly build when they need to cross a wide canyon?",
+      "options": ["A glittering rainbow bridge", "A wooden catapult", "A hot air balloon", "A giant rope ladder"],
+      "answer": 0
+    },
+    {
+      "book": "Princess Truly",
+      "question": "When Sir Noodles gets stuck in a tall tree, how does Truly rescue him?",
+      "options": ["She climbs up courageously and uses her magic curls to cradle him down", "She calls the fire station", "She cuts the tree down", "She tells him to jump"],
+      "answer": 0
+    },
+    {
+      "book": "Princess Truly",
+      "question": "True or False: Truly believes that true strength comes from your own heart.",
       "options": ["True", "False"],
-      "answer": 1
-    },
-    {
-      "book": "Princess Truly",
-      "question": "Princess Truly builds a super cool racer for Noodles.",
-      "options": ["True", "False"],
-      "answer": 1
-    },
-    {
-      "book": "Princess Truly",
-      "question": "Princess Truly adds a propeller to make Ty's bike fly.",
-      "options": ["True", "False"],
       "answer": 0
     },
     {
       "book": "Princess Truly",
-      "question": "What animal is Princess Truly afraid of when she has hiccups?",
-      "options": ["A bear (cub)", "Lizards", "Snakes", "Big bugs"],
+      "question": "What kind of superhero costume does Truly make for Sir Noodles?",
+      "options": ["A sparkling cape with a little golden badge", "A giant iron suit", "A heavy pirate hat", "A pair of sunglasses"],
       "answer": 0
     },
     {
       "book": "Princess Truly",
-      "question": "What was the scary night shadow by the tent actually?",
-      "options": ["A big frog", "A bear", "A monster", "A tree"],
-      "answer": 0
-    },
-    {
-      "book": "Princess Truly",
-      "question": "What's the name of Princess Truly's pet?",
-      "options": ["Sir Noodles", "Waffles", "Lemon", "Scratch"],
-      "answer": 0
-    },
-    {
-      "book": "Princess Truly",
-      "question": "What's the name of Lizzie's pet?",
-      "options": ["Waffles", "Sir Noodles", "Lemon", "Sniff"],
-      "answer": 0
-    },
-    {
-      "book": "Princess Truly",
-      "question": "What's the name of May's pet?",
-      "options": ["Lemon", "Waffles", "Sir Noodles", "Harry"],
-      "answer": 0
-    },
-    {
-      "book": "Princess Truly",
-      "question": "What is the name of their clubhouse?",
-      "options": ["Rainbow Clubhouse", "Super Clubhouse", "Princess Castle", "Friendship Club"],
-      "answer": 0
-    },
-    {
-      "book": "Princess Truly",
-      "question": "What does the welcome sign say at the clubhouse?",
-      "options": ["Everyone is Welcome", "Friends Only", "No Pets Allowed", "Super Girls"],
+      "question": "What message does Princess Truly want to share with every child reading?",
+      "options": ["You are smart, brave, and capable of wonderful things!", "Only princesses can be leaders", "Superpowers are real", "Never leave your castle"],
       "answer": 0
     },
 
     {
       "book": "Unicorn and Yeti",
-      "question": "Yeti is good at kicking the ball.",
+      "question": "What special ability does Unicorn have at the tip of her horn?",
+      "options": ["She can make things sparkle and glow with magic", "She can freeze anything solid", "She shoots thunderbolts", "She makes rain fall"],
+      "answer": 0
+    },
+    {
+      "book": "Unicorn and Yeti",
+      "question": "What is Yeti's favorite treat to enjoy on cold snowy days?",
+      "options": ["Hot cocoa with giant fluffy marshmallows", "Spicy tomato soup", "Cold green salad", "Crunchy carrot sticks"],
+      "answer": 0
+    },
+    {
+      "book": "Unicorn and Yeti",
+      "question": "How are Unicorn and Yeti completely different in personality and looks?",
+      "options": ["Unicorn is graceful and sparkly, while Yeti is big, fluffy, and clumsy", "They are identical twins", "One likes hot sun, one hates winter", "They don't like playing"],
+      "answer": 0
+    },
+    {
+      "book": "Unicorn and Yeti",
+      "question": "What fun outdoor sport do Unicorn and Yeti love doing on snowy peaks?",
+      "options": ["Ice skating and building whimsical snow sculptures", "Playing baseball in mud", "Surfing ocean waves", "Riding roller coasters"],
+      "answer": 0
+    },
+    {
+      "book": "Unicorn and Yeti",
+      "question": "True or False: Even though they are opposites, they are best friends forever.",
       "options": ["True", "False"],
       "answer": 0
     },
     {
       "book": "Unicorn and Yeti",
-      "question": "Unicorn is good at kicking the ball.",
-      "options": ["True", "False"],
-      "answer": 1
-    },
-    {
-      "book": "Unicorn and Yeti",
-      "question": "The ball becomes a ring because there's a hole in it.",
-      "options": ["True", "False"],
+      "question": "What does Yeti do when Unicorn's hooves slip on slick ice?",
+      "options": ["Catches her gently in his big fluffy arms", "Runs away scared", "Slips and falls too", "Laughs loudly"],
       "answer": 0
     },
     {
       "book": "Unicorn and Yeti",
-      "question": "Why is throwing snowballs not easy for Unicorn?",
-      "options": ["Because Unicorn has hooves, not hands", "Because Unicorn doesn't like snow", "Because of the horn", "Because it's cold"],
+      "question": "What does Unicorn do when Yeti feels too cold on a windy mountain peak?",
+      "options": ["Warms him with a soft, glowing rainbow light from her horn", "Brings him an umbrella", "Tells him to run faster", "Builds a snowman"],
       "answer": 0
     },
     {
       "book": "Unicorn and Yeti",
-      "question": "What makes Yeti look fancy in the end?",
-      "options": ["A super fancy hat", "Flowery fur", "Curly fur", "Rainbow fur"],
-      "answer": 0
-    },
-    {
-      "book": "Unicorn and Yeti",
-      "question": "Yeti really likes ______ while Unicorn really likes peaches.",
-      "options": ["ice cream", "soup", "hot cocoa", "snowball"],
-      "answer": 0
-    },
-    {
-      "book": "Unicorn and Yeti",
-      "question": "Where did Unicorn and Yeti put the sparkly rock?",
-      "options": ["On the top of the mountain", "In the cloud", "In the cave", "Under the tree"],
-      "answer": 0
-    },
-    {
-      "book": "Unicorn and Yeti",
-      "question": "What was the last thing Yeti knitted for Unicorn to keep warm?",
-      "options": ["A blanket", "A hat", "Mittens", "A scarf"],
-      "answer": 0
-    },
-    {
-      "book": "Unicorn and Yeti",
-      "question": "Unicorn feels happy in the forest in the beginning.",
+      "question": "True or False: Unicorn gets frustrated because Yeti is not as neat as her.",
       "options": ["True", "False"],
       "answer": 1
     },
     {
       "book": "Unicorn and Yeti",
-      "question": "Why does Unicorn finally think the forest is amazing?",
-      "options": ["Because the sun comes out", "Because it started snowing", "Because of the tea", "Because they ran away"],
+      "question": "What funny creature joins Unicorn and Yeti on their snowball adventures?",
+      "options": ["A cheerful little snow squirrel", "A grumpy mountain goat", "A flying parrot", "A polar bear cub"],
+      "answer": 0
+    },
+    {
+      "book": "Unicorn and Yeti",
+      "question": "What do Unicorn and Yeti share right before going to sleep under the starlight?",
+      "options": ["A plate of yummy star cookies and warm stories", "A pillow fight", "A puzzle book", "A map of the kingdom"],
       "answer": 0
     }
   ],
-
   "matching": [
     {
       "book": "Best Buddies",
       "pairs": [
-        {"item": "sit", "match": "坐下"},
-        {"item": "wall", "match": "牆壁"},
-        {"item": "spell", "match": "咒語/拼字"},
-        {"item": "bark", "match": "吠叫"},
-        {"item": "run", "match": "奔跑"}
+        { "item": "buddy", "match": "a close and loyal friend" },
+        { "item": "share", "match": "giving part of something to others" },
+        { "item": "adventure", "match": "an exciting journey or quest" },
+        { "item": "hug", "match": "holding someone close with warmth" }
       ]
     },
     {
       "book": "Best Buddies",
       "pairs": [
-        {"item": "storm", "match": "暴風雨"},
-        {"item": "hide", "match": "躲藏"},
-        {"item": "flash", "match": "閃電"},
-        {"item": "under", "match": "在...下面"},
-        {"item": "brave", "match": "勇敢的"}
+        { "item": "cheer", "match": "shouting joyfully to encourage friends" },
+        { "item": "promise", "match": "a statement that you will definitely do it" },
+        { "item": "smile", "match": "a happy facial expression with teeth showing" },
+        { "item": "together", "match": "with each other in the same place" }
       ]
     },
     {
       "book": "Best Buddies",
       "pairs": [
-        {"item": "buddy", "match": "夥伴/死黨"},
-        {"item": "sniff", "match": "嗅聞"},
-        {"item": "scratch", "match": "抓癢/刮"},
-        {"item": "roll", "match": "翻滾"},
-        {"item": "spin", "match": "旋轉"}
+        { "item": "secret", "match": "something kept hidden from others" },
+        { "item": "protect", "match": "keeping someone safe from harm" },
+        { "item": "brave", "match": "ready to face danger without fear" },
+        { "item": "laugh", "match": "making sounds when amused" }
+      ]
+    },
+    {
+      "book": "Best Buddies",
+      "pairs": [
+        { "item": "trust", "match": "believing in someone completely" },
+        { "item": "listen", "match": "paying close attention to sounds or words" },
+        { "item": "kindness", "match": "the quality of being gentle and caring" },
+        { "item": "playful", "match": "fond of games and amusement" }
       ]
     },
 
     {
       "book": "Bumble and Bee",
       "pairs": [
-        {"item": "bake", "match": "烘烤"},
-        {"item": "forget", "match": "忘記"},
-        {"item": "get", "match": "取得/拿取"},
-        {"item": "butter", "match": "奶油"},
-        {"item": "pie", "match": "派"}
+        { "item": "buzz", "match": "low humming sound made by bees" },
+        { "item": "nectar", "match": "sweet liquid collected from flowers" },
+        { "item": "nap", "match": "a short sleep taken during the day" },
+        { "item": "lily pad", "match": "floating leaf of a water lily in a pond" }
       ]
     },
     {
       "book": "Bumble and Bee",
       "pairs": [
-        {"item": "winter", "match": "冬天"},
-        {"item": "room", "match": "房間/空間"},
-        {"item": "friend", "match": "朋友"},
-        {"item": "favorite", "match": "最愛的"},
-        {"item": "practice", "match": "練習"}
+        { "item": "garden", "match": "piece of ground for growing flowers" },
+        { "item": "wings", "match": "body parts used to fly through air" },
+        { "item": "striped", "match": "pattern marked with colored bands" },
+        { "item": "hop", "match": "jumping on both feet like a frog" }
       ]
     },
     {
       "book": "Bumble and Bee",
       "pairs": [
-        {"item": "pirate", "match": "海盜"},
-        {"item": "key", "match": "鑰匙"},
-        {"item": "map", "match": "地圖"},
-        {"item": "ice cream", "match": "冰淇淋"},
-        {"item": "treasure", "match": "寶藏"}
+        { "item": "noisy", "match": "making a lot of loud sounds" },
+        { "item": "peaceful", "match": "calm, quiet, and free from disturbance" },
+        { "item": "annoyed", "match": "slightly angry or irritated" },
+        { "item": "pollen", "match": "fine yellow powder produced by flowers" }
       ]
     },
     {
       "book": "Bumble and Bee",
       "pairs": [
-        {"item": "help", "match": "幫忙"},
-        {"item": "ask", "match": "詢問"},
-        {"item": "scare", "match": "嚇"},
-        {"item": "bear", "match": "熊"},
-        {"item": "surprise", "match": "驚喜"}
-      ]
-    },
-    {
-      "book": "Bumble and Bee",
-      "pairs": [
-        {"item": "dance", "match": "舞蹈"},
-        {"item": "music", "match": "音樂"},
-        {"item": "right", "match": "右邊"},
-        {"item": "left", "match": "左邊"},
-        {"item": "world", "match": "世界"}
+        { "item": "hive", "match": "structure where bees live together" },
+        { "item": "splash", "match": "striking a liquid surface causing drops" },
+        { "item": "pond", "match": "small body of still water" },
+        { "item": "croak", "match": "deep rough sound made by a frog" }
       ]
     },
 
     {
       "book": "Fairylight Friends",
       "pairs": [
-        {"item": "Who baked a cake?", "match": "Ruby"},
-        {"item": "Who loved growing things?", "match": "Iris"},
-        {"item": "Who saw a lightning bolt?", "match": "Miss Goldwing"},
-        {"item": "Who found a party?", "match": "Pip"}
+        { "item": "sparkle", "match": "shining brightly with flashes of light" },
+        { "item": "magic", "match": "mysterious power used to do wonders" },
+        { "item": "glow", "match": "giving out steady and warm light" },
+        { "item": "wings", "match": "delicate organs used by fairies to fly" }
       ]
     },
     {
       "book": "Fairylight Friends",
       "pairs": [
-        {"item": "field trip", "match": "校外教學"},
-        {"item": "path", "match": "小徑"},
-        {"item": "music", "match": "音樂"},
-        {"item": "full moon", "match": "滿月"},
-        {"item": "cloud", "match": "雲朵"}
+        { "item": "forest", "match": "large area dominated by trees" },
+        { "item": "blossom", "match": "a flower or mass of flowers on a tree" },
+        { "item": "starlight", "match": "light coming from distant night stars" },
+        { "item": "dew", "match": "tiny drops of water on morning grass" }
       ]
     },
     {
       "book": "Fairylight Friends",
       "pairs": [
-        {"item": "paintbrush", "match": "水彩筆"},
-        {"item": "coin", "match": "硬幣"},
-        {"item": "pin", "match": "保齡球瓶"},
-        {"item": "bowling", "match": "保齡球"},
-        {"item": "prize", "match": "獎品"}
+        { "item": "lantern", "match": "portable lamp with a protective case" },
+        { "item": "whisper", "match": "speaking softly using breath only" },
+        { "item": "twilight", "match": "soft glowing light from sky after sunset" },
+        { "item": "toadstool", "match": "round umbrella-shaped fungus in woods" }
+      ]
+    },
+    {
+      "book": "Fairylight Friends",
+      "pairs": [
+        { "item": "potion", "match": "magical liquid mixture with special effects" },
+        { "item": "firefly", "match": "soft-bodied beetle producing night light" },
+        { "item": "gentle", "match": "mild, kind, and tender manner" },
+        { "item": "flute", "match": "wind instrument producing high sweet notes" }
       ]
     },
 
     {
       "book": "Hello, Hedgehog!",
       "pairs": [
-        {"item": "wheel", "match": "輪子"},
-        {"item": "handlebar", "match": "單車把手"},
-        {"item": "bell", "match": "鈴鐺"},
-        {"item": "seat", "match": "座位"},
-        {"item": "basket", "match": "籃子"}
+        { "item": "quill", "match": "stiff sharp spine covering the back" },
+        { "item": "shy", "match": "feeling nervous and hesitant around others" },
+        { "item": "curl", "match": "forming into a curved spherical shape" },
+        { "item": "prickly", "match": "covered with small sharp points" }
       ]
     },
     {
       "book": "Hello, Hedgehog!",
       "pairs": [
-        {"item": "Are there snacks at your house?", "match": "Harry"},
-        {"item": "So I brought everything.", "match": "Hedgehog"},
-        {"item": "What snacks should I bring?", "match": "Hedgehog"},
-        {"item": "And for good friends.", "match": "Harry"}
+        { "item": "slide", "match": "smooth sloping chute on playgrounds" },
+        { "item": "courage", "match": "ability to do something that frightens you" },
+        { "item": "acorn", "match": "smooth oval nut of an oak tree" },
+        { "item": "burrow", "match": "hole or tunnel dug into ground by animals" }
       ]
     },
     {
       "book": "Hello, Hedgehog!",
       "pairs": [
-        {"item": "swim", "match": "游泳"},
-        {"item": "dive", "match": "潛水"},
-        {"item": "stone", "match": "石頭"},
-        {"item": "nose", "match": "鼻子"},
-        {"item": "treasure", "match": "寶藏"}
+        { "item": "crunch", "match": "sound made by walking over dry autumn leaves" },
+        { "item": "cozy", "match": "giving a feeling of comfort and warmth" },
+        { "item": "snout", "match": "projecting nose and mouth of an animal" },
+        { "item": "scamper", "match": "running with quick light steps" }
       ]
     },
     {
       "book": "Hello, Hedgehog!",
       "pairs": [
-        {"item": "bug spray", "match": "防蚊液"},
-        {"item": "sleeping bag", "match": "睡袋"},
-        {"item": "tent", "match": "帳篷"},
-        {"item": "sleepover", "match": "過夜派對"},
-        {"item": "flashlight", "match": "手電筒"}
+        { "item": "nervous", "match": "easily agitated or apprehensive" },
+        { "item": "safety", "match": "the condition of being protected from danger" },
+        { "item": "snack", "match": "small amount of food eaten between meals" },
+        { "item": "gentle", "match": "having a mild, considerate temperament" }
       ]
     },
 
     {
       "book": "Princess Truly",
       "pairs": [
-        {"item": "princess", "match": "公主"},
-        {"item": "rainbow", "match": "彩虹"},
-        {"item": "sidekick", "match": "跟班/搭檔"},
-        {"item": "cape", "match": "披風"},
-        {"item": "hero", "match": "英雄"}
+        { "item": "curls", "match": "spiral locks of hair with magical power" },
+        { "item": "crown", "match": "circular ornamental headdress worn by royalty" },
+        { "item": "hero", "match": "a person admired for great courage" },
+        { "item": "cape", "match": "sleeveless cloak fastened at the neck" }
       ]
     },
     {
       "book": "Princess Truly",
       "pairs": [
-        {"item": "ladder", "match": "梯子"},
-        {"item": "shake", "match": "搖動"},
-        {"item": "paint", "match": "油漆"},
-        {"item": "mop", "match": "拖地"},
-        {"item": "slip", "match": "滑倒"}
+        { "item": "confidence", "match": "firm belief in one's own abilities" },
+        { "item": "imagination", "match": "ability to form new ideas and images" },
+        { "item": "rescue", "match": "saving someone from dangerous situations" },
+        { "item": "companion", "match": "a person or animal one spends time with" }
       ]
     },
     {
       "book": "Princess Truly",
       "pairs": [
-        {"item": "Lizards", "match": "Do not scare me"},
-        {"item": "Big bugs", "match": "I think they are neat"},
-        {"item": "Snakes", "match": "Not afraid of them"},
-        {"item": "Spiders", "match": "I think they are sweet"},
-        {"item": "Bear cub", "match": "Princess Truly is afraid"}
+        { "item": "space", "match": "physical universe beyond earth's atmosphere" },
+        { "item": "canyon", "match": "deep gorge typically with river flowing" },
+        { "item": "rainbow", "match": "multicolored arch in sky after rainfall" },
+        { "item": "badge", "match": "emblem worn as a mark of office or honor" }
+      ]
+    },
+    {
+      "book": "Princess Truly",
+      "pairs": [
+        { "item": "leader", "match": "person who leads or commands a group" },
+        { "item": "cradle", "match": "holding gently and protectively" },
+        { "item": "glitter", "match": "tiny pieces of sparkling material" },
+        { "item": "bravery", "match": "courageous behavior and character" }
       ]
     },
 
     {
       "book": "Unicorn and Yeti",
       "pairs": [
-        {"item": "fancy", "match": "精緻花俏的"},
-        {"item": "born", "match": "天生的"},
-        {"item": "amazing", "match": "驚人的"},
-        {"item": "brush", "match": "刷洗/梳毛"},
-        {"item": "magic", "match": "魔法"}
+        { "item": "horn", "match": "pointed spiraled bone on Unicorn's head" },
+        { "item": "fluffy", "match": "soft and voluminous like fresh snow" },
+        { "item": "snowball", "match": "ball formed by squeezing snow together" },
+        { "item": "frosty", "match": "extremely cold with thin white ice layer" }
       ]
     },
     {
       "book": "Unicorn and Yeti",
       "pairs": [
-        {"item": "hard", "match": "困難的"},
-        {"item": "snowball", "match": "雪球"},
-        {"item": "throw", "match": "丟擲"},
-        {"item": "fight", "match": "打架/對抗"},
-        {"item": "soup", "match": "熱湯"}
+        { "item": "marshmallow", "match": "spongy sweet confectionery" },
+        { "item": "graceful", "match": "showing elegance and beauty of movement" },
+        { "item": "clumsy", "match": "awkward in movement or in handling things" },
+        { "item": "ice skate", "match": "boot with a blade attached for gliding" }
       ]
     },
     {
       "book": "Unicorn and Yeti",
       "pairs": [
-        {"item": "rock", "match": "岩石"},
-        {"item": "fast", "match": "速度快的"},
-        {"item": "run", "match": "跑步"},
-        {"item": "race", "match": "比賽"},
-        {"item": "team", "match": "團隊"}
+        { "item": "blizzard", "match": "severe snowstorm with very high winds" },
+        { "item": "sculpture", "match": "three-dimensional work of art" },
+        { "item": "hoof", "match": "horny part of the foot of ungulate animals" },
+        { "item": "opposites", "match": "things completely different from each other" }
       ]
     },
     {
       "book": "Unicorn and Yeti",
       "pairs": [
-        {"item": "ice cream", "match": "冰淇淋"},
-        {"item": "peaches", "match": "水蜜桃"},
-        {"item": "icky", "match": "黏膩討厭的"},
-        {"item": "boring", "match": "無聊的"},
-        {"item": "weird", "match": "怪異的"}
+        { "item": "whimsical", "match": "playfully quaint or fanciful in appeal" },
+        { "item": "starlight", "match": "light emitted by stars in the night sky" },
+        { "item": "mountain", "match": "large natural elevation of the earth surface" },
+        { "item": "slip", "match": "losing one's footing and sliding accidentally" }
       ]
     }
   ],
-
   "memory": [
     {
       "book": "Best Buddies",
-      "cards": ["yummy", "high", "short", "pie"]
+      "pairs": [
+        { "en": "buddy", "zh": "好夥伴" },
+        { "en": "share", "zh": "分享" },
+        { "en": "smile", "zh": "微笑" },
+        { "en": "cheer", "zh": "歡呼鼓勵" }
+      ]
     },
     {
       "book": "Best Buddies",
-      "cards": ["box", "pull", "bite", "yard"]
+      "pairs": [
+        { "en": "hug", "zh": "擁抱" },
+        { "en": "adventure", "zh": "冒險" },
+        { "en": "protect", "zh": "保護" },
+        { "en": "promise", "zh": "承諾" }
+      ]
     },
     {
       "book": "Best Buddies",
-      "cards": ["rain", "splash", "muddy", "wet"]
+      "pairs": [
+        { "en": "together", "zh": "在一起" },
+        { "en": "brave", "zh": "勇敢的" },
+        { "en": "trust", "zh": "信任" },
+        { "en": "kindness", "zh": "善良" }
+      ]
     },
     {
       "book": "Best Buddies",
-      "cards": ["string", "balloon", "climb", "loud"]
-    },
-    {
-      "book": "Best Buddies",
-      "cards": ["duck", "tug", "save", "toy"]
-    },
-
-    {
-      "book": "Bumble and Bee",
-      "cards": ["paint", "jump", "wish", "pumpkin"]
-    },
-    {
-      "book": "Bumble and Bee",
-      "cards": ["butter", "apple", "bake", "pie"]
-    },
-    {
-      "book": "Bumble and Bee",
-      "cards": ["winter", "room", "friend", "marshmallow"]
-    },
-    {
-      "book": "Bumble and Bee",
-      "cards": ["pirate", "key", "map", "treasure"]
-    },
-    {
-      "book": "Bumble and Bee",
-      "cards": ["hide", "read", "find", "sleep"]
-    },
-    {
-      "book": "Bumble and Bee",
-      "cards": ["smile", "picture", "count", "try"]
+      "pairs": [
+        { "en": "secret", "zh": "秘密" },
+        { "en": "listen", "zh": "聆聽" },
+        { "en": "playful", "zh": "愛玩的" },
+        { "en": "laugh", "zh": "大笑" }
+      ]
     },
 
     {
+      "book": "Bumble and Bee",
+      "pairs": [
+        { "en": "buzz", "zh": "嗡嗡叫" },
+        { "en": "honey", "zh": "蜂蜜" },
+        { "en": "garden", "zh": "花園" },
+        { "en": "flower", "zh": "花朵" }
+      ]
+    },
+    {
+      "book": "Bumble and Bee",
+      "pairs": [
+        { "en": "wings", "zh": "翅膀" },
+        { "en": "nectar", "zh": "花蜜" },
+        { "en": "striped", "zh": "有條紋的" },
+        { "en": "hop", "zh": "跳躍" }
+      ]
+    },
+    {
+      "book": "Bumble and Bee",
+      "pairs": [
+        { "en": "nap", "zh": "小睡午睡" },
+        { "en": "pond", "zh": "池塘" },
+        { "en": "noisy", "zh": "吵鬧的" },
+        { "en": "peaceful", "zh": "平靜寧靜" }
+      ]
+    },
+    {
+      "book": "Bumble and Bee",
+      "pairs": [
+        { "en": "hive", "zh": "蜂巢" },
+        { "en": "splash", "zh": "濺水水花" },
+        { "en": "annoyed", "zh": "煩惱氣惱" },
+        { "en": "croak", "zh": "蛙鳴呱呱叫" }
+      ]
+    },
+
+    {
       "book": "Fairylight Friends",
-      "cards": ["rainbow", "flower", "wand", "magic"]
+      "pairs": [
+        { "en": "sparkle", "zh": "閃閃發亮" },
+        { "en": "magic", "zh": "魔法" },
+        { "en": "glow", "zh": "發光微光" },
+        { "en": "forest", "zh": "森林" }
+      ]
     },
     {
       "book": "Fairylight Friends",
-      "cards": ["batter", "oven", "flour", "cake"]
+      "pairs": [
+        { "en": "wings", "zh": "仙子翅膀" },
+        { "en": "starlight", "zh": "星光" },
+        { "en": "blossom", "zh": "盛開花朵" },
+        { "en": "dew", "zh": "清晨露水" }
+      ]
     },
     {
       "book": "Fairylight Friends",
-      "cards": ["petal", "soil", "seed", "water"]
+      "pairs": [
+        { "en": "lantern", "zh": "提燈燈籠" },
+        { "en": "twilight", "zh": "黃昏暮光" },
+        { "en": "whisper", "zh": "輕聲細語" },
+        { "en": "toadstool", "zh": "毒蕈菇傘" }
+      ]
     },
     {
       "book": "Fairylight Friends",
-      "cards": ["ticket", "short", "map", "gate"]
-    },
-    {
-      "book": "Fairylight Friends",
-      "cards": ["bowling", "strike", "pin", "prize"]
-    },
-    {
-      "book": "Fairylight Friends",
-      "cards": ["snowflake", "teapot", "melt", "warm"]
-    },
-    {
-      "book": "Fairylight Friends",
-      "cards": ["lighthouse", "firework", "shine", "snowstorm"]
+      "pairs": [
+        { "en": "potion", "zh": "魔法藥水" },
+        { "en": "firefly", "zh": "螢火蟲" },
+        { "en": "gentle", "zh": "溫柔和藹" },
+        { "en": "flute", "zh": "長笛笛子" }
+      ]
     },
 
     {
       "book": "Hello, Hedgehog!",
-      "cards": ["helmet", "bike", "closet", "freezer"]
+      "pairs": [
+        { "en": "hedgehog", "zh": "刺蝟" },
+        { "en": "quill", "zh": "刺毛硬刺" },
+        { "en": "shy", "zh": "害羞靦腆" },
+        { "en": "brave", "zh": "勇敢堅強" }
+      ]
     },
     {
       "book": "Hello, Hedgehog!",
-      "cards": ["grapes", "snack", "hungry", "tired"]
+      "pairs": [
+        { "en": "curl", "zh": "蜷縮捲起" },
+        { "en": "prickly", "zh": "帶刺多刺" },
+        { "en": "slide", "zh": "滑梯滑行" },
+        { "en": "courage", "zh": "勇氣膽量" }
+      ]
     },
     {
       "book": "Hello, Hedgehog!",
-      "cards": ["towel", "goggles", "sandals", "cool"]
+      "pairs": [
+        { "en": "acorn", "zh": "橡子橡果" },
+        { "en": "burrow", "zh": "地洞洞穴" },
+        { "en": "crunch", "zh": "踩碎嘎吱聲" },
+        { "en": "cozy", "zh": "舒適溫馨" }
+      ]
     },
     {
       "book": "Hello, Hedgehog!",
-      "cards": ["swim", "dive", "stone", "treasure"]
-    },
-    {
-      "book": "Hello, Hedgehog!",
-      "cards": ["teddy bear", "pillow", "blanket", "sleepover"]
-    },
-    {
-      "book": "Hello, Hedgehog!",
-      "cards": ["doctor", "checkup", "blocks", "shot"]
-    },
-    {
-      "book": "Hello, Hedgehog!",
-      "cards": ["tongue", "heart", "sticker", "brave"]
+      "pairs": [
+        { "en": "snout", "zh": "動物口鼻" },
+        { "en": "scamper", "zh": "蹦跳快跑" },
+        { "en": "safety", "zh": "安全保護" },
+        { "en": "snack", "zh": "小吃點心" }
+      ]
     },
 
     {
       "book": "Princess Truly",
-      "cards": ["princess", "boots", "cape", "hero"]
+      "pairs": [
+        { "en": "curls", "zh": "魔法捲髮" },
+        { "en": "crown", "zh": "璀璨皇冠" },
+        { "en": "power", "zh": "力量威力" },
+        { "en": "dream", "zh": "美好夢想" }
+      ]
     },
     {
       "book": "Princess Truly",
-      "cards": ["birthday", "candle", "fish", "cake"]
+      "pairs": [
+        { "en": "hero", "zh": "英雄偶像" },
+        { "en": "cape", "zh": "飄逸披風" },
+        { "en": "confidence", "zh": "自信心" },
+        { "en": "imagination", "zh": "想像力" }
+      ]
     },
     {
       "book": "Princess Truly",
-      "cards": ["robot", "tool", "race car", "build"]
+      "pairs": [
+        { "en": "rescue", "zh": "援救解救" },
+        { "en": "companion", "zh": "同伴夥伴" },
+        { "en": "canyon", "zh": "險峻峽谷" },
+        { "en": "rainbow", "zh": "彩虹天橋" }
+      ]
     },
     {
       "book": "Princess Truly",
-      "cards": ["camping", "tent", "waterfall", "dark"]
-    },
-    {
-      "book": "Princess Truly",
-      "cards": ["hiccup", "lizard", "spider", "bear cub"]
-    },
-    {
-      "book": "Princess Truly",
-      "cards": ["scooter", "parrot", "wing", "soccer"]
+      "pairs": [
+        { "en": "leader", "zh": "領袖領袖" },
+        { "en": "cradle", "zh": "搖籃抱護" },
+        { "en": "glitter", "zh": "燦爛閃耀" },
+        { "en": "bravery", "zh": "英勇氣魄" }
+      ]
     },
 
     {
       "book": "Unicorn and Yeti",
-      "cards": ["sparkles", "cold", "white", "horn"]
+      "pairs": [
+        { "en": "unicorn", "zh": "獨角獸" },
+        { "en": "snowball", "zh": "圓雪球" },
+        { "en": "horn", "zh": "神奇尖角" },
+        { "en": "fluffy", "zh": "蓬鬆絨毛" }
+      ]
     },
     {
       "book": "Unicorn and Yeti",
-      "cards": ["fancy", "born", "brush", "magic"]
+      "pairs": [
+        { "en": "frosty", "zh": "嚴寒冰霜" },
+        { "en": "marshmallow", "zh": "棉花糖" },
+        { "en": "graceful", "zh": "優雅端莊" },
+        { "en": "clumsy", "zh": "笨拙可愛" }
+      ]
     },
     {
       "book": "Unicorn and Yeti",
-      "cards": ["snowball", "fort", "throw", "soup"]
+      "pairs": [
+        { "en": "ice skate", "zh": "溜冰滑冰" },
+        { "en": "blizzard", "zh": "狂暴暴風雪" },
+        { "en": "sculpture", "zh": "冰雪雕像" },
+        { "en": "hoof", "zh": "獨角獸蹄" }
+      ]
     },
     {
       "book": "Unicorn and Yeti",
-      "cards": ["bounce", "kick", "ring", "ball"]
-    },
-    {
-      "book": "Unicorn and Yeti",
-      "cards": ["rock", "fast", "race", "team"]
-    },
-    {
-      "book": "Unicorn and Yeti",
-      "cards": ["slippery", "slide", "ice skates", "hot cocoa"]
-    },
-    {
-      "book": "Unicorn and Yeti",
-      "cards": ["peaches", "ice cream", "icky", "weird"]
-    },
-    {
-      "book": "Unicorn and Yeti",
-      "cards": ["mittens", "scarf", "icicles", "knit"]
+      "pairs": [
+        { "en": "opposites", "zh": "完全相反" },
+        { "en": "whimsical", "zh": "古靈精怪" },
+        { "en": "mountain", "zh": "白雪高山" },
+        { "en": "slip", "zh": "滑倒打滑" }
+      ]
     }
   ]
 }

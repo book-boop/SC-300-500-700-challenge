@@ -138,7 +138,7 @@
       display: none;
     }
 
-    /* 三階段進度狀態 */
+    /* 三階段進度狀態 (順序已換：Match -> Memory -> QA) */
     .stage-bar {
       display: flex;
       justify-content: space-between;
@@ -166,34 +166,6 @@
       align-items: center;
       text-align: center;
     }
-
-    /* 單選對答 (QA) */
-    .quiz-box { width: 100%; text-align: left; }
-    .book-tag {
-      display: inline-block;
-      background: #b3e5fc;
-      color: #01579b;
-      padding: 4px 12px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-    .quiz-question { font-size: 19px; font-weight: bold; margin-bottom: 20px; color: #222; line-height: 1.5; }
-    .options-grid { display: flex; flex-direction: column; gap: 12px; }
-    .option-btn {
-      padding: 14px 18px;
-      background: #ffffff;
-      border: 2px solid #e0e0e0;
-      border-radius: 12px;
-      font-size: 16px;
-      text-align: left;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .option-btn:hover { background: #e1f5fe; border-color: #0288d1; }
-    .option-btn.correct { background: #c8e6c9 !important; border-color: #4caf50 !important; color: #2e7d32; }
-    .option-btn.wrong { background: #ffcdd2 !important; border-color: #f44336 !important; color: #c62828; }
 
     /* 連連看 (Matching) */
     .match-container { display: flex; justify-content: space-between; width: 100%; gap: 20px; }
@@ -252,6 +224,34 @@
       cursor: default;
       transform: scale(1);
     }
+
+    /* 單選對答 (QA) */
+    .quiz-box { width: 100%; text-align: left; }
+    .book-tag {
+      display: inline-block;
+      background: #b3e5fc;
+      color: #01579b;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .quiz-question { font-size: 19px; font-weight: bold; margin-bottom: 20px; color: #222; line-height: 1.5; }
+    .options-grid { display: flex; flex-direction: column; gap: 12px; }
+    .option-btn {
+      padding: 14px 18px;
+      background: #ffffff;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .option-btn:hover { background: #e1f5fe; border-color: #0288d1; }
+    .option-btn.correct { background: #c8e6c9 !important; border-color: #4caf50 !important; color: #2e7d32; }
+    .option-btn.wrong { background: #ffcdd2 !important; border-color: #f44336 !important; color: #c62828; }
 
     /* 表單區塊 */
     .form-box {
@@ -373,11 +373,11 @@
 
     <!-- 畫面 2：遊戲進行面板 -->
     <div id="game-screen">
-      <!-- 三階段進度狀態 -->
+      <!-- 三階段進度狀態 (順序已換：Match -> Memory -> QA) -->
       <div class="stage-bar">
-        <span class="stage-step" id="step-qa">階段 1：單選對答 (QA)</span>
-        <span class="stage-step" id="step-match">階段 2：連連看配對 (Matching)</span>
-        <span class="stage-step" id="step-memory">階段 3：翻牌對對碰 (Memory)</span>
+        <span class="stage-step" id="step-match">階段 1：連連看配對 (Matching)</span>
+        <span class="stage-step" id="step-memory">階段 2：翻牌對對碰 (Memory)</span>
+        <span class="stage-step" id="step-qa">階段 3：單選對答 (QA)</span>
       </div>
 
       <!-- 遊戲主舞台 -->
@@ -414,10 +414,10 @@
     let rawData = null;
     let selectedBooks = [];
 
-    let currentSession = { qa: [], match: [], memory: [] };
-    let currentPhase = 'qa';
+    let currentSession = { match: [], memory: [], qa: [] };
+    let currentPhase = 'match'; // 初始階段改為 match
     let currentItemIdx = 0;
-    let score = { qaCorrect: 0, qaTotal: 0, matchDone: 0, memoryDone: 0 };
+    let score = { matchDone: 0, memoryDone: 0, qaCorrect: 0, qaTotal: 0 };
     let isFormSubmitted = false;
 
     // 讀取 500L 題庫
@@ -487,95 +487,47 @@
     function startNewGameSession() {
       const win = document.getElementById('game-window');
       isFormSubmitted = false;
-      const qaPool = rawData.qa.filter(q => selectedBooks.includes(q.book));
       const matchPool = rawData.matching.filter(m => selectedBooks.includes(m.book));
       const memPool = rawData.memory.filter(m => selectedBooks.includes(m.book));
+      const qaPool = rawData.qa.filter(q => selectedBooks.includes(q.book));
 
-      currentSession.qa = samplePool(qaPool, 5);
       currentSession.match = samplePool(matchPool, 5);
       currentSession.memory = samplePool(memPool, 5);
+      currentSession.qa = samplePool(qaPool, 5);
 
       score = {
-        qaCorrect: 0,
-        qaTotal: currentSession.qa.length,
         matchDone: 0,
-        memoryDone: 0
+        memoryDone: 0,
+        qaCorrect: 0,
+        qaTotal: currentSession.qa.length
       };
 
-      currentPhase = 'qa';
+      currentPhase = 'match';
       currentItemIdx = 0;
       updateStageIndicators();
 
-      if (currentSession.qa.length > 0) {
-        renderQAQuestion();
-      } else if (currentSession.match.length > 0) {
-        currentPhase = 'match';
-        updateStageIndicators();
+      if (currentSession.match.length > 0) {
         renderMatchQuestion();
       } else if (currentSession.memory.length > 0) {
         currentPhase = 'memory';
         updateStageIndicators();
         renderMemoryQuestion();
+      } else if (currentSession.qa.length > 0) {
+        currentPhase = 'qa';
+        updateStageIndicators();
+        renderQAQuestion();
       } else {
         win.innerHTML = '<p>所選讀本目前無題目，請點擊上方「重選讀本」勾選其他書籍。</p>';
       }
     }
 
     function updateStageIndicators() {
-      document.getElementById('step-qa').className = `stage-step ${currentPhase === 'qa' ? 'current' : ''}`;
       document.getElementById('step-match').className = `stage-step ${currentPhase === 'match' ? 'current' : ''}`;
       document.getElementById('step-memory').className = `stage-step ${currentPhase === 'memory' ? 'current' : ''}`;
+      document.getElementById('step-qa').className = `stage-step ${currentPhase === 'qa' ? 'current' : ''}`;
     }
 
-    /* ---------------- 階段 1：單選對答 ---------------- */
-    function renderQAQuestion() {
-      const win = document.getElementById('game-window');
-      const q = currentSession.qa[currentItemIdx];
-      win.innerHTML = `
-        <div class="quiz-box">
-          <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} / ${currentSession.qa.length} 題</span>
-          <div class="quiz-question">${q.question}</div>
-          <div class="options-grid">
-            ${q.options.map((opt, i) => `
-              <button class="option-btn" onclick="submitQAAnswer(this, ${i}, ${q.answer})">${opt}</button>
-            `).join('')}
-          </div>
-        </div>
-      `;
-    }
-
-    function submitQAAnswer(btn, chosen, correct) {
-      const parent = btn.parentElement;
-      parent.querySelectorAll('.option-btn').forEach(b => b.style.pointerEvents = 'none');
-
-      if (chosen === correct) {
-        btn.classList.add('correct');
-        score.qaCorrect++;
-      } else {
-        btn.classList.add('wrong');
-        parent.querySelectorAll('.option-btn')[correct].classList.add('correct');
-      }
-
-      setTimeout(() => {
-        currentItemIdx++;
-        if (currentItemIdx < currentSession.qa.length) {
-          renderQAQuestion();
-        } else {
-          currentPhase = 'match';
-          currentItemIdx = 0;
-          updateStageIndicators();
-          if (currentSession.match.length > 0) {
-            renderMatchQuestion();
-          } else {
-            currentPhase = 'memory';
-            updateStageIndicators();
-            renderMemoryQuestion();
-          }
-        }
-      }, 1100);
-    }
-
-    /* ---------------- 階段 2：連連看配對 ---------------- */
+    /* ---------------- 階段 1：連連看配對 (Matching) ---------------- */
     let selLeft = null, selRight = null;
 
     function renderMatchQuestion() {
@@ -634,11 +586,16 @@
             if (currentItemIdx < currentSession.match.length) {
               renderMatchQuestion();
             } else {
+              // 階段 1 完成 -> 進入階段 2: Memory
               currentPhase = 'memory';
               currentItemIdx = 0;
               updateStageIndicators();
               if (currentSession.memory.length > 0) {
                 renderMemoryQuestion();
+              } else if (currentSession.qa.length > 0) {
+                currentPhase = 'qa';
+                updateStageIndicators();
+                renderQAQuestion();
               } else {
                 renderFinalResults();
               }
@@ -648,7 +605,7 @@
       }
     }
 
-    /* ---------------- 階段 3：翻牌對對碰 (中英對照配對 - 完美相容版) ---------------- */
+    /* ---------------- 階段 2：翻牌對對碰 (Memory Cards) ---------------- */
     let memSelected = [];
 
     function renderMemoryQuestion() {
@@ -706,7 +663,15 @@
               if (currentItemIdx < currentSession.memory.length) {
                 renderMemoryQuestion();
               } else {
-                renderFinalResults();
+                // 階段 2 完成 -> 進入階段 3: QA
+                currentPhase = 'qa';
+                currentItemIdx = 0;
+                updateStageIndicators();
+                if (currentSession.qa.length > 0) {
+                  renderQAQuestion();
+                } else {
+                  renderFinalResults();
+                }
               }
             }, 800);
           }
@@ -718,6 +683,46 @@
           }, 700);
         }
       }
+    }
+
+    /* ---------------- 階段 3：單選對答 (QA) ---------------- */
+    function renderQAQuestion() {
+      const win = document.getElementById('game-window');
+      const q = currentSession.qa[currentItemIdx];
+      win.innerHTML = `
+        <div class="quiz-box">
+          <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} / ${currentSession.qa.length} 題</span>
+          <div class="quiz-question">${q.question}</div>
+          <div class="options-grid">
+            ${q.options.map((opt, i) => `
+              <button class="option-btn" onclick="submitQAAnswer(this, ${i}, ${q.answer})">${opt}</button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function submitQAAnswer(btn, chosen, correct) {
+      const parent = btn.parentElement;
+      parent.querySelectorAll('.option-btn').forEach(b => b.style.pointerEvents = 'none');
+
+      if (chosen === correct) {
+        btn.classList.add('correct');
+        score.qaCorrect++;
+      } else {
+        btn.classList.add('wrong');
+        parent.querySelectorAll('.option-btn')[correct].classList.add('correct');
+      }
+
+      setTimeout(() => {
+        currentItemIdx++;
+        if (currentItemIdx < currentSession.qa.length) {
+          renderQAQuestion();
+        } else {
+          // 階段 3 完成 -> 進入最終結算
+          renderFinalResults();
+        }
+      }, 1100);
     }
 
     /* ---------------- 過關彩帶拉炮特效 ---------------- */
@@ -751,12 +756,12 @@
 
     /* ---------------- 計分結算與回傳表單 ---------------- */
     function renderFinalResults() {
-      document.getElementById('step-qa').className = 'stage-step';
       document.getElementById('step-match').className = 'stage-step';
       document.getElementById('step-memory').className = 'stage-step';
+      document.getElementById('step-qa').className = 'stage-step';
 
-      const totalScore = score.qaCorrect + score.matchDone + score.memoryDone;
-      const totalPossible = currentSession.qa.length + currentSession.match.length + currentSession.memory.length;
+      const totalScore = score.matchDone + score.memoryDone + score.qaCorrect;
+      const totalPossible = currentSession.match.length + currentSession.memory.length + currentSession.qa.length;
       const isPassed = totalScore >= 11;
       const win = document.getElementById('game-window');
 
@@ -775,9 +780,9 @@
           `}
 
           <div style="background:#e1f5fe; padding:15px 25px; border-radius:16px; margin-bottom:15px; width:100%; max-width:480px; text-align:left; line-height:2; font-size:15px;">
-            <p>🎯 <b>單選對答正確率</b>：${score.qaCorrect} / ${score.qaTotal} 分</p>
             <p>🔗 <b>連連看完成組數</b>：${score.matchDone} / ${currentSession.match.length} 分</p>
             <p>🃏 <b>中英翻牌對對碰完成</b>：${score.memoryDone} / ${currentSession.memory.length} 分</p>
+            <p>🎯 <b>單選對答正確率</b>：${score.qaCorrect} / ${score.qaTotal} 分</p>
             <hr style="border:none; border-top:1px dashed #81d4fa; margin:6px 0;">
             <p style="color:${isPassed ? '#0288d1' : '#d32f2f'}; font-weight:bold; font-size:18px;">
               🏆 最終總得分：${totalScore} / ${totalPossible} 分

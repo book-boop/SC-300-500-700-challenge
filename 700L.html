@@ -46,6 +46,7 @@
       margin-bottom: 20px;
     }
     .header h1 { font-size: 24px; color: #7b1fa2; }
+    .nav-btns { display: flex; gap: 10px; align-items: center; }
     .back-btn {
       text-decoration: none;
       background: #8e24aa;
@@ -54,32 +55,57 @@
       border-radius: 20px;
       font-weight: bold;
       transition: 0.2s;
+      font-size: 14px;
     }
     .back-btn:hover { background: #6a1b9a; transform: scale(1.05); }
 
-    /* 書籍篩選器 */
+    .sub-btn {
+      background: #ab47bc;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .sub-btn:hover { background: #7b1fa2; transform: scale(1.05); }
+
+    /* ================= 階段一：書單篩選獨立面板 ================= */
+    #selection-screen {
+      padding: 10px 5px;
+      text-align: center;
+    }
+    .selection-intro {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
     .filter-section {
       background: #f3e5f5;
-      border-radius: 16px;
-      padding: 15px 20px;
-      margin-bottom: 20px;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 25px;
+      text-align: left;
     }
     .filter-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       font-weight: bold;
       color: #6a1b9a;
+      font-size: 15px;
     }
-    .book-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .book-list { display: flex; flex-wrap: wrap; gap: 12px; }
     .book-chip {
       background: #ffffff;
       border: 2px solid #ce93d8;
-      padding: 6px 14px;
-      border-radius: 20px;
+      padding: 8px 18px;
+      border-radius: 22px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 15px;
       transition: all 0.2s;
       user-select: none;
     }
@@ -88,6 +114,28 @@
       color: #ffffff;
       border-color: #8e24aa;
       box-shadow: 0 4px 10px rgba(142, 36, 170, 0.3);
+    }
+    .start-game-btn {
+      padding: 14px 40px;
+      background: #8e24aa;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(142, 36, 170, 0.35);
+      transition: 0.25s;
+    }
+    .start-game-btn:hover {
+      background: #6a1b9a;
+      transform: scale(1.05);
+      box-shadow: 0 10px 24px rgba(106, 27, 154, 0.45);
+    }
+
+    /* ================= 階段二：遊戲專屬面板 ================= */
+    #game-screen {
+      display: none;
     }
 
     /* 三階段進度狀態 */
@@ -162,7 +210,7 @@
     .match-item.selected { border-color: #8e24aa; background: #f3e5f5; transform: scale(1.02); }
     .match-item.matched { background: #e8f5e9; border-color: #81c784; color: #2e7d32; cursor: default; }
 
-    /* 對對碰 (Memory Cards) - 中英雙語自適應 */
+    /* 對對碰 (Memory Cards) */
     .memory-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -215,10 +263,7 @@
       width: 100%;
       max-width: 480px;
     }
-    .form-group {
-      margin-bottom: 15px;
-      text-align: left;
-    }
+    .form-group { margin-bottom: 15px; text-align: left; }
     .form-group label {
       display: block;
       font-size: 14px;
@@ -254,10 +299,8 @@
       transition: 0.2s;
     }
     .action-btn:hover { background: #6a1b9a; transform: scale(1.04); }
-
     .cert-btn { background: #ff9800; }
     .cert-btn:hover { background: #f57c00; }
-
     .submit-form-btn { background: #4caf50; }
     .submit-form-btn:hover { background: #388e3c; }
 
@@ -307,31 +350,40 @@
   <div class="container">
     <div class="header">
       <h1>🏰 藍思值 700L 探索冒險闖關玩</h1>
-      <a href="index.html" class="back-btn">⬅ 返回大地圖</a>
-    </div>
-
-    <!-- 書籍篩選器 -->
-    <div class="filter-section">
-      <div class="filter-header">
-        <span>📖 請勾選你想挑戰的讀本（支援單選或複選）：</span>
-        <div>
-          <button id="btn-select-all" style="background:none;border:none;color:#8e24aa;cursor:pointer;font-weight:bold;margin-right:10px;">全部勾選</button>
-          <button id="btn-start" class="action-btn" style="margin-top:0;padding:6px 16px;font-size:14px;">重新出題抽籤</button>
-        </div>
+      <div class="nav-btns">
+        <button id="btn-reselect" class="sub-btn" style="display:none;" onclick="goToSelectionScreen()">🔄 重選讀本</button>
+        <a href="index.html" class="back-btn">⬅ 返回大地圖</a>
       </div>
-      <div class="book-list" id="book-list"></div>
     </div>
 
-    <!-- 三階段進度狀態 -->
-    <div class="stage-bar">
-      <span class="stage-step" id="step-qa">階段 1：單選對答 (QA)</span>
-      <span class="stage-step" id="step-match">階段 2：連連看配對 (Matching)</span>
-      <span class="stage-step" id="step-memory">階段 3：翻牌對對碰 (Memory)</span>
+    <!-- 畫面 1：書籍勾選面板 -->
+    <div id="selection-screen">
+      <p class="selection-intro">請先勾選你看過或想挑戰的書籍讀本，系統將從你挑選的書目中出題！</p>
+      
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>📖 讀本清單（支援單選或複選）：</span>
+          <button id="btn-select-all" style="background:none;border:none;color:#8e24aa;cursor:pointer;font-weight:bold;font-size:14px;">全部勾選</button>
+        </div>
+        <div class="book-list" id="book-list">載入書單中...</div>
+      </div>
+
+      <button class="start-game-btn" onclick="confirmAndStartGame()">🎮 開始闖關挑戰</button>
     </div>
 
-    <!-- 遊戲主舞台 -->
-    <div class="game-window" id="game-window">
-      載入題庫中...
+    <!-- 畫面 2：遊戲進行面板 -->
+    <div id="game-screen">
+      <!-- 三階段進度狀態 -->
+      <div class="stage-bar">
+        <span class="stage-step" id="step-qa">階段 1：單選對答 (QA)</span>
+        <span class="stage-step" id="step-match">階段 2：連連看配對 (Matching)</span>
+        <span class="stage-step" id="step-memory">階段 3：翻牌對對碰 (Memory)</span>
+      </div>
+
+      <!-- 遊戲主舞台 -->
+      <div class="game-window" id="game-window">
+        題目載入中...
+      </div>
     </div>
   </div>
 
@@ -341,7 +393,6 @@
       <button class="close-modal" onclick="closeCertModal()">×</button>
       <h2 style="color: #ff9800; margin-bottom: 15px;">🏅 榮譽過關獎狀</h2>
       
-      <!-- 隱藏 canvas，用 img 呈現繪製後的專屬獎狀 -->
       <canvas id="cert-canvas" style="display:none;"></canvas>
       <img id="cert-display-img" src="" alt="專屬過關獎狀" style="max-width:100%; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-bottom:15px;">
       
@@ -376,10 +427,9 @@
         rawData = data;
         selectedBooks = [...data.books];
         renderBookChips();
-        startNewGameSession();
       })
       .catch(err => {
-        document.getElementById('game-window').innerHTML = `
+        document.getElementById('book-list').innerHTML = `
           <p style="color:red;">⚠️ 無法讀取 questions-700l.json，請確認檔案已放置在同目錄中。</p>
         `;
       });
@@ -410,10 +460,23 @@
         }
         renderBookChips();
       };
+    }
 
-      document.getElementById('btn-start').onclick = () => {
-        startNewGameSession();
-      };
+    function goToSelectionScreen() {
+      document.getElementById('selection-screen').style.display = 'block';
+      document.getElementById('game-screen').style.display = 'none';
+      document.getElementById('btn-reselect').style.display = 'none';
+    }
+
+    function confirmAndStartGame() {
+      if (selectedBooks.length === 0) {
+        alert('請至少勾選一本你想挑戰的讀本！');
+        return;
+      }
+      document.getElementById('selection-screen').style.display = 'none';
+      document.getElementById('game-screen').style.display = 'block';
+      document.getElementById('btn-reselect').style.display = 'inline-block';
+      startNewGameSession();
     }
 
     function samplePool(pool, targetCount = 5) {
@@ -423,11 +486,6 @@
 
     function startNewGameSession() {
       const win = document.getElementById('game-window');
-      if (selectedBooks.length === 0) {
-        win.innerHTML = '<p style="font-size:18px;">⚠️ 請至少勾選一本上方讀本再開始闖關！</p>';
-        return;
-      }
-
       isFormSubmitted = false;
       const qaPool = rawData.qa.filter(q => selectedBooks.includes(q.book));
       const matchPool = rawData.matching.filter(m => selectedBooks.includes(m.book));
@@ -459,7 +517,7 @@
         updateStageIndicators();
         renderMemoryQuestion();
       } else {
-        win.innerHTML = '<p>所選讀本目前無任何題目，請嘗試勾選其他讀本。</p>';
+        win.innerHTML = '<p>所選讀本目前無題目，請點擊上方「重選讀本」勾選其他書籍。</p>';
       }
     }
 
@@ -598,22 +656,18 @@
       const mem = currentSession.memory[currentItemIdx];
 
       let cardList = [];
-
-      // 判斷是否為新版 pairs (中英對照) 結構
       if (mem.pairs && Array.isArray(mem.pairs)) {
         mem.pairs.forEach((p, idx) => {
           cardList.push({ id: idx, text: p.en });
           cardList.push({ id: idx, text: p.zh });
         });
       } else if (mem.cards && Array.isArray(mem.cards)) {
-        // 相容舊版 cards 結構 (防止題目格式尚未更新時卡死)
         mem.cards.forEach((w, idx) => {
           cardList.push({ id: idx, text: w });
           cardList.push({ id: idx, text: w });
         });
       }
 
-      // 隨機洗牌
       cardList.sort(() => Math.random() - 0.5);
 
       win.innerHTML = `
@@ -640,7 +694,6 @@
       if (memSelected.length === 2) {
         const [c1, c2] = memSelected;
 
-        // 比對兩張卡牌的 pair-id 是否一致
         if (c1.dataset.pairId === c2.dataset.pairId) {
           c1.classList.add('matched');
           c2.classList.add('matched');
@@ -681,10 +734,7 @@
 
       const interval = setInterval(function() {
         const timeLeft = animationEnd - Date.now();
-
-        if (timeLeft <= 0) {
-          return clearInterval(interval);
-        }
+        if (timeLeft <= 0) return clearInterval(interval);
 
         const particleCount = 50 * (timeLeft / duration);
 
@@ -710,7 +760,6 @@
       const isPassed = totalScore >= 11;
       const win = document.getElementById('game-window');
 
-      // 闖關成功時觸發彩帶拉炮
       if (isPassed) {
         triggerConfetti();
       }
@@ -757,8 +806,10 @@
             ${isPassed ? `
               <button class="action-btn cert-btn" onclick="openCertModal()">🏅 領取獎狀</button>
               <button class="action-btn" onclick="startNewGameSession()">🔄 再玩一輪</button>
+              <button class="action-btn" style="background:#7b1fa2;" onclick="goToSelectionScreen()">📚 挑選其他讀本</button>
             ` : `
               <button class="action-btn" onclick="startNewGameSession()">🔄 再次闖關</button>
+              <button class="action-btn" style="background:#7b1fa2;" onclick="goToSelectionScreen()">📚 挑選其他讀本</button>
             `}
           </div>
         </div>

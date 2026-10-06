@@ -162,13 +162,13 @@
     .match-item.selected { border-color: #8e24aa; background: #f3e5f5; transform: scale(1.02); }
     .match-item.matched { background: #e8f5e9; border-color: #81c784; color: #2e7d32; cursor: default; }
 
-    /* 對對碰 (Memory Cards) */
+    /* 對對碰 (Memory Cards) - 中英雙語自適應 */
     .memory-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
       width: 100%;
-      max-width: 520px;
+      max-width: 540px;
     }
     .memory-card {
       aspect-ratio: 1;
@@ -179,13 +179,16 @@
       align-items: center;
       cursor: pointer;
       user-select: none;
-      padding: 10px;
-      font-size: 16px;
+      padding: 8px;
+      font-size: 15px;
+      line-height: 1.3;
+      word-break: break-word;
       font-weight: bold;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: all 0.25s ease-out;
       color: transparent;
       border: 3px solid transparent;
+      text-align: center;
     }
     .memory-card.flipped {
       background: #ffffff;
@@ -587,20 +590,42 @@
       }
     }
 
-    /* ---------------- 階段 3：翻牌對對碰 ---------------- */
+    /* ---------------- 階段 3：翻牌對對碰 (中英對照配對 - 完美相容版) ---------------- */
     let memSelected = [];
 
     function renderMemoryQuestion() {
       const win = document.getElementById('game-window');
       const mem = currentSession.memory[currentItemIdx];
-      let cardList = [...mem.cards, ...mem.cards].sort(() => Math.random() - 0.5);
+
+      let cardList = [];
+
+      // 判斷是否為新版 pairs (中英對照) 結構
+      if (mem.pairs && Array.isArray(mem.pairs)) {
+        mem.pairs.forEach((p, idx) => {
+          cardList.push({ id: idx, text: p.en });
+          cardList.push({ id: idx, text: p.zh });
+        });
+      } else if (mem.cards && Array.isArray(mem.cards)) {
+        // 相容舊版 cards 結構 (防止題目格式尚未更新時卡死)
+        mem.cards.forEach((w, idx) => {
+          cardList.push({ id: idx, text: w });
+          cardList.push({ id: idx, text: w });
+        });
+      }
+
+      // 隨機洗牌
+      cardList.sort(() => Math.random() - 0.5);
 
       win.innerHTML = `
         <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
           <span class="book-tag" style="margin-bottom:15px;">📖 ${mem.book} ｜ 對對碰 第 ${currentItemIdx + 1} / ${currentSession.memory.length} 組</span>
-          <p style="margin-bottom:15px;color:#666;">點開兩張卡片，找出相同的單字或角色！</p>
+          <p style="margin-bottom:15px;color:#666;">點開兩張卡片，將「英文單字」與「中文解釋」配對！</p>
           <div class="memory-grid">
-            ${cardList.map(w => `<div class="memory-card" data-word="${w}" onclick="onFlipCard(this)">${w}</div>`).join('')}
+            ${cardList.map(card => `
+              <div class="memory-card" data-pair-id="${card.id}" onclick="onFlipCard(this)">
+                ${card.text}
+              </div>
+            `).join('')}
           </div>
         </div>
       `;
@@ -614,7 +639,9 @@
 
       if (memSelected.length === 2) {
         const [c1, c2] = memSelected;
-        if (c1.dataset.word === c2.dataset.word) {
+
+        // 比對兩張卡牌的 pair-id 是否一致
+        if (c1.dataset.pairId === c2.dataset.pairId) {
           c1.classList.add('matched');
           c2.classList.add('matched');
           memSelected = [];
@@ -701,7 +728,7 @@
           <div style="background:#f3e5f5; padding:15px 25px; border-radius:16px; margin-bottom:15px; width:100%; max-width:480px; text-align:left; line-height:2; font-size:15px;">
             <p>🎯 <b>單選對答正確率</b>：${score.qaCorrect} / ${score.qaTotal} 分</p>
             <p>🔗 <b>連連看完成組數</b>：${score.matchDone} / ${currentSession.match.length} 分</p>
-            <p>🃏 <b>對對碰翻牌完成</b>：${score.memoryDone} / ${currentSession.memory.length} 分</p>
+            <p>🃏 <b>中英翻牌對對碰完成</b>：${score.memoryDone} / ${currentSession.memory.length} 分</p>
             <hr style="border:none; border-top:1px dashed #ce93d8; margin:6px 0;">
             <p style="color:${isPassed ? '#7b1fa2' : '#d32f2f'}; font-weight:bold; font-size:18px;">
               🏆 最終總得分：${totalScore} / ${totalPossible} 分
@@ -787,45 +814,35 @@
 
     /* 700L 獎狀動態合成與彈窗控制 */
     function openCertModal() {
-      // 1. 抓取答題者在表單中輸入的「本名」
       const nameInput = document.getElementById('user-name');
       let studentName = nameInput ? nameInput.value.trim() : "";
       if (!studentName) {
-        studentName = "小小閱讀家"; // 未輸入時的預設稱呼
+        studentName = "小小閱讀家";
       }
 
-      // 2. 取得隱藏的 canvas 畫布
       const canvas = document.getElementById('cert-canvas');
       const ctx = canvas.getContext('2d');
       const certImg = new Image();
 
-      // 3. 載入 700L 專屬紫色獎狀底圖
       certImg.src = 'images/certificates/cert-700l.png';
 
-      // 4. 底圖讀取完畢後進行繪製合成
       certImg.onload = function() {
-        // 設定畫布解析度為圖片原始大小
         canvas.width = certImg.naturalWidth;
         canvas.height = certImg.naturalHeight;
 
-        // 繪製獎狀底圖
         ctx.drawImage(certImg, 0, 0);
 
-        // 設定文字字型與樣式（隨圖片寬度等比縮放）
         const fontSize = Math.floor(canvas.width * 0.045);
         ctx.font = `bold ${fontSize}px "PingFang TC", "Microsoft JhengHei", sans-serif`;
-        ctx.fillStyle = '#2c3e50'; // 深灰藍色字體
+        ctx.fillStyle = '#2c3e50';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'bottom';
 
-        // 坐標定位：已校正至橫線正中心（寬度 68%、高度 46.5%）
         const lineX = canvas.width * 0.68;
         const lineY = canvas.height * 0.465;
 
-        // 繪製姓名
         ctx.fillText(studentName, lineX, lineY);
 
-        // 5. 輸出為 PNG 圖片並帶入下載連結
         const finalImageURL = canvas.toDataURL('image/png');
         document.getElementById('cert-display-img').src = finalImageURL;
         
@@ -833,7 +850,6 @@
         downloadBtn.href = finalImageURL;
         downloadBtn.download = `${studentName}_700L_闖關獎狀.png`;
 
-        // 6. 開啟彈窗
         document.getElementById('cert-modal').style.display = 'flex';
       };
     }

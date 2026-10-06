@@ -69,12 +69,6 @@
       "options": ["Because of good luck", "Because of pure skills", "Because of coded shoes", "Because the referee helped"],
       "answer": 0
     },
-    {
-      "book": "Diary of a Roblox Pro",
-      "question": "Why did the pirates NOT get the treasure chest?",
-      "options": ["Because they were not truthful", "Because their map was fake", "Because the chest was locked", "Because Harold hid it"],
-      "answer": 0
-    },
 
     {
       "book": "Disaster Squad",
@@ -104,6 +98,24 @@
       "book": "Disaster Squad",
       "question": "What are the tornado seasons in Oklahoma?",
       "options": ["Spring and summer", "Fall and winter", "Winter only", "All year round"],
+      "answer": 0
+    },
+    {
+      "book": "Disaster Squad",
+      "question": "Why did the Jacksons have to evacuate the campground so quickly?",
+      "options": ["A wildfire was spreading through the dry canyon", "A flood broke the dam", "A blizzard blocked the road", "The RV engine broke"],
+      "answer": 0
+    },
+    {
+      "book": "Disaster Squad",
+      "question": "What is the calm center of a hurricane called?",
+      "options": ["The eye", "The core", "The gate", "The whirlpool"],
+      "answer": 0
+    },
+    {
+      "book": "Disaster Squad",
+      "question": "True or False: You should use elevators during an earthquake emergency.",
+      "options": ["False", "True"],
       "answer": 0
     },
 
@@ -210,6 +222,12 @@
       "options": ["The Ember Stone", "A golden slingshot", "A shiny shell", "His wooden dagger"],
       "answer": 0
     },
+    {
+      "book": "The Last Firehawk",
+      "question": "What magical gemstone powers the protection around Perodia?",
+      "options": ["The Ember Stone", "The Moonstone", "The Dragon Eye", "The Solar Ruby"],
+      "answer": 0
+    },
 
     {
       "book": "The Notebook of Doom",
@@ -253,6 +271,12 @@
       "options": ["Salt", "Hot chocolate", "Laser light", "Pepper"],
       "answer": 0
     },
+    {
+      "book": "The Notebook of Doom",
+      "question": "Who originally wrote the secret notebook of doom?",
+      "options": ["Alexander Bopp's grandfather", "Mr. Vandermead", "The principal", "Ms. Jovial"],
+      "answer": 0
+    },
 
     {
       "book": "Eerie Elementary",
@@ -282,6 +306,18 @@
       "book": "Eerie Elementary",
       "question": "Where was Orson Eerie trapped forever in the end?",
       "options": ["Inside Mr. Nekobi's old hall monitor sash", "Inside a giant pumpkin", "In the school basement", "Behind the locker"],
+      "answer": 0
+    },
+    {
+      "book": "Eerie Elementary",
+      "question": "What role does Sam Graves have that helps him protect students?",
+      "options": ["Hall Monitor", "Class President", "Library Assistant", "Bus Captain"],
+      "answer": 0
+    },
+    {
+      "book": "Eerie Elementary",
+      "question": "What happened to the playground during recess in book one?",
+      "options": ["The sandbox turned into quicksand", "The swings flew into the sky", "The slide caught fire", "The gym collapsed"],
       "answer": 0
     },
 
@@ -376,7 +412,6 @@
       "answer": 0
     }
   ],
-
   "matching": [
     {
       "book": "Diary of a Roblox Pro",
@@ -418,6 +453,33 @@
         {"item": "lava", "match": "hot melted rock from volcano"}
       ]
     },
+    {
+      "book": "Diary of a Roblox Pro",
+      "pairs": [
+        {"item": "glitch", "match": "a sudden malfunction in software"},
+        {"item": "loot", "match": "valuable items collected in game"},
+        {"item": "respawn", "match": "reappearing after being defeated"},
+        {"item": "inventory", "match": "item storage held by the player"}
+      ]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "pairs": [
+        {"item": "zombie", "match": "walking undead creature"},
+        {"item": "radar", "match": "system detecting locations"},
+        {"item": "submarine", "match": "watercraft operating deep underwater"},
+        {"item": "blaster", "match": "toy gun shooting water or foam"}
+      ]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "pairs": [
+        {"item": "treasure", "match": "quantity of precious gold and gems"},
+        {"item": "pirate", "match": "sailor attacking ships on sea"},
+        {"item": "dungeon", "match": "dark underground stone prison"},
+        {"item": "quest", "match": "a long or arduous search for something"}
+      ]
+    },
 
     {
       "book": "Disaster Squad",
@@ -437,6 +499,42 @@
         {"item": "cyclone", "match": "tropical storm in Indian Ocean"},
         {"item": "shelter", "match": "protection from bad weather"},
         {"item": "flood", "match": "large amount of water on dry land"}
+      ]
+    },
+    {
+      "book": "Disaster Squad",
+      "pairs": [
+        {"item": "blizzard", "match": "heavy snowstorm with high winds"},
+        {"item": "snowplow", "match": "vehicle clearing snow from roads"},
+        {"item": "salt", "match": "mineral preventing road ice formation"},
+        {"item": "generator", "match": "machine producing electricity during blackouts"}
+      ]
+    },
+    {
+      "book": "Disaster Squad",
+      "pairs": [
+        {"item": "tornado", "match": "rotating column of air touching earth"},
+        {"item": "whistle", "match": "emergency sound tool for signaling rescue"},
+        {"item": "kit", "match": "set of medical and survival supplies"},
+        {"item": "rancher", "match": "person operating a cattle farm"}
+      ]
+    },
+    {
+      "book": "Disaster Squad",
+      "pairs": [
+        {"item": "blackout", "match": "sudden loss of electrical power"},
+        {"item": "debris", "match": "scattered pieces of waste or remains"},
+        {"item": "first-aid", "match": "emergency care given immediately"},
+        {"item": "siren", "match": "loud alarm warning of natural disaster"}
+      ]
+    },
+    {
+      "book": "Disaster Squad",
+      "pairs": [
+        {"item": "satellite", "match": "space device monitoring weather patterns"},
+        {"item": "radar", "match": "equipment tracking rain and storms"},
+        {"item": "canyon", "match": "deep narrow valley between cliffs"},
+        {"item": "embankment", "match": "stone wall built to prevent flooding"}
       ]
     },
 
@@ -470,6 +568,42 @@
         {"item": "giant", "match": "a very big creature"}
       ]
     },
+    {
+      "book": "Dragon Masters",
+      "pairs": [
+        {"item": "telepathy", "match": "communicating through thoughts"},
+        {"item": "potion", "match": "magical drink with special effects"},
+        {"item": "hatchling", "match": "young baby dragon newly out of egg"},
+        {"item": "fortress", "match": "heavily protected military castle"}
+      ]
+    },
+    {
+      "book": "Dragon Masters",
+      "pairs": [
+        {"item": "rainbow", "match": "multicolored dragon bringing rain"},
+        {"item": "lava", "match": "liquid melted rock flowing from volcano"},
+        {"item": "mist", "match": "cloud of tiny water droplets hiding dragons"},
+        {"item": "earthquake", "match": "shaking of the ground caused by stone power"}
+      ]
+    },
+    {
+      "book": "Dragon Masters",
+      "pairs": [
+        {"item": "crystal", "match": "transparent mineral glowing with light"},
+        {"item": "shield", "match": "protective armor blocking attacks"},
+        {"item": "tower", "match": "tall narrow structure of castle"},
+        {"item": "spark", "match": "tiny fiery particle igniting flames"}
+      ]
+    },
+    {
+      "book": "Dragon Masters",
+      "pairs": [
+        {"item": "enchanted", "match": "placed under a magical spell"},
+        {"item": "cavern", "match": "massive cave underground"},
+        {"item": "scales", "match": "hard protective plates covering dragons"},
+        {"item": "roars", "match": "makes loud deep animal call"}
+      ]
+    },
 
     {
       "book": "The Last Firehawk",
@@ -499,6 +633,42 @@
         {"item": "march", "match": "walk with regular soldier steps"},
         {"item": "tunnel", "match": "underground passage"},
         {"item": "dagger", "match": "short knife used as weapon"}
+      ]
+    },
+    {
+      "book": "The Last Firehawk",
+      "pairs": [
+        {"item": "firehawk", "match": "legendary bird born in fire"},
+        {"item": "ember", "match": "glowing piece of coal or wood"},
+        {"item": "sloth", "match": "slow tree-climbing mammal"},
+        {"item": "vulture", "match": "large bird of prey working for Thorn"}
+      ]
+    },
+    {
+      "book": "The Last Firehawk",
+      "pairs": [
+        {"item": "swamp", "match": "wet spongy land saturated with water"},
+        {"item": "valor", "match": "great courage in the face of danger"},
+        {"item": "disguise", "match": "costume hiding true identity"},
+        {"item": "shadow", "match": "dark area created by blocked light"}
+      ]
+    },
+    {
+      "book": "The Last Firehawk",
+      "pairs": [
+        {"item": "hatch", "match": "to emerge from an egg"},
+        {"item": "talons", "match": "sharp claws of a bird of prey"},
+        {"item": "canopy", "match": "high leafy layer of forest branches"},
+        {"item": "nest", "match": "bird structure for laying eggs"}
+      ]
+    },
+    {
+      "book": "The Last Firehawk",
+      "pairs": [
+        {"item": "bramble", "match": "rough thorny shrub or vine"},
+        {"item": "crystal", "match": "shiny mineral focusing stone power"},
+        {"item": "spies", "match": "orange-eyed birds watching secret moves"},
+        {"item": "shield", "match": "barrier deflecting dark magic"}
       ]
     },
 
@@ -532,6 +702,33 @@
         {"item": "roared", "match": "made a loud, deep monster sound"}
       ]
     },
+    {
+      "book": "The Notebook of Doom",
+      "pairs": [
+        {"item": "piñata", "match": "decorated paper animal filled with candy"},
+        {"item": "greenhouse", "match": "glass building where veggie monsters grow"},
+        {"item": "bathtub", "match": "bathroom tub where crawling hand appeared"},
+        {"item": "salt", "match": "substance melting snombies and ice beasts"}
+      ]
+    },
+    {
+      "book": "The Notebook of Doom",
+      "pairs": [
+        {"item": "mummy", "match": "bumpy monster wrapped in bubble wrap"},
+        {"item": "gopher", "match": "burrowing rodent causing garden mischief"},
+        {"item": "telescope", "match": "optical instrument viewing distant objects"},
+        {"item": "scream", "match": "loud high screech shriveling megaworms"}
+      ]
+    },
+    {
+      "book": "The Notebook of Doom",
+      "pairs": [
+        {"item": "patrol", "match": "secret group keeping watch over school"},
+        {"item": "locker", "match": "storage box where strange sounds came from"},
+        {"item": "flashlight", "match": "torch casting light in dark basements"},
+        {"item": "notebook", "match": "handbook recording all monster weaknesses"}
+      ]
+    },
 
     {
       "book": "Eerie Elementary",
@@ -551,6 +748,42 @@
         {"item": "maze", "match": "puzzle made of many paths"},
         {"item": "sprinkler", "match": "machine spraying water during fire"},
         {"item": "thermostat", "match": "device used to control temperature"}
+      ]
+    },
+    {
+      "book": "Eerie Elementary",
+      "pairs": [
+        {"item": "sash", "match": "cloth band worn across shoulder by monitors"},
+        {"item": "hayride", "match": "pleasure ride in open wagon filled with hay"},
+        {"item": "pumpkin", "match": "giant squash turning into monster head"},
+        {"item": "quicksand", "match": "loose wet sand that sucks down objects"}
+      ]
+    },
+    {
+      "book": "Eerie Elementary",
+      "pairs": [
+        {"item": "janitor", "match": "caretaker who cleans and maintains school"},
+        {"item": "hallway", "match": "passage corridor connecting rooms"},
+        {"item": "clock", "match": "wall timepiece hiding the secret switch"},
+        {"item": "furnace", "match": "large heater burning fuel in basement"}
+      ]
+    },
+    {
+      "book": "Eerie Elementary",
+      "pairs": [
+        {"item": "locker", "match": "metal cupboard snapping at hall monitors"},
+        {"item": "pipes", "match": "metal tubes running through school walls"},
+        {"item": "recess", "match": "break period between school classes"},
+        {"item": "chains", "match": "metal links binding monster school"}
+      ]
+    },
+    {
+      "book": "Eerie Elementary",
+      "pairs": [
+        {"item": "shadow", "match": "dark shape cast by Orson Eerie"},
+        {"item": "tractor", "match": "farm machine used to ram into monster"},
+        {"item": "stage", "match": "raised wooden platform in auditorium"},
+        {"item": "chalkboard", "match": "blackboard writing strange messages"}
       ]
     },
 
@@ -582,141 +815,390 @@
       ]
     }
   ],
-
   "memory": [
     {
       "book": "Diary of a Roblox Pro",
-      "cards": ["avatar", "portal", "monster", "warehouse"]
+      "pairs": [
+        {"en": "avatar", "zh": "遊戲虛擬化身"},
+        {"en": "portal", "zh": "時空傳送門"},
+        {"en": "monster", "zh": "恐怖怪物"},
+        {"en": "warehouse", "zh": "廢棄倉庫"}
+      ]
     },
     {
       "book": "Diary of a Roblox Pro",
-      "cards": ["dragon", "corridor", "sloth", "egg"]
+      "pairs": [
+        {"en": "dragon", "zh": "神秘巨龍"},
+        {"en": "corridor", "zh": "長廊走廊"},
+        {"en": "sloth", "zh": "樹懶"},
+        {"en": "egg", "zh": "寵物蛋"}
+      ]
     },
     {
       "book": "Diary of a Roblox Pro",
-      "cards": ["volcano", "lava", "nerd", "noob"]
+      "pairs": [
+        {"en": "volcano", "zh": "活火山"},
+        {"en": "lava", "zh": "滾燙熔岩"},
+        {"en": "nerd", "zh": "書呆子高手"},
+        {"en": "noob", "zh": "新手菜鳥"}
+      ]
     },
     {
       "book": "Diary of a Roblox Pro",
-      "cards": ["zombie", "lemonade", "radar", "blaster"]
+      "pairs": [
+        {"en": "zombie", "zh": "殭屍喪屍"},
+        {"en": "lemonade", "zh": "致命檸檬汁"},
+        {"en": "radar", "zh": "探測雷達"},
+        {"en": "blaster", "zh": "水槍射擊槍"}
+      ]
     },
     {
       "book": "Diary of a Roblox Pro",
-      "cards": ["laptop", "submarine", "shark", "tunnel"]
+      "pairs": [
+        {"en": "laptop", "zh": "筆記型電腦"},
+        {"en": "submarine", "zh": "深海潛水艇"},
+        {"en": "shark", "zh": "鯊魚"},
+        {"en": "tunnel", "zh": "逃生通道"}
+      ]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "pairs": [
+        {"en": "treasure", "zh": "藏寶箱"},
+        {"en": "pirate", "zh": "海盜船長"},
+        {"en": "compass", "zh": "藏寶圖指南針"},
+        {"en": "skeleton", "zh": "骷髏兵"}
+      ]
+    },
+    {
+      "book": "Diary of a Roblox Pro",
+      "pairs": [
+        {"en": "helmet", "zh": "防禦頭盔"},
+        {"en": "sword", "zh": "像素光劍"},
+        {"en": "speed", "zh": "疾跑加速"},
+        {"en": "badge", "zh": "過關徽章"}
+      ]
     },
 
     {
       "book": "Disaster Squad",
-      "cards": ["wildfire", "squad", "evacuate", "RV"]
+      "pairs": [
+        {"en": "wildfire", "zh": "森林大火"},
+        {"en": "squad", "zh": "救援小隊"},
+        {"en": "evacuate", "zh": "緊急疏散"},
+        {"en": "RV", "zh": "露營車住家"}
+      ]
     },
     {
       "book": "Disaster Squad",
-      "cards": ["hurricane", "shelter", "flood", "mayor"]
+      "pairs": [
+        {"en": "hurricane", "zh": "颶風暴風"},
+        {"en": "shelter", "zh": "避難所避難營"},
+        {"en": "flood", "zh": "大洪水"},
+        {"en": "mayor", "zh": "小鎮鎮長"}
+      ]
     },
     {
       "book": "Disaster Squad",
-      "cards": ["blizzard", "snowplow", "salt", "cattle"]
+      "pairs": [
+        {"en": "blizzard", "zh": "嚴寒暴風雪"},
+        {"en": "snowplow", "zh": "除雪車"},
+        {"en": "salt", "zh": "融冰粗鹽"},
+        {"en": "cattle", "zh": "牧場牛群"}
+      ]
     },
     {
       "book": "Disaster Squad",
-      "cards": ["tornado", "whistle", "vaccine", "rancher"]
+      "pairs": [
+        {"en": "tornado", "zh": "旋轉龍捲風"},
+        {"en": "whistle", "zh": "求救哨子"},
+        {"en": "vaccine", "zh": "急救疫苗針"},
+        {"en": "rancher", "zh": "農場主人"}
+      ]
+    },
+    {
+      "book": "Disaster Squad",
+      "pairs": [
+        {"en": "blackout", "zh": "大停電"},
+        {"en": "flashlight", "zh": "強光手電筒"},
+        {"en": "radio", "zh": "應急廣播機"},
+        {"en": "canned food", "zh": "耐放罐頭"}
+      ]
+    },
+    {
+      "book": "Disaster Squad",
+      "pairs": [
+        {"en": "first-aid", "zh": "急救包藥箱"},
+        {"en": "bandage", "zh": "包紮繃帶"},
+        {"en": "blanket", "zh": "保暖毯"},
+        {"en": "siren", "zh": "警報空襲聲"}
+      ]
     },
 
     {
       "book": "Dragon Masters",
-      "cards": ["dragon stone", "wizard", "curse", "palace"]
+      "pairs": [
+        {"en": "dragon stone", "zh": "發光龍之心石"},
+        {"en": "wizard", "zh": "王國巫師"},
+        {"en": "curse", "zh": "黑魔法詛咒"},
+        {"en": "palace", "zh": "國王王宮"}
+      ]
     },
     {
       "book": "Dragon Masters",
-      "cards": ["fire dragon", "flame", "earth dragon", "worm"]
+      "pairs": [
+        {"en": "fire dragon", "zh": "噴火火龍"},
+        {"en": "flame", "zh": "炙熱烈焰"},
+        {"en": "earth dragon", "zh": "地底土龍"},
+        {"en": "worm", "zh": "土龍沃姆"}
+      ]
     },
     {
       "book": "Dragon Masters",
-      "cards": ["water dragon", "symbol", "moon dragon", "sun dragon"]
+      "pairs": [
+        {"en": "water dragon", "zh": "治癒水龍"},
+        {"en": "symbol", "zh": "神聖圖騰標誌"},
+        {"en": "moon dragon", "zh": "月光神龍"},
+        {"en": "sun dragon", "zh": "陽光烈陽龍"}
+      ]
     },
     {
       "book": "Dragon Masters",
-      "cards": ["ice dragon", "freeze", "giant", "kingdom"]
+      "pairs": [
+        {"en": "ice dragon", "zh": "寒霜冰龍"},
+        {"en": "freeze", "zh": "瞬間結冰"},
+        {"en": "giant", "zh": "高大巨人"},
+        {"en": "kingdom", "zh": "羅蘭王國"}
+      ]
     },
     {
       "book": "Dragon Masters",
-      "cards": ["silver sword", "castle", "portal", "shield"]
+      "pairs": [
+        {"en": "silver sword", "zh": "皇家銀劍"},
+        {"en": "castle", "zh": "石砌古堡"},
+        {"en": "portal", "zh": "魔法傳送門"},
+        {"en": "shield", "zh": "鋼鐵防護盾"}
+      ]
+    },
+    {
+      "book": "Dragon Masters",
+      "pairs": [
+        {"en": "rainbow", "zh": "降雨彩虹龍"},
+        {"en": "thunder", "zh": "雷電風暴"},
+        {"en": "scales", "zh": "堅硬龍鱗"},
+        {"en": "mist", "zh": "隱形花霧"}
+      ]
+    },
+    {
+      "book": "Dragon Masters",
+      "pairs": [
+        {"en": "potion", "zh": "療癒魔藥"},
+        {"en": "cavern", "zh": "龍之地下穴"},
+        {"en": "crystal", "zh": "魔力水晶"},
+        {"en": "scroll", "zh": "古老魔法卷軸"}
+      ]
     },
 
     {
       "book": "The Last Firehawk",
-      "cards": ["firehawk", "ember stone", "volcano", "tiger bat"]
+      "pairs": [
+        {"en": "firehawk", "zh": "傳奇火鷹"},
+        {"en": "ember stone", "zh": "灰燼神石"},
+        {"en": "volcano", "zh": "燃燒活火山"},
+        {"en": "tiger bat", "zh": "虎紋蝙蝠怪"}
+      ]
     },
     {
       "book": "The Last Firehawk",
-      "cards": ["slingshot", "acorn", "cavern", "ice leopard"]
+      "pairs": [
+        {"en": "slingshot", "zh": "精準彈弓"},
+        {"en": "acorn", "zh": "硬橡樹果實"},
+        {"en": "cavern", "zh": "深邃石穴"},
+        {"en": "ice leopard", "zh": "暗影雪豹"}
+      ]
     },
     {
       "book": "The Last Firehawk",
-      "cards": ["honeycomb", "meadow", "beetle", "nectar"]
+      "pairs": [
+        {"en": "honeycomb", "zh": "金黃蜂巢"},
+        {"en": "meadow", "zh": "青翠草甸"},
+        {"en": "beetle", "zh": "鐵甲甲蟲"},
+        {"en": "nectar", "zh": "甜蜜花蜜"}
+      ]
     },
     {
       "book": "The Last Firehawk",
-      "cards": ["tunnel", "mole", "dagger", "shadow"]
+      "pairs": [
+        {"en": "tunnel", "zh": "地下穿行地道"},
+        {"en": "mole", "zh": "地鼠鼴鼠"},
+        {"en": "dagger", "zh": "防身短劍匕首"},
+        {"en": "shadow", "zh": "黑暗暗影領地"}
+      ]
     },
     {
       "book": "The Last Firehawk",
-      "cards": ["magic dome", "waterfall", "swamp", "maze"]
+      "pairs": [
+        {"en": "magic dome", "zh": "守護魔法天穹"},
+        {"en": "waterfall", "zh": "秘境瀑布"},
+        {"en": "swamp", "zh": "迷霧沼澤"},
+        {"en": "maze", "zh": "荊棘迷宮"}
+      ]
+    },
+    {
+      "book": "The Last Firehawk",
+      "pairs": [
+        {"en": "talons", "zh": "銳利鷹爪"},
+        {"en": "beak", "zh": "貓頭鷹喙"},
+        {"en": "vulture", "zh": "禿鷹爪牙"},
+        {"en": "spies", "zh": "密探間諜"}
+      ]
+    },
+    {
+      "book": "The Last Firehawk",
+      "pairs": [
+        {"en": "bramble", "zh": "有刺黑莓藤"},
+        {"en": "sloth", "zh": "樹懶史丹利"},
+        {"en": "egg", "zh": "火鷹神卵"},
+        {"en": "valor", "zh": "英勇守護者"}
+      ]
     },
 
     {
       "book": "The Notebook of Doom",
-      "cards": ["notebook", "skull", "megaworm", "balloon goon"]
+      "pairs": [
+        {"en": "notebook", "zh": "末日怪獸筆記"},
+        {"en": "skull", "zh": "警告骷髏標誌"},
+        {"en": "megaworm", "zh": "地底巨蟲"},
+        {"en": "balloon goon", "zh": "氣球怪人"}
+      ]
     },
     {
       "book": "The Notebook of Doom",
-      "cards": ["coatrack", "apron", "flyer", "limbo"]
+      "pairs": [
+        {"en": "coatrack", "zh": "怪手衣架"},
+        {"en": "apron", "zh": "主廚圍裙"},
+        {"en": "flyer", "zh": "傳單"},
+        {"en": "limbo", "zh": "凌波舞怪"}
+      ]
     },
     {
       "book": "The Notebook of Doom",
-      "cards": ["carrot chef", "greenhouse", "gopher", "radish"]
+      "pairs": [
+        {"en": "carrot chef", "zh": "胡蘿蔔主廚怪"},
+        {"en": "greenhouse", "zh": "學校溫室"},
+        {"en": "gopher", "zh": "咬地囊鼠怪"},
+        {"en": "radish", "zh": "變異白蘿蔔"}
+      ]
     },
     {
       "book": "The Notebook of Doom",
-      "cards": ["pinata", "ant farm", "candy-saurus", "jellybean"]
+      "pairs": [
+        {"en": "pinata", "zh": "恐龍皮納塔"},
+        {"en": "ant farm", "zh": "巨大螞蟻箱"},
+        {"en": "candy-saurus", "zh": "糖果暴龍"},
+        {"en": "jellybean", "zh": "跳豆彈丸"}
+      ]
     },
     {
       "book": "The Notebook of Doom",
-      "cards": ["bumpy mummy", "bubble wrap", "scorpion", "lasers"]
+      "pairs": [
+        {"en": "bumpy mummy", "zh": "氣泡紙木乃伊"},
+        {"en": "bubble wrap", "zh": "防撞氣泡紙"},
+        {"en": "scorpion", "zh": "巨毒蠍子怪"},
+        {"en": "lasers", "zh": "安全雷射光"}
+      ]
+    },
+    {
+      "book": "The Notebook of Doom",
+      "pairs": [
+        {"en": "salt", "zh": "融怪精鹽"},
+        {"en": "bathtub", "zh": "爬行手浴缸"},
+        {"en": "mirror", "zh": "反光神鏡"},
+        {"en": "patrol", "zh": "秘密巡邏隊"}
+      ]
     },
 
     {
       "book": "Eerie Elementary",
-      "cards": ["hall monitor", "locker", "quicksand", "snake hose"]
+      "pairs": [
+        {"en": "hall monitor", "zh": "走廊糾察隊員"},
+        {"en": "locker", "zh": "吃人置物櫃"},
+        {"en": "quicksand", "zh": "操場流沙坑"},
+        {"en": "snake hose", "zh": "水管怪蛇"}
+      ]
     },
     {
       "book": "Eerie Elementary",
-      "cards": ["graveyard", "blueprint", "vent", "basement"]
+      "pairs": [
+        {"en": "graveyard", "zh": "校園旁墓園"},
+        {"en": "blueprint", "zh": "學校建築藍圖"},
+        {"en": "vent", "zh": "通風排氣孔"},
+        {"en": "basement", "zh": "幽暗鍋爐地下室"}
+      ]
     },
     {
       "book": "Eerie Elementary",
-      "cards": ["recess", "jungle", "swamp", "crow"]
+      "pairs": [
+        {"en": "recess", "zh": "驚魂課間休息"},
+        {"en": "jungle", "zh": "瘋狂植物叢林"},
+        {"en": "swamp", "zh": "球場泥淖沼澤"},
+        {"en": "crow", "zh": "黑羽烏鴉群"}
+      ]
     },
     {
       "book": "Eerie Elementary",
-      "cards": ["blizzard", "thermostat", "clock", "tornado"]
+      "pairs": [
+        {"en": "blizzard", "zh": "室內大暴雪"},
+        {"en": "thermostat", "zh": "失控溫度調節器"},
+        {"en": "clock", "zh": "壁鐘秘密開關"},
+        {"en": "tornado", "zh": "體育館旋風"}
+      ]
     },
     {
       "book": "Eerie Elementary",
-      "cards": ["pumpkin", "tractor", "sash", "revenge"]
+      "pairs": [
+        {"en": "pumpkin", "zh": "南瓜怪頭"},
+        {"en": "tractor", "zh": "破障牽引拖拉機"},
+        {"en": "sash", "zh": "封印糾察隊肩帶"},
+        {"en": "revenge", "zh": "歐森復仇幽魂"}
+      ]
+    },
+    {
+      "book": "Eerie Elementary",
+      "pairs": [
+        {"en": "furnace", "zh": "校舍大心臟火爐"},
+        {"en": "pipes", "zh": "爬行蒸氣鐵管"},
+        {"en": "curtain", "zh": "禮堂纏人布幕"},
+        {"en": "janitor", "zh": "深藏不露校工"}
+      ]
     },
 
     {
       "book": "Geronimo Stilton",
-      "cards": ["Geronimo", "Thea", "Trap", "Benjamin"]
+      "pairs": [
+        {"en": "Geronimo", "zh": "傑羅尼摩社長"},
+        {"en": "Thea", "zh": "勇敢記者菲"},
+        {"en": "Trap", "zh": "愛惡作劇表哥賴皮"},
+        {"en": "Benjamin", "zh": "貼心小姪子班傑明"}
+      ]
     },
     {
       "book": "Geronimo Stilton",
-      "cards": ["Gazette", "Newspaper", "Editor", "Helicopter"]
+      "pairs": [
+        {"en": "Gazette", "zh": "囓齒報社"},
+        {"en": "Newspaper", "zh": "妙鼠城早報"},
+        {"en": "Editor", "zh": "雜誌總編輯"},
+        {"en": "Helicopter", "zh": "屋頂停機坪直升機"}
+      ]
     },
     {
       "book": "Geronimo Stilton",
-      "cards": ["Cheese", "Mouse Island", "Adventure", "Feline"]
+      "pairs": [
+        {"en": "Cheese", "zh": "最愛古董起司"},
+        {"en": "Mouse Island", "zh": "起司形狀老鼠島"},
+        {"en": "Adventure", "zh": "刺激歷險故事"},
+        {"en": "Feline", "zh": "可怕大貓咪"}
+      ]
     }
   ]
 }

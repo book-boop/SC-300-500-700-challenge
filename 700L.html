@@ -138,7 +138,7 @@
       display: none;
     }
 
-    /* 三階段進度狀態 (順序已換：Match -> Memory -> QA) */
+    /* 三階段進度狀態 (順序：Match -> Memory -> QA) */
     .stage-bar {
       display: flex;
       justify-content: space-between;
@@ -373,7 +373,7 @@
 
     <!-- 畫面 2：遊戲進行面板 -->
     <div id="game-screen">
-      <!-- 三階段進度狀態 (順序已換：Match -> Memory -> QA) -->
+      <!-- 三階段進度狀態 (順序：Match -> Memory -> QA) -->
       <div class="stage-bar">
         <span class="stage-step" id="step-match">階段 1：連連看配對 (Matching)</span>
         <span class="stage-step" id="step-memory">階段 2：翻牌對對碰 (Memory)</span>
@@ -412,10 +412,10 @@
     const ENTRY_SCORE = "entry.1302922829";  // 答對題數欄位 ID
 
     let rawData = null;
-    let selectedBooks = [];
+    let selectedBooks = []; // 預設全不選
 
     let currentSession = { match: [], memory: [], qa: [] };
-    let currentPhase = 'match'; // 初始階段改為 match
+    let currentPhase = 'match';
     let currentItemIdx = 0;
     let score = { matchDone: 0, memoryDone: 0, qaCorrect: 0, qaTotal: 0 };
     let isFormSubmitted = false;
@@ -425,7 +425,7 @@
       .then(res => res.json())
       .then(data => {
         rawData = data;
-        selectedBooks = [...data.books];
+        selectedBooks = []; // 預設全不選
         renderBookChips();
       })
       .catch(err => {
@@ -438,8 +438,9 @@
       const container = document.getElementById('book-list');
       container.innerHTML = '';
       rawData.books.forEach(b => {
+        const isSelected = selectedBooks.includes(b);
         const chip = document.createElement('div');
-        chip.className = `book-chip ${selectedBooks.includes(b) ? 'active' : ''}`;
+        chip.className = `book-chip ${isSelected ? 'active' : ''}`;
         chip.innerText = b;
         chip.onclick = () => {
           if (selectedBooks.includes(b)) {
@@ -448,9 +449,12 @@
             selectedBooks.push(b);
           }
           chip.classList.toggle('active');
+          updateSelectAllBtnText();
         };
         container.appendChild(chip);
       });
+
+      updateSelectAllBtnText();
 
       document.getElementById('btn-select-all').onclick = () => {
         if (selectedBooks.length === rawData.books.length) {
@@ -460,6 +464,16 @@
         }
         renderBookChips();
       };
+    }
+
+    function updateSelectAllBtnText() {
+      const btn = document.getElementById('btn-select-all');
+      if (!btn || !rawData) return;
+      if (selectedBooks.length === rawData.books.length && rawData.books.length > 0) {
+        btn.innerText = '全部取消';
+      } else {
+        btn.innerText = '全部勾選';
+      }
     }
 
     function goToSelectionScreen() {
@@ -586,7 +600,6 @@
             if (currentItemIdx < currentSession.match.length) {
               renderMatchQuestion();
             } else {
-              // 階段 1 完成 -> 進入階段 2: Memory
               currentPhase = 'memory';
               currentItemIdx = 0;
               updateStageIndicators();
@@ -663,7 +676,6 @@
               if (currentItemIdx < currentSession.memory.length) {
                 renderMemoryQuestion();
               } else {
-                // 階段 2 完成 -> 進入階段 3: QA
                 currentPhase = 'qa';
                 currentItemIdx = 0;
                 updateStageIndicators();
@@ -719,7 +731,6 @@
         if (currentItemIdx < currentSession.qa.length) {
           renderQAQuestion();
         } else {
-          // 階段 3 完成 -> 進入最終結算
           renderFinalResults();
         }
       }, 1100);

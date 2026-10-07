@@ -45,6 +45,23 @@
     }
     .header h1 { font-size: 24px; color: #d81b60; }
     .nav-btns { display: flex; gap: 10px; align-items: center; }
+    
+    /* 靜音切換按鈕 */
+    .sound-toggle-btn {
+      background: #f06292;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s;
+      user-select: none;
+    }
+    .sound-toggle-btn:hover { background: #d81b60; transform: scale(1.05); }
+    .sound-toggle-btn.muted { background: #9e9e9e; }
+
     .back-btn {
       text-decoration: none;
       background: #ff4081;
@@ -442,6 +459,7 @@
     <div class="header">
       <h1>🎡 藍思值 300L 奇幻樂園闖關玩</h1>
       <div class="nav-btns">
+        <button id="btn-sound-toggle" class="sound-toggle-btn" onclick="SoundEffect.toggleMute()">🔊 音效</button>
         <button id="btn-reselect" class="sub-btn" style="display:none;" onclick="goToSelectionScreen()">🔄 重選讀本</button>
         <a href="index.html" class="back-btn">⬅ 返回大地圖</a>
       </div>
@@ -518,6 +536,149 @@
 
   <script>
     /* =========================================================
+       【Web Audio 原生合成音效系統】
+       ========================================================= */
+    const SoundEffect = {
+      ctx: null,
+      isMuted: localStorage.getItem('scholastic_sound_muted') === 'true',
+
+      init() {
+        if (!this.ctx) {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) this.ctx = new AudioCtx();
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      },
+
+      // 1. 點擊 / 翻牌音效：短促柔和「啵」聲
+      playFlip() {
+        if (this.isMuted) return;
+        this.init();
+        if (!this.ctx) return;
+
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        const now = this.ctx.currentTime;
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(320, now);
+        osc.frequency.exponentialRampToValueAtTime(580, now + 0.08);
+
+        gain.gain.setValueAtTime(0.18, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.08);
+      },
+
+      // 2. 配對成功 / 答對音效：輕快上揚雙音 (Ting!)
+      playCorrect() {
+        if (this.isMuted) return;
+        this.init();
+        if (!this.ctx) return;
+
+        const now = this.ctx.currentTime;
+
+        const osc1 = this.ctx.createOscillator();
+        const gain1 = this.ctx.createGain();
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(1318, now);
+        gain1.gain.setValueAtTime(0.2, now);
+        gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+        osc1.connect(gain1);
+        gain1.connect(this.ctx.destination);
+        osc1.start(now);
+        osc1.stop(now + 0.12);
+
+        const osc2 = this.ctx.createOscillator();
+        const gain2 = this.ctx.createGain();
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(1567, now + 0.1);
+        gain2.gain.setValueAtTime(0.25, now + 0.1);
+        gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+        osc2.connect(gain2);
+        gain2.connect(this.ctx.destination);
+        osc2.start(now + 0.1);
+        osc2.stop(now + 0.35);
+      },
+
+      // 3. 配對錯誤 / 答錯音效：低沈彈跳提醒 (Uh-oh)
+      playWrong() {
+        if (this.isMuted) return;
+        this.init();
+        if (!this.ctx) return;
+
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        const now = this.ctx.currentTime;
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(220, now);
+        osc.frequency.exponentialRampToValueAtTime(130, now + 0.22);
+
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.22);
+      },
+
+      // 4. 過關勝利樂章：大三和弦琶音
+      playVictory() {
+        if (this.isMuted) return;
+        this.init();
+        if (!this.ctx) return;
+
+        const notes = [523.25, 659.25, 783.99, 1046.50];
+        const now = this.ctx.currentTime;
+
+        notes.forEach((freq, idx) => {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          const startTime = now + idx * 0.12;
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, startTime);
+
+          gain.gain.setValueAtTime(0.22, startTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.4);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+
+          osc.start(startTime);
+          osc.stop(startTime + 0.4);
+        });
+      },
+
+      toggleMute() {
+        this.isMuted = !this.isMuted;
+        localStorage.setItem('scholastic_sound_muted', this.isMuted);
+        this.updateBtnUI();
+      },
+
+      updateBtnUI() {
+        const btn = document.getElementById('btn-sound-toggle');
+        if (!btn) return;
+        if (this.isMuted) {
+          btn.innerText = '🔇 靜音';
+          btn.classList.add('muted');
+        } else {
+          btn.innerText = '🔊 音效';
+          btn.classList.remove('muted');
+        }
+      }
+    };
+
+    /* =========================================================
        【Google 表單設定】
        ========================================================= */
     const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe1wq7V2HLV5ALzSzkmQ7ZkOR02nOIAqicxXZ_XQdwgZz-6Ig/formResponse";
@@ -527,7 +688,7 @@
 
     let rawData = null;
     let selectedBooks = []; // 預設全不選
-    let isTimerEnabled = false; // 計時器開關，預設關閉
+    let isTimerEnabled = false; // 計時器預設關閉
 
     let currentSession = { match: [], memory: [], qa: [] };
     let currentPhase = 'match';
@@ -541,6 +702,7 @@
     let timeLeft = TIME_LIMIT;
 
     function toggleTimerMode() {
+      SoundEffect.playFlip();
       isTimerEnabled = !isTimerEnabled;
       const btn = document.getElementById('btn-toggle-timer');
       const desc = document.getElementById('mode-desc');
@@ -567,7 +729,6 @@
       stopTimer();
       const badgeEl = document.getElementById('game-timer');
 
-      // 若玩家未開啟計時器，隱藏徽章並不啟動倒數
       if (!isTimerEnabled) {
         if (badgeEl) badgeEl.style.display = 'none';
         return;
@@ -646,6 +807,7 @@
         chip.className = `book-chip ${isSelected ? 'active' : ''}`;
         chip.innerText = b;
         chip.onclick = () => {
+          SoundEffect.playFlip();
           if (selectedBooks.includes(b)) {
             selectedBooks = selectedBooks.filter(x => x !== b);
           } else {
@@ -660,6 +822,7 @@
       updateSelectAllBtnText();
 
       document.getElementById('btn-select-all').onclick = () => {
+        SoundEffect.playFlip();
         if (selectedBooks.length === rawData.books.length) {
           selectedBooks = [];
         } else {
@@ -682,6 +845,7 @@
     /* 切換至選書畫面 */
     function goToSelectionScreen() {
       stopTimer();
+      SoundEffect.playFlip();
       document.getElementById('selection-screen').style.display = 'block';
       document.getElementById('game-screen').style.display = 'none';
       document.getElementById('btn-reselect').style.display = 'none';
@@ -693,6 +857,7 @@
         alert('請至少勾選一本你想挑戰的讀本！');
         return;
       }
+      SoundEffect.playFlip();
       document.getElementById('selection-screen').style.display = 'none';
       document.getElementById('game-screen').style.display = 'block';
       document.getElementById('btn-reselect').style.display = 'inline-block';
@@ -754,6 +919,7 @@
     function renderMatchQuestion() {
       updateProgressBar();
       startTimer(() => {
+        SoundEffect.playWrong();
         currentItemIdx++;
         if (currentItemIdx < currentSession.match.length) {
           renderMatchQuestion();
@@ -785,6 +951,7 @@
 
     function onSelectLeft(el) {
       if (el.classList.contains('matched')) return;
+      SoundEffect.playFlip();
       document.querySelectorAll('#col-left .match-item').forEach(i => i.classList.remove('selected'));
       el.classList.add('selected');
       selLeft = el;
@@ -793,6 +960,7 @@
 
     function onSelectRight(el) {
       if (el.classList.contains('matched')) return;
+      SoundEffect.playFlip();
       document.querySelectorAll('#col-right .match-item').forEach(i => i.classList.remove('selected'));
       el.classList.add('selected');
       selRight = el;
@@ -802,8 +970,11 @@
     function checkMatch() {
       if (selLeft && selRight) {
         if (selLeft.dataset.id === selRight.dataset.id) {
+          SoundEffect.playCorrect();
           selLeft.classList.add('matched');
           selRight.classList.add('matched');
+        } else {
+          SoundEffect.playWrong();
         }
         selLeft.classList.remove('selected');
         selRight.classList.remove('selected');
@@ -844,6 +1015,7 @@
     function renderMemoryQuestion() {
       updateProgressBar();
       startTimer(() => {
+        SoundEffect.playWrong();
         currentItemIdx++;
         if (currentItemIdx < currentSession.memory.length) {
           renderMemoryQuestion();
@@ -888,6 +1060,7 @@
     function onFlipCard(card) {
       if (card.classList.contains('flipped') || card.classList.contains('matched') || memSelected.length >= 2) return;
 
+      SoundEffect.playFlip();
       card.classList.add('flipped');
       memSelected.push(card);
 
@@ -895,6 +1068,7 @@
         const [c1, c2] = memSelected;
 
         if (c1.dataset.pairId === c2.dataset.pairId) {
+          SoundEffect.playCorrect();
           c1.classList.add('matched');
           c2.classList.add('matched');
           memSelected = [];
@@ -912,6 +1086,7 @@
             }, 800);
           }
         } else {
+          SoundEffect.playWrong();
           setTimeout(() => {
             c1.classList.remove('flipped');
             c2.classList.remove('flipped');
@@ -936,6 +1111,7 @@
     function renderQAQuestion() {
       updateProgressBar();
       startTimer(() => {
+        SoundEffect.playWrong();
         currentItemIdx++;
         if (currentItemIdx < currentSession.qa.length) {
           renderQAQuestion();
@@ -965,9 +1141,11 @@
       parent.querySelectorAll('.option-btn').forEach(b => b.style.pointerEvents = 'none');
 
       if (chosen === correct) {
+        SoundEffect.playCorrect();
         btn.classList.add('correct');
         score.qaCorrect++;
       } else {
+        SoundEffect.playWrong();
         btn.classList.add('wrong');
         parent.querySelectorAll('.option-btn')[correct].classList.add('correct');
       }
@@ -1028,6 +1206,7 @@
 
       if (isPassed) {
         triggerConfetti();
+        SoundEffect.playVictory();
       }
 
       win.innerHTML = `
@@ -1092,6 +1271,7 @@
         return;
       }
 
+      SoundEffect.playFlip();
       const name = document.getElementById('user-name').value.trim();
       const line = document.getElementById('user-line').value.trim();
       const msg = document.getElementById('form-msg');
@@ -1134,6 +1314,7 @@
 
     /* 獎狀動態合成與彈窗控制 */
     function openCertModal() {
+      SoundEffect.playFlip();
       const nameInput = document.getElementById('user-name');
       let studentName = nameInput ? nameInput.value.trim() : "";
       if (!studentName) {
@@ -1175,8 +1356,12 @@
     }
 
     function closeCertModal() {
+      SoundEffect.playFlip();
       document.getElementById('cert-modal').style.display = 'none';
     }
+
+    // 初始化同步音效按鈕狀態
+    SoundEffect.updateBtnUI();
   </script>
 </body>
 </html>

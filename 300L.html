@@ -196,10 +196,10 @@
       display: none;
     }
 
-    /* 三階段進度狀態列與倒數計時 */
+    /* 三階段進度狀態列 (已設置居中) */
     .stage-bar {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       margin-bottom: 12px;
       background: #fdf0f4;
@@ -209,12 +209,12 @@
       font-size: 14px;
       color: #888;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
-    .stage-step { padding: 4px 10px; border-radius: 8px; }
+    .stage-step { padding: 4px 12px; border-radius: 8px; text-align: center; }
     .stage-step.current { background: #ff4081; color: white; }
 
-    /* 倒數計時徽章樣式 */
+    /* 倒數計時徽章樣式（置放於題目上方） */
     .timer-badge {
       display: inline-flex;
       align-items: center;
@@ -222,12 +222,13 @@
       background: #fff;
       border: 2px solid #ffb6c1;
       color: #d81b60;
-      padding: 4px 12px;
-      border-radius: 16px;
-      font-size: 13px;
+      padding: 5px 16px;
+      border-radius: 18px;
+      font-size: 14px;
       font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       transition: all 0.3s;
+      margin-bottom: 12px;
     }
     .timer-badge.warning {
       border-color: #f44336;
@@ -477,14 +478,14 @@
         <div class="book-list" id="book-list">載入書單中...</div>
       </div>
 
-      <!-- 計時挑戰模式開關 -->
+      <!-- 計時挑戰模式開關（預設為開啟） -->
       <div class="mode-setting-box">
         <div class="mode-text">
           <h3>⏱️ 計時挑戰模式（每題 45 秒）</h3>
-          <p id="mode-desc">目前模式：關閉（無時間壓力，可從容作答）</p>
+          <p id="mode-desc">目前模式：開啟（每題 45 秒，時間到自動推進）</p>
         </div>
-        <button class="timer-toggle-btn" id="btn-toggle-timer" onclick="toggleTimerMode()">
-          <span>⏸️ 已關閉計時</span>
+        <button class="timer-toggle-btn active" id="btn-toggle-timer" onclick="toggleTimerMode()">
+          <span>⚡ 已開啟計時 (45s)</span>
         </button>
       </div>
 
@@ -493,16 +494,11 @@
 
     <!-- 畫面 2：遊戲進行面板 -->
     <div id="game-screen">
-      <!-- 三階段進度狀態與倒數計時 -->
+      <!-- 三階段進度狀態 (置中排版) -->
       <div class="stage-bar">
-        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-          <span class="stage-step" id="step-match">階段 1：連連看配對 (Matching)</span>
-          <span class="stage-step" id="step-memory">階段 2：翻牌對對碰 (Memory)</span>
-          <span class="stage-step" id="step-qa">階段 3：單選對答 (QA)</span>
-        </div>
-        <div class="timer-badge" id="game-timer">
-          ⏱️ <span id="timer-sec">45</span> 秒
-        </div>
+        <span class="stage-step" id="step-match">階段 1：連連看配對 (Matching)</span>
+        <span class="stage-step" id="step-memory">階段 2：翻牌對對碰 (Memory)</span>
+        <span class="stage-step" id="step-qa">階段 3：單選對答 (QA)</span>
       </div>
 
       <!-- 計步進度條 -->
@@ -552,7 +548,6 @@
         }
       },
 
-      // 1. 點擊 / 翻牌音效：短促柔和「啵」聲
       playFlip() {
         if (this.isMuted) return;
         this.init();
@@ -576,7 +571,6 @@
         osc.stop(now + 0.08);
       },
 
-      // 2. 配對成功 / 答對音效：輕快上揚雙音 (Ting!)
       playCorrect() {
         if (this.isMuted) return;
         this.init();
@@ -607,7 +601,6 @@
         osc2.stop(now + 0.35);
       },
 
-      // 3. 配對錯誤 / 答錯音效：低沈彈跳提醒 (Uh-oh)
       playWrong() {
         if (this.isMuted) return;
         this.init();
@@ -631,7 +624,6 @@
         osc.stop(now + 0.22);
       },
 
-      // 4. 過關勝利樂章：大三和弦琶音
       playVictory() {
         if (this.isMuted) return;
         this.init();
@@ -682,13 +674,13 @@
        【Google 表單設定】
        ========================================================= */
     const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe1wq7V2HLV5ALzSzkmQ7ZkOR02nOIAqicxXZ_XQdwgZz-6Ig/formResponse";
-    const ENTRY_NAME = "entry.10104725";    // 本名欄位 ID
-    const ENTRY_LINE = "entry.393671221";   // LINE 名稱欄位 ID
-    const ENTRY_SCORE = "entry.1127374980"; // 答對題數欄位 ID
+    const ENTRY_NAME = "entry.10104725";
+    const ENTRY_LINE = "entry.393671221";
+    const ENTRY_SCORE = "entry.1127374980";
 
     let rawData = null;
-    let selectedBooks = []; // 預設全不選
-    let isTimerEnabled = false; // 計時器預設關閉
+    let selectedBooks = [];
+    let isTimerEnabled = true; // 預設開啟計時模式
 
     let currentSession = { match: [], memory: [], qa: [] };
     let currentPhase = 'match';
@@ -788,7 +780,7 @@
       .then(res => res.json())
       .then(data => {
         rawData = data;
-        selectedBooks = []; // 預設全不選
+        selectedBooks = [];
         renderBookChips();
       })
       .catch(err => {
@@ -934,7 +926,11 @@
       const rightList = [...m.pairs].sort(() => Math.random() - 0.5);
 
       win.innerHTML = `
-        <div style="width:100%;">
+        <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
+          <!-- 倒數計時徽章置於書本標籤上方 -->
+          <div class="timer-badge" id="game-timer">
+            ⏱️ <span id="timer-sec">${timeLeft}</span> 秒
+          </div>
           <span class="book-tag" style="margin-bottom:15px;">📖 ${m.book} ｜ 連連看 第 ${currentItemIdx + 1} / ${currentSession.match.length} 組</span>
           <p style="margin-bottom:15px;color:#666;">點擊左側項目，再點擊右側對應的意思進行連線！</p>
           <div class="match-container">
@@ -1044,6 +1040,10 @@
 
       win.innerHTML = `
         <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
+          <!-- 倒數計時徽章置於書本標籤上方 -->
+          <div class="timer-badge" id="game-timer">
+            ⏱️ <span id="timer-sec">${timeLeft}</span> 秒
+          </div>
           <span class="book-tag" style="margin-bottom:15px;">📖 ${mem.book} ｜ 對對碰 第 ${currentItemIdx + 1} / ${currentSession.memory.length} 組</span>
           <p style="margin-bottom:15px;color:#666;">點開兩張卡片，將「英文單字」與「中文解釋」配對！</p>
           <div class="memory-grid">
@@ -1124,7 +1124,13 @@
       const q = currentSession.qa[currentItemIdx];
       win.innerHTML = `
         <div class="quiz-box">
-          <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} / ${currentSession.qa.length} 題</span>
+          <div style="display:flex; flex-direction:column; align-items:flex-start;">
+            <!-- 倒數計時徽章置於書本標籤上方 -->
+            <div class="timer-badge" id="game-timer">
+              ⏱️ <span id="timer-sec">${timeLeft}</span> 秒
+            </div>
+            <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} / ${currentSession.qa.length} 題</span>
+          </div>
           <div class="quiz-question">${q.question}</div>
           <div class="options-grid">
             ${q.options.map((opt, i) => `
@@ -1360,7 +1366,6 @@
       document.getElementById('cert-modal').style.display = 'none';
     }
 
-    // 初始化同步音效按鈕狀態
     SoundEffect.updateBtnUI();
   </script>
 </body>

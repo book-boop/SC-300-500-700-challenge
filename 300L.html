@@ -84,7 +84,7 @@
       background: #fff0f5;
       border-radius: 18px;
       padding: 20px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       text-align: left;
     }
     .filter-header {
@@ -113,6 +113,49 @@
       border-color: #ff4081;
       box-shadow: 0 4px 10px rgba(255, 64, 129, 0.3);
     }
+
+    /* 計時模式設定卡片 */
+    .mode-setting-box {
+      background: #fff8fa;
+      border: 2px dashed #ffb6c1;
+      border-radius: 18px;
+      padding: 14px 20px;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
+    .mode-text h3 {
+      font-size: 15px;
+      color: #d81b60;
+      margin-bottom: 4px;
+    }
+    .mode-text p {
+      font-size: 13px;
+      color: #777;
+    }
+    .timer-toggle-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border: 2px solid #ff4081;
+      background: #ffffff;
+      color: #ff4081;
+      transition: all 0.25s ease;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .timer-toggle-btn.active {
+      background: #ff4081;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(255, 64, 129, 0.3);
+    }
+
     .start-game-btn {
       padding: 14px 40px;
       background: #ff4081;
@@ -416,6 +459,17 @@
         <div class="book-list" id="book-list">載入書單中...</div>
       </div>
 
+      <!-- 計時挑戰模式開關 -->
+      <div class="mode-setting-box">
+        <div class="mode-text">
+          <h3>⏱️ 計時挑戰模式（每題 45 秒）</h3>
+          <p id="mode-desc">目前模式：關閉（無時間壓力，可從容作答）</p>
+        </div>
+        <button class="timer-toggle-btn" id="btn-toggle-timer" onclick="toggleTimerMode()">
+          <span>⏸️ 已關閉計時</span>
+        </button>
+      </div>
+
       <button class="start-game-btn" onclick="confirmAndStartGame()">🎮 開始闖關挑戰</button>
     </div>
 
@@ -473,6 +527,7 @@
 
     let rawData = null;
     let selectedBooks = []; // 預設全不選
+    let isTimerEnabled = false; // 計時器開關，預設關閉
 
     let currentSession = { match: [], memory: [], qa: [] };
     let currentPhase = 'match';
@@ -485,6 +540,22 @@
     const TIME_LIMIT = 45;
     let timeLeft = TIME_LIMIT;
 
+    function toggleTimerMode() {
+      isTimerEnabled = !isTimerEnabled;
+      const btn = document.getElementById('btn-toggle-timer');
+      const desc = document.getElementById('mode-desc');
+
+      if (isTimerEnabled) {
+        btn.classList.add('active');
+        btn.innerHTML = '<span>⚡ 已開啟計時 (45s)</span>';
+        desc.innerText = '目前模式：開啟（每題 45 秒，時間到自動推進）';
+      } else {
+        btn.classList.remove('active');
+        btn.innerHTML = '<span>⏸️ 已關閉計時</span>';
+        desc.innerText = '目前模式：關閉（無時間壓力，可從容作答）';
+      }
+    }
+
     function stopTimer() {
       if (timerInterval) {
         clearInterval(timerInterval);
@@ -494,6 +565,15 @@
 
     function startTimer(onTimeoutCallback) {
       stopTimer();
+      const badgeEl = document.getElementById('game-timer');
+
+      // 若玩家未開啟計時器，隱藏徽章並不啟動倒數
+      if (!isTimerEnabled) {
+        if (badgeEl) badgeEl.style.display = 'none';
+        return;
+      }
+
+      if (badgeEl) badgeEl.style.display = 'inline-flex';
       timeLeft = TIME_LIMIT;
       updateTimerUI();
 
@@ -674,7 +754,6 @@
     function renderMatchQuestion() {
       updateProgressBar();
       startTimer(() => {
-        // 超時推進下一題
         currentItemIdx++;
         if (currentItemIdx < currentSession.match.length) {
           renderMatchQuestion();
@@ -765,7 +844,6 @@
     function renderMemoryQuestion() {
       updateProgressBar();
       startTimer(() => {
-        // 超時推進下一題
         currentItemIdx++;
         if (currentItemIdx < currentSession.memory.length) {
           renderMemoryQuestion();
@@ -858,7 +936,6 @@
     function renderQAQuestion() {
       updateProgressBar();
       startTimer(() => {
-        // 超時視為未答對直接推進
         currentItemIdx++;
         if (currentItemIdx < currentSession.qa.length) {
           renderQAQuestion();

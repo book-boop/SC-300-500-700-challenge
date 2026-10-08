@@ -454,6 +454,117 @@
       background: none;
       border: none;
     }
+    /* ========================================================
+   📱 手機端 RWD 深度響應式排版修正 (小於 680px)
+   ======================================================== */
+@media (max-width: 680px) {
+  /* 1. 外圍邊距緊湊化，釋放寶貴寬度 */
+  body {
+    padding: 10px 8px;
+  }
+
+  .container {
+    padding: 16px 12px;
+    border-radius: 20px;
+    margin: 0;
+  }
+
+  /* 2. 頂部標題與功能按鈕自適應 */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+
+  .header h1 {
+    font-size: 19px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .nav-btns {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav-btns button,
+  .nav-btns a {
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+  }
+
+  /* 3. 階段指示進度條緊湊化 */
+  .stage-bar {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .stage-step {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+
+  .game-window {
+    padding: 15px 10px;
+    min-height: 380px;
+  }
+
+  /* 4. 解決【圖 1】翻牌卡片寬度超出容器問題 */
+  .memory-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 8px !important;
+  }
+
+  .memory-card {
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    padding: 4px !important;
+  }
+
+  /* 5. 解決【圖 2】連連看兩側比例不均、高度落差過大問題 */
+  .match-container {
+    gap: 10px !important;
+  }
+
+  .match-col {
+    gap: 10px !important;
+  }
+
+  .match-item {
+    padding: 10px 6px !important;
+    font-size: 13px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px; /* 強制設定最小高度，讓左側短字與右側長句對齊 */
+    line-height: 1.35;
+  }
+
+  /* 6. 題目字體與標籤微調 */
+  .book-tag {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .timer-badge {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+
+  .quiz-question {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .option-btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
   </style>
 </head>
 <body>

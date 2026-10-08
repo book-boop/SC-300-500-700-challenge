@@ -289,7 +289,20 @@
       transition: 0.2s;
     }
     .match-item.selected { border-color: #ff4081; background: #fff0f5; transform: scale(1.02); }
-    .match-item.matched { background: #e8f5e9; border-color: #81c784; color: #2e7d32; cursor: default; }
+    .match-item.matched { background: #e8f5e9; border-color: #81c784; color: #2e7d32; 
+      /* 連連看答錯：紅色外框 + 淺紅底色 + 抖動回饋 */
+.match-item.error {
+  border-color: #f44336 !important;
+  background-color: #ffebee !important;
+  color: #c62828 !important;
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}cursor: default; }
 
     /* 對對碰 (Memory Cards) */
     .memory-grid {
@@ -1086,34 +1099,55 @@
     }
 
     function checkMatch() {
-      if (selLeft && selRight) {
-        if (selLeft.dataset.id === selRight.dataset.id) {
-          SoundEffect.playCorrect();
-          selLeft.classList.add('matched');
-          selRight.classList.add('matched');
-        } else {
-          SoundEffect.playWrong();
-        }
-        selLeft.classList.remove('selected');
-        selRight.classList.remove('selected');
-        selLeft = null;
-        selRight = null;
+  if (selLeft && selRight) {
+    if (selLeft.dataset.id === selRight.dataset.id) {
+      // ✅ 配對成功：綠色外框 + 答對音效
+      SoundEffect.playCorrect();
+      selLeft.classList.remove('selected');
+      selRight.classList.remove('selected');
+      selLeft.classList.add('matched');
+      selRight.classList.add('matched');
+      
+      selLeft = null;
+      selRight = null;
 
-        if (document.querySelectorAll('#col-left .match-item:not(.matched)').length === 0) {
-          score.matchDone++;
-          stopTimer();
-          setTimeout(() => {
-            currentItemIdx++;
-            if (currentItemIdx < currentSession.match.length) {
-              renderMatchQuestion();
-            } else {
-              proceedToMemoryPhase();
-            }
-          }, 800);
-        }
+      if (document.querySelectorAll('#col-left .match-item:not(.matched)').length === 0) {
+        score.matchDone++;
+        stopTimer();
+        setTimeout(() => {
+          currentItemIdx++;
+          if (currentItemIdx < currentSession.match.length) {
+            renderMatchQuestion();
+          } else {
+            proceedToMemoryPhase();
+          }
+        }, 800);
       }
-    }
+    } else {
+      // ❌ 配對錯誤：播放答錯音效 + 閃爍紅色外框
+      SoundEffect.playWrong();
+      
+      const wrongLeft = selLeft;
+      const wrongRight = selRight;
 
+      // 暫存並清空選取指針，避免連續誤點
+      selLeft = null;
+      selRight = null;
+
+      // 加上紅色錯誤樣式
+      wrongLeft.classList.remove('selected');
+      wrongRight.classList.remove('selected');
+      wrongLeft.classList.add('error');
+      wrongRight.classList.add('error');
+
+      // 0.5 秒後移除紅色外框，恢復原本可點擊狀態
+      setTimeout(() => {
+        wrongLeft.classList.remove('error');
+        wrongRight.classList.remove('error');
+      }, 500);
+    }
+  }
+}
     function proceedToMemoryPhase() {
       currentPhase = 'memory';
       currentItemIdx = 0;

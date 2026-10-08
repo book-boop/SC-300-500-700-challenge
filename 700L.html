@@ -1232,38 +1232,47 @@
     }
 
     /* ---------------- 階段 3：單選對答 (QA) ---------------- */
-    function renderQAQuestion() {
-      updateProgressBar();
-      startTimer(() => {
-        SoundEffect.playWrong();
-        currentItemIdx++;
-        if (currentItemIdx < currentSession.qa.length) {
-          renderQAQuestion();
-        } else {
-          renderFinalResults();
-        }
-      });
-
-      const win = document.getElementById('game-window');
-      const q = currentSession.qa[currentItemIdx];
-      win.innerHTML = `
-        <div class="quiz-box">
-          <div style="display:flex; flex-direction:column; align-items:flex-start;">
-            <!-- 倒數計時徽章置於書本標籤上方 -->
-            <div class="timer-badge" id="game-timer">
-              ⏱️ <span id="timer-sec">${timeLeft}</span> 秒
-            </div>
-            <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} / ${currentSession.qa.length} 題</span>
-          </div>
-          <div class="quiz-question">${q.question}</div>
-          <div class="options-grid">
-            ${q.options.map((opt, i) => `
-              <button class="option-btn" onclick="submitQAAnswer(this, ${i}, ${q.answer})">${opt}</button>
-            `).join('')}
-          </div>
-        </div>
-      `;
+    /* ---------------- 階段 3：單選對答 (QA) ---------------- */
+function renderQAQuestion() {
+  updateProgressBar();
+  startTimer(() => {
+    SoundEffect.playWrong();
+    currentItemIdx++;
+    if (currentItemIdx < currentSession.qa.length) {
+      renderQAQuestion();
+    } else {
+      renderFinalResults();
     }
+  });
+
+  const win = document.getElementById('game-window');
+  const q = currentSession.qa[currentItemIdx];
+
+  // 🎲 將選項進行隨機洗牌，並動態計算正確答案的新索引
+  const shuffledOptions = q.options.map((optText, origIdx) => ({
+    text: optText,
+    isCorrect: origIdx === q.answer
+  })).sort(() => Math.random() - 0.5);
+
+  const newCorrectIndex = shuffledOptions.findIndex(item => item.isCorrect);
+
+  win.innerHTML = `
+    <div class="quiz-box">
+      <div style="display:flex; flex-direction:column; align-items:flex-start;">
+        <div class="timer-badge" id="game-timer">
+          ⏱️ <span id="timer-sec">${timeLeft}</span> 秒
+        </div>
+        <span class="book-tag">📖 ${q.book} ｜ 對答 第 ${currentItemIdx + 1} / ${currentSession.qa.length} 題</span>
+      </div>
+      <div class="quiz-question">${q.question}</div>
+      <div class="options-grid">
+        ${shuffledOptions.map((opt, i) => `
+          <button class="option-btn" onclick="submitQAAnswer(this, ${i}, ${newCorrectIndex})">${opt.text}</button>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
 
     function submitQAAnswer(btn, chosen, correct) {
       btn.blur();

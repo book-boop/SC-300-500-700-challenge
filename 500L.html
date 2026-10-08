@@ -351,18 +351,29 @@
     .quiz-question { font-size: 19px; font-weight: bold; margin-bottom: 20px; color: #222; line-height: 1.5; }
     .options-grid { display: flex; flex-direction: column; gap: 12px; }
     .option-btn {
-      padding: 14px 18px;
-      background: #ffffff;
-      border: 2px solid #e0e0e0;
-      border-radius: 12px;
-      font-size: 16px;
-      text-align: left;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .option-btn:hover { background: #e1f5fe; border-color: #0288d1; }
-    .option-btn.correct { background: #c8e6c9 !important; border-color: #4caf50 !important; color: #2e7d32; }
-    .option-btn.wrong { background: #ffcdd2 !important; border-color: #f44336 !important; color: #c62828; }
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  outline: none; /* 移除點擊後的外框殘留 */
+  -webkit-tap-highlight-color: transparent; /* 移除手機預設點擊反灰/反光高亮 */
+}
+
+/* 僅在「支援滑鼠懸停」的桌機設備啟用 hover 效果，防止手機端殘留選中邊框 */
+@media (hover: hover) and (pointer: fine) {
+  .option-btn:hover {
+    background: #e1f5fe;
+    border-color: #0288d1;
+  }
+}
+
+/* 正確與錯誤狀態優先度最高 */
+.option-btn.correct { background: #c8e6c9 !important; border-color: #4caf50 !important; color: #2e7d32 !important; }
+.option-btn.wrong { background: #ffcdd2 !important; border-color: #f44336 !important; color: #c62828 !important; }
 
     /* 表單區塊 */
     .form-box {
@@ -1255,6 +1266,7 @@
     }
 
     function submitQAAnswer(btn, chosen, correct) {
+      btn.blur();
       stopTimer();
       const parent = btn.parentElement;
       parent.querySelectorAll('.option-btn').forEach(b => b.style.pointerEvents = 'none');
